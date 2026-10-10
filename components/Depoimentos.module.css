@@ -1,0 +1,82 @@
+/*
+ * Cartões em papel sobre o fundo escuro. A troca de superfície é o que separa
+ * "fala de outra pessoa" de "texto do escritório" — sem ela, os depoimentos
+ * se misturavam ao resto da página.
+ * Colunas CSS em vez de grade: alturas desiguais nunca deixam buraco.
+ */
+.parede {
+  columns: 3;
+  column-gap: 18px;
+}
+@media (max-width: 1000px) { .parede { columns: 2; } }
+@media (max-width: 640px) { .parede { columns: 1; } }
+
+.card {
+  break-inside: avoid;
+  margin: 0 0 18px;
+  background: var(--read-bg);
+  color: var(--read-ink);
+  padding: 26px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--read-line);
+}
+
+.aspas {
+  font-family: var(--fonte-titulo);
+  font-size: 2.6rem;
+  line-height: 0.6;
+  color: var(--read-faint);
+  opacity: 0.45;
+  height: 0.5em;
+}
+
+.texto {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--read-ink);
+}
+.destaque .texto { font-size: 1.14rem; }
+
+.autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--read-line);
+  margin-top: auto;
+}
+
+.avatar {
+  width: 40px; height: 40px; flex: none; border-radius: 50%;
+  background: #d8d8dd;
+  color: #3f3f46;
+  display: grid; place-items: center;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.02em;
+}
+
+.ids { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.nome { font-size: 0.9rem; font-weight: 700; color: var(--read-ink); line-height: 1.25; }
+.papel { font-size: var(--t-micro); color: var(--read-faint); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.linha2 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+
+.handle {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-micro);
+  color: var(--read-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.handle:hover { color: #000; text-decoration: underline; }
+
+.verificado {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #15803d; background: #15803d14; border: 1px solid #15803d33;
+  padding: 2px 6px; font-weight: 700;
+}

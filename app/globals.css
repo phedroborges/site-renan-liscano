@@ -1,0 +1,314 @@
+/* ============================================================
+   Sistema de design Renan Liscano — v0.2
+   Dark-first: o :root nu é a paleta escura, porque a marca é preta.
+   ============================================================ */
+
+:root {
+  --ink: #0a0a0b;
+  --ink-raise: #131315;
+  --ink-sunk: #060607;
+
+  --read-bg: #f4f4f5;
+  --read-ink: #16161a;
+  --read-muted: #3f3f46;
+  --read-faint: #6a6a70;
+  --read-line: #00000014;
+
+  --platinum: #a0a0a2;
+  --platinum-hi: #ededef;
+  --platinum-lo: #6d6d6e;
+  --platinum-dk: #3b3b3c;
+  --metal-grad: linear-gradient(100deg, #3b3b3c 0%, #a0a0a2 26%, #ededef 43%, #ffffff 50%, #bcbcbe 58%, #6d6d6e 76%, #3b3b3c 100%);
+
+  --cta-bg: #f4f4f5;
+  --cta-ink: #0a0a0b;
+  --cta-bg-hover: #ffffff;
+
+  --text: #e8e8ea;
+  --muted: #7e7e82;
+  --faint: #55555a;
+
+  --line: #ffffff1f;
+  --line-hairline: #ffffff12;
+  --line-structural: #ffffff0a;
+  --hover-veil: #ffffff05;
+
+  --live: #4ade80;
+  --live-line: #4ade8040;
+  --warn: #e5b769;
+  --danger: #e2726e;
+
+  --avatar-grad: linear-gradient(140deg, #3b3b3c, #6d6d6e);
+  --avatar-ink: #ededef;
+
+  /* Pilhas de fonte declaradas uma vez. Trocar a fonte de titulo do site
+     inteiro passa a ser mudar esta linha, e nao 38 arquivos. */
+  --fonte-titulo: var(--font-bodoni), "Didot", "Times New Roman", serif;
+  --fonte-corpo: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --fonte-mono: var(--font-plex), ui-monospace, Menlo, monospace;
+
+  /* Cartoes de conteudo. Titulo e corpo saem daqui, entao um ajuste de
+     tipografia vale para todo cartao do site de uma vez. O tema popular
+     so troca o valor do token, nao redeclara seletor por seletor. */
+  --cartao-titulo-tam: clamp(1.14rem, 1.9vw, 1.3rem);
+  --cartao-corpo-tam: var(--t-small);
+
+  --measure: 1240px;
+  --rail: max(20px, calc((100vw - var(--measure)) / 2));
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 0.22s;
+  --med: 0.42s;
+  --slow: 0.72s;
+
+  --t-display: clamp(2.6rem, 6.5vw, 5rem);
+  --t-h2: clamp(1.5rem, 2.8vw, 2.15rem);
+  --t-h3: 1.15rem;
+  --t-small: 0.875rem;
+  --t-micro: 0.7rem;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --ink: #f1f1f3;
+    --ink-raise: #ffffff;
+    --ink-sunk: #e7e7eb;
+    --read-bg: #ffffff;
+    --platinum: #5e5e64;
+    --platinum-hi: #26262a;
+    --platinum-lo: #8a8a90;
+    --platinum-dk: #b6b6bc;
+    --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
+    --cta-bg: #0a0a0b;
+    --cta-ink: #f4f4f5;
+    --cta-bg-hover: #000000;
+    --text: #101014;
+    --muted: #5c5c63;
+    --faint: #8a8a92;
+    --line: #00000024;
+    --line-hairline: #00000014;
+    --line-structural: #0000000a;
+    --hover-veil: #00000005;
+    --live: #15803d;
+    --live-line: #15803d40;
+    --warn: #a16207;
+    --danger: #b91c1c;
+    --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
+    --avatar-ink: #101014;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --ink: #f1f1f3;
+  --ink-raise: #ffffff;
+  --ink-sunk: #e7e7eb;
+  --read-bg: #ffffff;
+  --platinum: #5e5e64;
+  --platinum-hi: #26262a;
+  --platinum-lo: #8a8a90;
+  --platinum-dk: #b6b6bc;
+  --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
+  --cta-bg: #0a0a0b;
+  --cta-ink: #f4f4f5;
+  --cta-bg-hover: #000000;
+  --text: #101014;
+  --muted: #5c5c63;
+  --faint: #8a8a92;
+  --line: #00000024;
+  --line-hairline: #00000014;
+  --line-structural: #0000000a;
+  --hover-veil: #00000005;
+  --live: #15803d;
+  --live-line: #15803d40;
+  --warn: #a16207;
+  --danger: #b91c1c;
+  --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
+  --avatar-ink: #101014;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background var(--med) var(--ease), color var(--med) var(--ease);
+}
+
+img { max-width: 100%; }
+
+::selection { background: var(--platinum); color: var(--ink); }
+
+/* ---------- utilidades ---------- */
+.wrap { padding-inline: var(--rail); }
+
+.serif { font-family: var(--fonte-titulo); }
+.mono { font-family: var(--fonte-mono); }
+
+.kicker {
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--platinum);
+  margin: 0;
+}
+
+.metal { color: var(--platinum-hi); }
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .metal {
+    background-image: var(--metal-grad);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: sheen 11s var(--ease) infinite;
+  }
+}
+@keyframes sheen {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+}
+
+/* ---------- grade estrutural ---------- */
+.rails {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  padding-inline: var(--rail);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.rails span { border-left: 1px solid var(--line-structural); }
+.rails span:last-child { border-right: 1px solid var(--line-structural); }
+@media (max-width: 760px) { .rails { grid-template-columns: repeat(2, 1fr); } }
+
+.page { position: relative; z-index: 1; }
+
+/* ---------- seções ---------- */
+.section {
+  padding-block: clamp(56px, 9vw, 112px);
+  border-top: 1px solid var(--line-hairline);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  align-items: baseline;
+  margin-bottom: 44px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-hairline);
+}
+.section-head h2 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-h2);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.section-head h2 em { font-style: italic; }
+.section-head .note {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--t-small);
+  max-width: 46ch;
+  margin-left: auto;
+}
+
+.lede { color: var(--muted); max-width: 66ch; font-size: 1.02rem; }
+.lede strong { color: var(--text); font-weight: 600; }
+
+/* ---------- botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 15px 28px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+.btn:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: 3px; }
+.btn-primary { background: var(--cta-bg); color: var(--cta-ink); }
+.btn-primary:hover { background: var(--cta-bg-hover); transform: translateY(-2px); }
+.btn-lg { padding: 19px 36px; font-size: 0.9rem; }
+.btn-quiet {
+  background: transparent;
+  color: var(--muted);
+  padding: 0;
+  border: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: var(--t-small);
+}
+.btn-quiet:hover { color: var(--platinum-hi); }
+.btn-quiet svg { transition: transform var(--fast) var(--ease); }
+.btn-quiet:hover svg { transform: translateX(5px); }
+
+/* ---------- reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--slow) var(--ease), transform var(--slow) var(--ease);
+}
+.reveal[data-in="true"] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- acessibilidade ---------- */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--cta-bg);
+  color: var(--cta-ink);
+  padding: 12px 20px;
+  font-size: var(--t-small);
+  font-weight: 600;
+}
+.pular:focus { left: var(--rail); top: 12px; }
+
+/* leitor de tela */
+.sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

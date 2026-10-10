@@ -1,0 +1,28 @@
+.lista { border-top: 1px solid var(--line-hairline); }
+.item { border-bottom: 1px solid var(--line-hairline); }
+.cabecalho { margin: 0; font-size: inherit; font-weight: inherit; }
+
+.botao {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1.02rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 22px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  transition: color var(--fast) var(--ease);
+}
+.botao:hover { color: var(--platinum-hi); }
+.botao:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: -3px; }
+.botao svg { color: var(--platinum); transition: transform var(--med) var(--ease); }
+.girado { transform: rotate(45deg); }
+
+.corpo { padding: 0 4px 24px; }
+.corpo p { margin: 0; color: var(--muted); max-width: 68ch; }

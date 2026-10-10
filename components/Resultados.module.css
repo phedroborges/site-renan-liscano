@@ -1,0 +1,9 @@
+.secao { background: var(--ink); color: var(--text); }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1px; margin: 0; background: var(--line); border: 1px solid var(--line); }
+.card { min-width: 0; display: flex; flex-direction: column; background: var(--ink-raise); padding: clamp(22px, 3vw, 36px); }
+.card dt { font-size: var(--t-small); font-weight: 600; line-height: 1.5; }
+.card dd { margin: 0; }
+.card .valor { font-family: var(--fonte-titulo); font-size: var(--t-h2); letter-spacing: -.025em; line-height: 1.15; margin: 24px 0 18px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.descricao { color: var(--muted); font-size: var(--t-small); max-width: 52ch; }
+.card .periodo { margin-top: auto; padding-top: 26px; color: var(--faint); font-size: var(--t-micro); }
+.nota { margin: 22px 0 0; max-width: 80ch; color: var(--muted); font-size: var(--t-micro); }

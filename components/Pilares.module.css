@@ -1,0 +1,96 @@
+.capitulo {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  padding-block: clamp(40px, 7vw, 86px);
+  border-top: 1px solid var(--line-hairline);
+}
+@media (max-width: 760px) {
+  .capitulo { grid-template-columns: 76px minmax(0, 1fr); gap: 24px; align-items: start; }
+}
+
+.colunaBox { position: relative; height: 260px; display: flex; align-items: flex-end; justify-content: center; }
+@media (max-width: 760px) { .colunaBox { height: 170px; } }
+
+.coluna {
+  width: 100%;
+  max-width: 60px;
+  height: auto;
+  color: var(--platinum);
+  transform-origin: bottom center;
+  transform: rotate(-84deg) translateY(2px);
+  opacity: 0.3;
+  transition: transform 620ms var(--ease), opacity 480ms var(--ease);
+}
+.ereto .coluna { transform: rotate(0deg); opacity: 0.85; }
+
+.poeira {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 96px;
+  height: 3px;
+  background: radial-gradient(ellipse at center, var(--platinum), transparent 70%);
+  opacity: 0;
+}
+.ereto .poeira { animation: bater 620ms var(--ease) 470ms 1; }
+@keyframes bater {
+  0% { opacity: 0; width: 60px; }
+  30% { opacity: 0.55; width: 108px; }
+  100% { opacity: 0; width: 132px; }
+}
+
+.n {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--fonte-mono);
+  font-size: var(--t-micro);
+  color: var(--platinum);
+  letter-spacing: 0.12em;
+  opacity: 0;
+  transition: opacity var(--med) var(--ease) 340ms;
+}
+.ereto .n { opacity: 1; }
+
+.texto { opacity: 0.4; transform: translateY(14px); transition: opacity var(--med) var(--ease), transform var(--med) var(--ease); }
+.ereto .texto { opacity: 1; transform: none; }
+
+.texto h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.12;
+  margin: 0 0 18px;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.texto h2 em { font-style: italic; }
+.texto p { margin: 0 0 14px; color: var(--muted); max-width: 62ch; }
+.texto p:last-child { margin-bottom: 0; }
+
+/* ---- pórtico do fechamento ---- */
+.portico {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 70px;
+  gap: clamp(16px, 4vw, 48px);
+  align-items: end;
+  border-top: 1px solid var(--line-hairline);
+  padding-top: clamp(32px, 5vw, 64px);
+}
+@media (max-width: 700px) { .portico { grid-template-columns: 1fr; } }
+
+.porticoColuna { color: var(--platinum); opacity: 0.75; }
+@media (max-width: 700px) { .porticoColuna { display: none; } }
+.porticoColuna svg { width: 100%; height: auto; }
+
+.porticoMiolo { padding-bottom: clamp(16px, 4vw, 48px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .coluna { transform: none; opacity: 0.85; }
+  .texto { opacity: 1; transform: none; }
+  .n { opacity: 1; }
+  .poeira { display: none; }
+}

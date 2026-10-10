@@ -1,0 +1,178 @@
+/* A superfície de leitura é clara nos dois temas: Bodoni em corpo pequeno
+   sobre preto cansa em texto longo, e isso não muda porque o leitor prefere
+   modo escuro no resto do site. */
+.papel {
+  background: var(--read-bg);
+  color: var(--read-ink);
+  padding-block: clamp(110px, 14vw, 170px) clamp(48px, 7vw, 90px);
+}
+
+.artigo { max-width: 1240px; }
+
+.migalha {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: var(--t-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--read-faint);
+  margin-bottom: 22px;
+}
+.migalha a { color: var(--read-faint); text-decoration: none; }
+.migalha a:hover { color: var(--read-ink); }
+
+.h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  padding-bottom: 26px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--read-line);
+  font-size: var(--t-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--read-faint);
+}
+.meta span { display: inline-flex; align-items: center; gap: 7px; }
+
+.resposta {
+  font-weight: 600;
+  color: var(--read-ink);
+  border-left: 3px solid var(--read-ink);
+  padding-left: 20px;
+  margin-bottom: 1.6em !important;
+}
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.85rem !important;
+  color: var(--read-muted);
+  background: #00000008;
+  border: 1px solid var(--read-line);
+  padding: 10px 15px;
+  margin-bottom: 2em !important;
+}
+.base strong { color: var(--read-ink); }
+
+.video {
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+  background: #e4e4e8;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2em;
+  font-family: var(--fonte-mono);
+  font-size: var(--t-micro);
+  color: var(--read-faint);
+}
+
+.artigo h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 2em 0 0.7em;
+  color: var(--read-ink);
+  text-wrap: balance;
+}
+
+.lista { margin: 0 0 1.4em; padding: 0; list-style: none; }
+.lista li {
+  padding: 0 0 14px 18px;
+  border-left: 2px solid var(--read-line);
+  margin-bottom: 14px;
+  color: var(--read-muted);
+}
+.lista strong { display: block; color: var(--read-ink); margin-bottom: 3px; }
+
+.ressalva {
+  border: 1px solid var(--read-line);
+  background: #00000006;
+  padding: 24px 26px;
+  margin-top: 2.4em;
+}
+.ressalva h2 { margin-top: 0 !important; font-size: 1.2rem !important; }
+.ressalva p:last-child { margin-bottom: 0 !important; }
+
+.autor {
+  max-width: 65ch;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--read-line);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.autor p { margin: 0; color: var(--read-muted); font-size: 0.92rem; }
+
+.cta {
+  max-width: 65ch;
+  margin-top: 40px;
+  border: 1px solid var(--read-line);
+  background: var(--read-ink);
+  color: var(--read-bg);
+  padding: clamp(26px, 4vw, 38px);
+}
+.cta h2 {
+  color: var(--read-bg);
+  margin: 0 0 10px !important;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+}
+.cta p { margin: 0 0 24px; color: #c9c9cf; font-size: 0.95rem; }
+.ctaAcoes { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; }
+.cta :global(.btn-primary) { background: var(--read-bg); color: var(--read-ink); }
+.cta :global(.btn-quiet) { color: #c9c9cf; }
+.cta :global(.btn-quiet):hover { color: #fff; }
+
+.relacionados { max-width: 65ch; margin-top: 48px; }
+.relacionados h2 { margin-top: 0 !important; }
+.relGrade { display: grid; gap: 1px; background: var(--read-line); border: 1px solid var(--read-line); }
+.relGrade a {
+  background: var(--read-bg);
+  padding: 22px 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background var(--fast) var(--ease);
+}
+.relGrade a:hover { background: #00000008; }
+.relTema {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--read-faint);
+  font-weight: 700;
+}
+.relGrade strong {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--read-ink);
+  line-height: 1.25;
+}
+.relMin { font-size: var(--t-micro); color: var(--read-faint); font-family: var(--fonte-mono); }
+
+.aviso {
+  max-width: 65ch;
+  margin: 48px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--read-line);
+  font-size: var(--t-micro);
+  line-height: 1.7;
+  color: var(--read-faint);
+}

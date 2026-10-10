@@ -1,0 +1,44 @@
+.progresso {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  height: 2px;
+  z-index: 56;
+  background: transparent;
+  pointer-events: none;
+}
+.progresso span { display: block; height: 100%; background: var(--platinum); }
+
+.controle {
+  position: sticky;
+  top: 90px;
+  z-index: 20;
+  display: flex;
+  gap: 1px;
+  background: var(--read-line);
+  border: 1px solid var(--read-line);
+  width: max-content;
+  margin: 0 0 28px auto;
+}
+.controle button {
+  background: var(--read-bg);
+  border: 0;
+  color: var(--read-muted);
+  cursor: pointer;
+  padding: 8px 14px;
+  font-family: var(--fonte-titulo);
+  line-height: 1;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+.controle button:nth-child(1) { font-size: 0.8rem; }
+.controle button:nth-child(2) { font-size: 1rem; }
+.controle button:nth-child(3) { font-size: 1.25rem; }
+.controle button:hover { color: var(--read-ink); }
+.controle .ativo { background: var(--read-ink); color: var(--read-bg); }
+.controle button:focus-visible { outline: 2px solid var(--read-ink); outline-offset: 2px; }
+
+.leitura { max-width: 65ch; }
+.leitura p { margin: 0 0 1.15em; }
+.t_p { font-size: 1rem; line-height: 1.72; }
+.t_m { font-size: 1.125rem; line-height: 1.75; }
+.t_g { font-size: 1.28rem; line-height: 1.78; }

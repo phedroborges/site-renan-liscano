@@ -1,0 +1,73 @@
+.caixa { border: 1px solid var(--line-hairline); background: var(--ink-raise); max-width: 620px; }
+
+.barra { height: 2px; background: var(--line-hairline); }
+.barra span { display: block; height: 100%; background: var(--platinum); transition: width var(--med) var(--ease); }
+
+.tela { padding: clamp(26px, 4vw, 40px); animation: entrar var(--med) var(--ease); }
+@keyframes entrar { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+
+.contador {
+  margin: 0 0 14px;
+  font-size: var(--t-micro);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--platinum);
+  font-weight: 600;
+}
+
+.pergunta {
+  margin: 0 0 10px;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+.apoio { margin: 0 0 24px; color: var(--muted); font-size: var(--t-small); max-width: 52ch; }
+
+.opcoes { display: grid; gap: 1px; background: var(--line-hairline); border: 1px solid var(--line-hairline); }
+.opcoes button {
+  background: var(--ink);
+  border: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: left;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+.opcoes button svg { color: var(--platinum); transition: transform var(--fast) var(--ease); }
+.opcoes button:hover { background: var(--ink-raise); color: var(--platinum-hi); }
+.opcoes button:hover svg { transform: translateX(5px); }
+.opcoes button:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: -3px; }
+
+.previa {
+  margin: 0 0 26px;
+  padding: 18px 20px;
+  border-left: 2px solid var(--platinum);
+  background: var(--ink);
+  color: var(--muted);
+  font-size: var(--t-small);
+  font-style: italic;
+}
+
+.voltar {
+  margin-top: 22px;
+  background: transparent;
+  border: 0;
+  color: var(--faint);
+  font-family: inherit;
+  font-size: var(--t-small);
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.voltar:hover { color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) { .tela { animation: none; } }

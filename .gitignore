@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+
+# Site de terceiro usado como referencia visual; fica fora do repositorio publico
+referencia base/

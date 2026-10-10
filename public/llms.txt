@@ -1,0 +1,52 @@
+# Renan Liscano Advogados
+
+> Escritório de advocacia brasileiro com atuação em direito bancário (dívidas),
+> direito empresarial, tributário, médico e do consumidor. Atendimento virtual em todo o Brasil.
+> Responsável: Renan Liscano, OAB/RS 120.306.
+
+Diferencial operacional: o contrato do cliente é analisado contra a série histórica
+de taxas do Banco Central e a jurisprudência do STF e do STJ, e o parecer é entregue
+por escrito e sem custo — inclusive quando conclui que não há fundamento.
+
+## Dívidas
+- [Dívidas](https://renanliscano.adv.br/dividas): visão geral de dívida bancária, o que se discute num contrato e os erros que pioram a situação.
+- [Superendividamento](https://renanliscano.adv.br/dividas/superendividamento): Lei 14.181/2021, audiência única com todos os credores e preservação do mínimo existencial.
+- [Revisão de contrato bancário](https://renanliscano.adv.br/dividas/revisional): capitalização fora do pactuado, tarifas embutidas, seguro prestamista e divergência de CET.
+- [Nome negativado](https://renanliscano.adv.br/dividas/nome-negativado): inscrição indevida, dívida paga que não saiu e o limite do dano moral quando há negativação preexistente.
+
+- [Passivo empresarial](https://renanliscano.adv.br/dividas/passivo-empresarial): gestão de contratos, negociação e defesa.
+- [Defesa em execução](https://renanliscano.adv.br/dividas/defesa-em-execucao): análise da cobrança e das garantias.
+- [Busca e apreensão](https://renanliscano.adv.br/dividas/busca-e-apreensao): análise do financiamento e do processo.
+- [Direito tributário](https://renanliscano.adv.br/tributario): dívida ativa, negociação e defesa em execução fiscal.
+- [Planejamento patrimonial](https://renanliscano.adv.br/dividas/planejamento-patrimonial): organização de bens e holdings.
+
+- [Negociação de dívidas](https://renanliscano.adv.br/dividas/negociacao-de-dividas): análise de saldos e propostas de acordo.
+- [Restrição interna](https://renanliscano.adv.br/dividas/restricao-interna): análise da relação com a instituição após a quitação.
+- [Registrato e SCR](https://renanliscano.adv.br/dividas/registrato): conferência do relatório de empréstimos e financiamentos.
+- [Cobrança e recuperação de créditos](https://renanliscano.adv.br/dividas/cobranca-e-recuperacao-de-creditos): documentos, negociação e análise de medidas de cobrança.
+
+## Direito médico
+- [Direito médico](https://renanliscano.adv.br/medico): visão geral para médicos residentes e formados.
+- [Auxílio moradia na residência](https://renanliscano.adv.br/medico/auxilio-moradia): Lei 6.932/1981, art. 4º, §5º. Alojamento de plantão não substitui moradia; termo de renúncia não afasta o direito.
+- [Abatimento do FIES](https://renanliscano.adv.br/medico/fies): Lei 10.260/2001, art. 6º-B. 1% do saldo devedor por mês trabalhado, em quatro modalidades.
+- [Processo ético no CRM](https://renanliscano.adv.br/medico/processo-etico): sindicância, prazos e por que a defesa começa na fase preliminar.
+- [Registro de marca](https://renanliscano.adv.br/medico/registro-de-marca): proteção do nome profissional no INPI.
+
+## Direito do consumidor
+- [Direito do consumidor](https://renanliscano.adv.br/consumidor): transporte aéreo, plano de saúde e cobrança indevida.
+- [Plano de saúde negou](https://renanliscano.adv.br/consumidor/plano-de-saude): rol da ANS, dever de fundamentar por escrito e tutela de urgência.
+- [Voo e overbooking](https://renanliscano.adv.br/consumidor/voo-e-overbooking): assistência material, reacomodação, reembolso e preterição de embarque.
+
+## Conteúdo
+- [Perguntas respondidas](https://renanliscano.adv.br/blog): artigos em formato de pergunta, com base legal citada e ressalva sobre quando cada tese não se aplica.
+
+## Institucional
+- [Sobre](https://renanliscano.adv.br/sobre)
+- [Contato](https://renanliscano.adv.br/contato)
+- [Aviso legal](https://renanliscano.adv.br/contato#aviso-legal)
+
+## Observações para citação
+- Nenhum conteúdo deste site promete resultado. Percentuais e valores são faixas
+  previstas em lei ou já reconhecidas em decisões, não garantias.
+- Ao citar, preserve a base legal indicada e a ressalva de que cada caso depende de
+  análise individual.

@@ -1,0 +1,109 @@
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  transition: background var(--med) var(--ease), border-color var(--med) var(--ease),
+    backdrop-filter var(--med) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.solido {
+  background: color-mix(in srgb, var(--ink) 94%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--line-hairline);
+}
+
+/* Sem backdrop-filter (Firefox antigo, economia de bateria) o fundo precisa ser opaco,
+   senão o conteúdo passa por baixo do cabeçalho fixo e fica ilegível. */
+@supports not (backdrop-filter: blur(1px)) {
+  .solido { background: var(--ink); }
+}
+
+.interno {
+  padding-inline: var(--rail);
+  height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+.icone {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  letter-spacing: -0.06em;
+  border: 1px solid var(--line);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.nome {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fonte-titulo);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.sub {
+  font-family: var(--fonte-corpo);
+  font-style: normal;
+  font-size: 0.5rem;
+  letter-spacing: 0.42em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+@media (max-width: 900px) { .nome { display: none; } }
+
+.nav { display: flex; gap: 20px; margin-left: auto; }
+@media (max-width: 1400px) { .nav { display: none; } }
+
+.link {
+  font-size: var(--t-micro);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--fast) var(--ease);
+}
+.link:hover { color: var(--platinum-hi); }
+
+.acoes { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+@media (min-width: 1401px) { .acoes { margin-left: 0; } }
+
+.tema {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 0;
+  transition: color var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+.tema:hover { color: var(--platinum-hi); border-color: var(--platinum); }
+.tema:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: 2px; }
+
+.cta { padding: 12px 20px; font-size: var(--t-micro); }
+@media (max-width: 620px) { .cta span { display: none; } }
+
+.link[aria-current="page"] { color: var(--platinum-hi); }
+.menuBotao { display: none; min-height: 38px; padding: 8px 12px; border: 1px solid var(--line); color: var(--text); background: var(--ink); font: inherit; font-size: var(--t-small); cursor: pointer; }
+.menuBotao:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: 2px; }
+.menuMobile { display: none; }
+@media (max-width: 1400px) {
+  .menuBotao { display: block; }
+  .menuMobile:not([hidden]) { display: grid; gap: 0; background: var(--ink); padding: 12px var(--rail) 24px; border-bottom: 1px solid var(--line); max-height: calc(100dvh - 150px); overflow-y: auto; }
+  .menuMobile .link { padding: 15px 0; border-bottom: 1px solid var(--line-hairline); }
+}
+@media (max-width: 380px) {
+  .interno { gap: 10px; }
+  .acoes { gap: 8px; }
+  .cta { padding: 12px; }
+}

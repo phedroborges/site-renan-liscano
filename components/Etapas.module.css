@@ -1,0 +1,104 @@
+.linha {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 46px;
+  max-width: 720px;
+}
+@media (max-width: 600px) { .linha { padding-left: 34px; } }
+
+.trilho, .trilhoAtivo {
+  position: absolute;
+  left: 11px;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+}
+@media (max-width: 600px) { .trilho, .trilhoAtivo { left: 7px; } }
+
+.trilho { background: var(--line-hairline); }
+.trilhoAtivo {
+  bottom: auto;
+  background: var(--platinum);
+  transition: height 700ms var(--ease);
+  opacity: 0.7;
+}
+
+.item {
+  position: relative;
+  padding-block: 0 clamp(28px, 4vw, 44px);
+}
+.item:last-child { padding-bottom: 0; }
+
+.marcador {
+  position: absolute;
+  left: -46px;
+  top: 4px;
+  width: 23px;
+  height: 23px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  transition: border-color var(--med) var(--ease);
+}
+@media (max-width: 600px) { .marcador { left: -34px; width: 15px; height: 15px; } }
+
+.miolo {
+  width: 7px;
+  height: 7px;
+  background: var(--line);
+  transition: background var(--med) var(--ease), transform var(--med) var(--ease);
+  transform: scale(0.6);
+}
+@media (max-width: 600px) { .miolo { width: 5px; height: 5px; } }
+
+.ativo .marcador { border-color: var(--platinum); }
+.ativo .miolo { background: var(--platinum-hi); transform: scale(1); }
+
+.corpo {
+  opacity: 0.35;
+  transform: translateY(8px);
+  transition: opacity var(--slow) var(--ease), transform var(--slow) var(--ease);
+}
+.ativo .corpo { opacity: 1; transform: none; }
+
+.n {
+  font-family: var(--fonte-mono);
+  font-size: var(--t-micro);
+  color: var(--platinum);
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.corpo h3 {
+  margin: 0 0 8px;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.corpo p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+/* a etapa do parecer é a única com tratamento próprio */
+.destaque .corpo h3::after {
+  content: "sem custo";
+  margin-left: 12px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.54rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--live);
+  border: 1px solid var(--live-line);
+  padding: 3px 7px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.destaque .corpo p { color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+  .corpo { opacity: 1; transform: none; }
+  .trilhoAtivo { display: none; }
+}
