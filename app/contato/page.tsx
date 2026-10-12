@@ -15,7 +15,7 @@ import s from "./contato.module.css";
 export const metadata: Metadata = {
   title: "Falar com o advogado",
   description:
-    "Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com parecer técnico antes de qualquer proposta.",
+    "Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com reunião online sem custo antes de qualquer proposta.",
   alternates: { canonical: "/contato" },
 };
 
@@ -144,7 +144,7 @@ export default function Contato() {
             { t: "Não é consulta comercial", d: "Ninguém vai empurrar contratação." },
             { t: "Não precisa ter tudo", d: "Traga os documentos que tiver. Levantar o resto faz parte do trabalho." },
             { t: "Você sai com uma resposta", d: "Tem caso ou não tem. Se tiver, quais são os cenários." },
-            { t: "Envolvendo contrato, há parecer", d: "Por escrito, sem custo, mesmo quando a conclusão é negativa." },
+            { t: "Análise em reunião online", d: "Previamente combinada, sem custo, para apresentar nosso trabalho e as soluções encontradas." },
           ].map((e, i) => (
             <Reveal key={e.t} delay={i * 60}>
               <div className={s.esperaItem}>

@@ -272,7 +272,7 @@ export const fies: PaginaServico = {
     { p: "Consigo suspender o pagamento enquanto atuo?", r: "Em alguns casos é possível discutir extensão de carência. Depende da situação contratual." },
     { p: "Isso vale para dentista e enfermeiro?", r: "A modalidade da COVID-19 alcança profissionais da saúde de forma mais ampla. As demais têm recorte próprio." },
   ],
-  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise sem custo, com resposta por escrito." },
+  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise apresentada em reunião online sem custo." },
 };
 
 export const processoEtico: PaginaServico = {

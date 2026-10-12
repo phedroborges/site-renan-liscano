@@ -18,15 +18,15 @@
   --platinum-hi: #ededef;
   --platinum-lo: #6d6d6e;
   --platinum-dk: #3b3b3c;
-  --metal-grad: linear-gradient(100deg, #3b3b3c 0%, #a0a0a2 26%, #ededef 43%, #ffffff 50%, #bcbcbe 58%, #6d6d6e 76%, #3b3b3c 100%);
+  --metal-grad: linear-gradient(100deg, #b7b7bd 0%, #d6d6da 26%, #ededef 43%, #ffffff 50%, #dedee2 58%, #b7b7bd 76%, #b7b7bd 100%);
 
   --cta-bg: #f4f4f5;
   --cta-ink: #0a0a0b;
   --cta-bg-hover: #ffffff;
 
   --text: #e8e8ea;
-  --muted: #7e7e82;
-  --faint: #55555a;
+  --muted: #b7b7bd;
+  --faint: #a0a0a8;
 
   --line: #ffffff1f;
   --line-hairline: #ffffff12;
@@ -80,13 +80,13 @@
     --platinum-hi: #26262a;
     --platinum-lo: #8a8a90;
     --platinum-dk: #b6b6bc;
-    --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
+    --metal-grad: linear-gradient(100deg, #55555c 0%, #44444b 26%, #3b3b3c 43%, #1a1a1e 50%, #414148 58%, #55555c 76%, #55555c 100%);
     --cta-bg: #0a0a0b;
     --cta-ink: #f4f4f5;
     --cta-bg-hover: #000000;
     --text: #101014;
     --muted: #5c5c63;
-    --faint: #8a8a92;
+    --faint: #62626a;
     --line: #00000024;
     --line-hairline: #00000014;
     --line-structural: #0000000a;
@@ -110,13 +110,13 @@
   --platinum-hi: #26262a;
   --platinum-lo: #8a8a90;
   --platinum-dk: #b6b6bc;
-  --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
+  --metal-grad: linear-gradient(100deg, #55555c 0%, #44444b 26%, #3b3b3c 43%, #1a1a1e 50%, #414148 58%, #55555c 76%, #55555c 100%);
   --cta-bg: #0a0a0b;
   --cta-ink: #f4f4f5;
   --cta-bg-hover: #000000;
   --text: #101014;
   --muted: #5c5c63;
-  --faint: #8a8a92;
+  --faint: #62626a;
   --line: #00000024;
   --line-hairline: #00000014;
   --line-structural: #0000000a;

@@ -11,7 +11,7 @@ export const dividas: PaginaServico = {
     kicker: "Dívidas",
     h1: "A dívida só cresce. O problema pode estar no contrato.",
     enfase: "O problema pode estar no contrato",
-    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos, por escrito e em número, se houve cobrança indevida. A primeira análise não tem custo, e se não compensar entrar com ação, a recomendação vai ser não entrar.",
+    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos se houve cobrança indevida. A primeira análise não tem custo, e se não compensar entrar com ação, a recomendação vai ser não entrar.",
     ctaTexto: "Mandar meu contrato no WhatsApp",
   },
   heroImagem: {
@@ -240,7 +240,7 @@ export const revisional: PaginaServico = {
       itens: [
         { titulo: "Leitura do contrato", texto: "Confronto entre o que está escrito e o que está sendo cobrado." },
         { titulo: "Recálculo", texto: "Refazimento da evolução do saldo com os parâmetros pactuados e com a taxa média do período." },
-        { titulo: "Parecer", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Vai por escrito." },
+        { titulo: "Parecer", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Apresentamos a análise em reunião online sem custo." },
         { titulo: "Decisão sua", texto: "Com o número na mão, você decide. Se não compensar, não ajuizamos." },
       ],
     },

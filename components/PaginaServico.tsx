@@ -98,7 +98,7 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
           <ul className={s.provas} aria-label="Informações do atendimento">
             <li><Icon name="check" size={14} />Análise inicial sem custo</li>
             <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
-            <li><Icon name="check" size={14} />Orientação por escrito</li>
+            <li><Icon name="check" size={14} />Reunião online sem custo</li>
           </ul>
           </div>
         </div>

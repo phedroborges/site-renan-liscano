@@ -58,8 +58,9 @@ export default function Home() {
           </h1>
 
           <p className={s.sub}>
-            Atuação bancária, empresarial e tributária para pessoas e empresas, além dos direitos
-            de médicos e consumidores. A conversa começa pelos documentos e pelos caminhos para o seu caso.
+            Nossa atuação é dedicada à segurança e à continuidade do que pessoas e empresas constroem.
+            Trabalhamos na redução de dívidas, na proteção patrimonial, empresarial e tributária e na
+            defesa de carreiras, com análise criteriosa e acompanhamento próximo do início ao fim.
           </p>
 
           <div className={s.heroAcoes}>
@@ -73,7 +74,7 @@ export default function Home() {
           <ul className={s.heroProvas}>
             <li><Icon name="check" size={14} />Análise sem custo</li>
             <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
-            <li><Icon name="check" size={14} />Tudo pelo celular, sem cartório</li>
+            <li><Icon name="check" size={14} />Atendimento online</li>
           </ul>
         </div>
 

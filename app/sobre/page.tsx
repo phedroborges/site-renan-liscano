@@ -125,7 +125,7 @@ export default function Sobre() {
             },
             {
               t: "Análise antes de proposta",
-              d: "Os documentos são examinados antes da proposta de contratação. O cliente recebe uma orientação por escrito para decidir como seguir.",
+              d: "Os documentos são examinados antes da proposta de contratação. O cliente participa de uma reunião online sem custo para conhecer as soluções e decidir como seguir.",
             },
             {
               t: "Comunicação clara",
