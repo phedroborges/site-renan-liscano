@@ -17,7 +17,7 @@ O repositório já tem um `Dockerfile` de produção. No Easypanel:
 2. **Source > GitHub**: repositório `phedroborges/site-renan-liscano`, branch `main`, caminho `/`.
 3. **Build > Dockerfile** (arquivo `Dockerfile`). Nenhuma variável de ambiente é necessária.
 4. **Deploy**.
-5. **Domains**: adicione `renanliscano.adv.br` e `www.renanliscano.adv.br` com HTTPS ligado e **porta 3000**.
+5. **Domains**: adicione `renanliscano.adv.br` e `www.renanliscano.adv.br` com HTTPS ligado e **porta 80** (o padrão do Easypanel; o container escuta na 80).
 6. No DNS do domínio, aponte os registros `A` de `renanliscano.adv.br` e `www` para o IP da VPS.
 
 O `www` é redirecionado para o domínio sem `www` pelo próprio site. Para atualizar o site depois, faça push na `main` e clique em **Deploy** (ou ative o **Auto Deploy**).
@@ -32,4 +32,5 @@ O `www` é redirecionado para o domínio sem `www` pelo próprio site. Para atua
 ## Outros comandos
 
 - `npm run build && npm start`: produção sem Docker (porta 3000).
+- `docker build -t renanliscano . && docker run -p 8080:80 renanliscano`: testar a imagem em http://localhost:8080.
 - `npm run build:vizantu`: exportação estática usada na hospedagem da Vizantu.
