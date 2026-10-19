@@ -2,7 +2,7 @@ import { Resultados } from "@/components/Resultados";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, whats } from "@/lib/site";
+import { site, whats, SELOS_ATENDIMENTO } from "@/lib/site";
 import { SITUACOES, FAQ } from "@/lib/conteudo";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
@@ -72,9 +72,9 @@ export default function Home() {
           </div>
 
           <ul className={s.heroProvas}>
-            <li><Icon name="check" size={14} />Análise sem custo</li>
-            <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
-            <li><Icon name="check" size={14} />Atendimento online</li>
+            {SELOS_ATENDIMENTO.map((selo) => (
+              <li key={selo}><Icon name="check" size={14} />{selo}</li>
+            ))}
           </ul>
         </div>
 

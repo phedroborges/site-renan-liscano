@@ -34,3 +34,17 @@ O `www` é redirecionado para o domínio sem `www` pelo próprio site. Para atua
 - `npm run build && npm start`: produção sem Docker (porta 3000).
 - `docker build -t renanliscano . && docker run -p 8080:80 renanliscano`: testar a imagem em http://localhost:8080.
 - `npm run build:vizantu`: exportação estática usada na hospedagem da Vizantu.
+
+## Onde editar o que se repete no site
+
+Estes itens aparecem em várias páginas e têm **um lugar só** para editar. Mudou ali, muda o site inteiro.
+
+| O que | Onde aparece | Arquivo |
+|---|---|---|
+| Números de resultados (R$ 6,3 mi, +300, +R$ 2,9 mi, 23 Estados) e quais áreas mostram cada um | Home, Sobre, Contato, Blog e páginas de área | `lib/resultados.ts` |
+| Passos "Como funciona nosso procedimento" | Home e páginas de serviço | `ETAPAS` em `lib/conteudo.ts` (título em `components/Etapas.tsx`) |
+| Selos do topo (✓ Análise sem custo, ✓ Atendimento em todo o Brasil, ✓ Atendimento online) | Home e todas as páginas de serviço | `SELOS_ATENDIMENTO` em `lib/site.ts` |
+| Título "Como atuamos?" | Todas as páginas de serviço | `TITULO_COMO_ATUAMOS` em `lib/site.ts` |
+| Frase "Reunião online sem custo antes da proposta." | Descrições das páginas no Google | `CHAMADA_REUNIAO` em `lib/site.ts` |
+| Nota "Envie o que você já tiver…" | Listas de documentos | `NOTA_DOCUMENTOS` em `lib/site.ts` |
+| Nome, OAB, telefone, WhatsApp, Instagram | Site inteiro | `site` em `lib/site.ts` |

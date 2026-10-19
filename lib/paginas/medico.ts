@@ -1,11 +1,12 @@
 import type { PaginaServico } from "@/lib/tipos";
+import { CHAMADA_REUNIAO, site } from "@/lib/site";
 
 export const medico: PaginaServico = {
   slug: "/medico",
   titulo: "Direito médico",
   metaTitulo: "Advogado para médicos: FIES, residência, CRM e marca",
   metaDescricao:
-    "Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. Parecer técnico antes da proposta. OAB/RS 120.306.",
+    `Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. ${CHAMADA_REUNIAO} ${site.oab}.`,
   hero: {
     kicker: "Direito médico",
     h1: "Seis anos de faculdade, três de residência. E a conta que ninguém avisou.",

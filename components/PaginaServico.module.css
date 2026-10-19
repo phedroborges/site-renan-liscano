@@ -255,6 +255,8 @@
 }
 @media (max-width: 760px) { .cartoes { grid-template-columns: 1fr; } }
 .cartao { background: var(--ink); padding: 28px 26px; }
+/* número ímpar de cartões: o último ocupa a linha inteira, sem deixar um quadro vazio */
+.cartao:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .cartao :is(h3, h4) {
   margin: 0 0 10px;
   font-family: var(--fonte-titulo);

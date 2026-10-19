@@ -4,7 +4,7 @@ import { AvisoLegal } from "@/components/AvisoLegal";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { site, whats } from "@/lib/site";
+import { site, whats, CHAMADA_REUNIAO } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { Triagem } from "@/components/Triagem";
@@ -15,7 +15,7 @@ import s from "./contato.module.css";
 export const metadata: Metadata = {
   title: "Falar com o advogado",
   description:
-    "Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com reunião online sem custo antes de qualquer proposta.",
+    `Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita. ${CHAMADA_REUNIAO}`,
   alternates: { canonical: "/contato" },
 };
 

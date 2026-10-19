@@ -1,4 +1,5 @@
 import type { PaginaServico } from "@/lib/tipos";
+import { CHAMADA_REUNIAO, NOTA_DOCUMENTOS, TITULO_COMO_ATUAMOS } from "@/lib/site";
 
 export const passivoEmpresarial: PaginaServico = {
   "slug": "/dividas/passivo-empresarial",
@@ -15,7 +16,7 @@ export const passivoEmpresarial: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Mapeamento do passivo",
@@ -40,7 +41,7 @@ export const passivoEmpresarial: PaginaServico = {
         "Documentos da empresa e relação das garantias",
         "Informações de caixa e processos em andamento"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -69,7 +70,7 @@ export const defesaExecucao: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Leitura do processo",
@@ -94,7 +95,7 @@ export const defesaExecucao: PaginaServico = {
         "Comprovantes de pagamento e propostas de acordo",
         "Documentos de eventuais bloqueios ou penhoras"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -123,7 +124,7 @@ export const buscaApreensao: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Contrato e pagamentos",
@@ -148,7 +149,7 @@ export const buscaApreensao: PaginaServico = {
         "Comprovantes das parcelas pagas",
         "Documento do veículo e termo de apreensão, se houver"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -177,7 +178,7 @@ export const negociacaoDividas: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Conferência do saldo",
@@ -202,7 +203,7 @@ export const negociacaoDividas: PaginaServico = {
         "Comprovantes de pagamentos anteriores",
         "Informações de renda ou fluxo de caixa"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -220,7 +221,7 @@ export const tributario: PaginaServico = {
   "slug": "/tributario",
   "titulo": "Direito tributário e dívida ativa",
   "metaTitulo": "Direito tributário e dívida ativa: defesa em execução fiscal",
-  "metaDescricao": "Dívida ativa, execução fiscal, penhora e bloqueio de contas. Análise da cobrança, negociação e defesa para pessoas e empresas. Reunião online sem custo antes de qualquer proposta.",
+  "metaDescricao": `Dívida ativa, execução fiscal, penhora e bloqueio de contas. Análise da cobrança, negociação e defesa para pessoas e empresas. ${CHAMADA_REUNIAO}`,
   "tema": "padrao",
   "hero": {
     "kicker": "Direito tributário · Dívida ativa",
@@ -279,7 +280,7 @@ export const tributario: PaginaServico = {
     },
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Dívida ativa e revisão da cobrança",
@@ -304,7 +305,7 @@ export const tributario: PaginaServico = {
         "Número do processo e intimações, se houver",
         "Comprovantes de pagamento, parcelamentos e documentos do contribuinte"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -356,7 +357,7 @@ export const restricaoInterna: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Identificação do registro",
@@ -381,7 +382,7 @@ export const restricaoInterna: PaginaServico = {
         "Protocolos e respostas do banco",
         "Contratos relacionados ao registro"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
@@ -410,7 +411,7 @@ export const planejamentoPatrimonial: PaginaServico = {
   "blocos": [
     {
       "tipo": "bullets",
-      "h2": "Como atuamos?",
+      "h2": TITULO_COMO_ATUAMOS,
       "itens": [
         {
           "titulo": "Patrimônio e objetivos",
@@ -435,7 +436,7 @@ export const planejamentoPatrimonial: PaginaServico = {
         "Informações sobre obrigações e garantias existentes",
         "Objetivos de organização patrimonial e sucessória"
       ],
-      "nota": "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso."
+      "nota": NOTA_DOCUMENTOS
     }
   ],
   "faq": [
