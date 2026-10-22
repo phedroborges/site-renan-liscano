@@ -28,13 +28,11 @@ Publica, edita e apaga artigos do blog sem mexer no código e sem novo deploy. N
 
 **No computador:** `npm run dev` e abra http://localhost:3002/painel. Os artigos ficam em `dados/artigos`, que está fora do git.
 
-**Na VPS (Easypanel):**
+**No site:** https://renanliscano.adv.br/painel. O painel fica sempre ligado; não precisa configurar nada.
 
-1. **Environment**: adicione `PAINEL_ATIVO=1`. Sem essa variável, `/painel` responde "página não encontrada".
-2. **Mounts > Add Volume**: monte um volume em `/app/dados`. Sem ele, os artigos criados no painel e os comentários somem a cada deploy.
-3. **Deploy** e abra https://renanliscano.adv.br/painel.
+Para os artigos e comentários não sumirem a cada deploy, monte um volume em `/app/dados` (Easypanel > **Mounts > Add Volume**).
 
-**Atenção:** enquanto não houver login, qualquer pessoa que souber o endereço consegue publicar no site. Ligue o painel só durante os testes e apague a variável `PAINEL_ATIVO` quando terminar (o volume com os artigos continua).
+**Atenção:** enquanto não houver login, qualquer pessoa que souber o endereço consegue publicar no site. Para desligar o painel sem mexer no código, defina `PAINEL_ATIVO=0` em **Environment** e faça Deploy.
 
 Como funciona:
 

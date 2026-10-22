@@ -20,10 +20,10 @@ export const PASTA_ARTIGOS = process.env.ARTIGOS_DIR ?? path.join(process.cwd(),
 export type Origem = "codigo" | "editado" | "painel";
 export type ArtigoComOrigem = Artigo & { origem: Origem };
 
-/** O painel só responde quando está ligado: sempre no computador, e na VPS
- *  apenas com PAINEL_ATIVO=1. Não é login, é um interruptor. */
+/** O painel fica sempre ligado. Para desligar sem mexer no código, defina
+ *  PAINEL_ATIVO=0 nas variáveis do Easypanel. */
 export function painelAtivo() {
-  return process.env.NODE_ENV !== "production" || process.env.PAINEL_ATIVO === "1";
+  return process.env.PAINEL_ATIVO?.trim() !== "0";
 }
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
