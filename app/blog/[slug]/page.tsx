@@ -2,20 +2,22 @@ import { Resultados } from "@/components/Resultados";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ARTIGOS, artigoPorSlug } from "@/lib/artigos";
+import { artigoPorSlug, todosOsArtigos } from "@/lib/artigos-painel";
 import { site, whats } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { Leitor } from "@/components/Leitor";
 import { CartaoEscritorio } from "@/components/CartaoEscritorio";
+import { Comentarios } from "@/components/Comentarios";
+import { comentariosAprovados } from "@/lib/comentarios";
 import s from "./artigo.module.css";
 
-export function generateStaticParams() {
-  return ARTIGOS.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  return (await todosOsArtigos()).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const a = artigoPorSlug(slug);
+  const a = await artigoPorSlug(slug);
   if (!a) return {};
   return {
     title: a.pergunta,
@@ -27,10 +29,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Artigo({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const a = artigoPorSlug(slug);
+  const todos = await todosOsArtigos();
+  const a = todos.find((artigo) => artigo.slug === slug);
   if (!a) notFound();
 
-  const relacionados = a.relacionados.map(artigoPorSlug).filter(Boolean);
+  const relacionados = a.relacionados.map((r) => todos.find((artigo) => artigo.slug === r)).filter(Boolean);
 
   const schema = {
     "@context": "https://schema.org",
@@ -80,8 +83,11 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
     ],
   };
 
+  const aprovados = await comentariosAprovados(a.slug);
+
   return (
-    <div className={s.papel}>
+    // data-papel: é aqui que o Leitor aplica o modo escuro/claro (data-leitura).
+    <div className={s.papel} data-papel data-leitura="escuro">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <article className={`wrap ${s.artigo}`}>
@@ -177,6 +183,10 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
             </div>
           </div>
         )}
+
+        {/* Na exportação estática não há servidor para receber comentário:
+            mostra só os aprovados no momento do build. */}
+        <Comentarios slug={a.slug} aprovados={aprovados} aceitaEnvio={process.env.STATIC_EXPORT !== "1"} />
 
         <p className={s.aviso}>
           Conteúdo informativo. Não constitui consulta nem orientação jurídica para caso concreto e

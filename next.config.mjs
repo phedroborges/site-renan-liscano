@@ -15,6 +15,10 @@ const cabecalhosSeguranca = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Rotas *.servidor.tsx/.ts (painel de artigos, envio de comentários) gravam
+  // arquivos no servidor. Na exportação estática não há servidor, então ficam
+  // de fora.
+  pageExtensions: staticExport ? ["tsx", "ts"] : ["tsx", "ts", "servidor.tsx", "servidor.ts"],
   distDir: staticExport ? ".next-static" : ".next",
   ...(staticExport
     ? { output: "export", trailingSlash: true }

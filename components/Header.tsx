@@ -36,8 +36,12 @@ export function Header() {
     return () => window.removeEventListener("keydown", fechar);
   }, [menuAberto]);
 
+  // Nos artigos o cabeçalho é sólido desde o topo: a folha pode estar no modo
+  // claro, e o cabeçalho transparente sumiria em cima dela.
+  const solido = rolou || menuAberto || pathname.startsWith("/blog/");
+
   return (
-    <header className={`${styles.header} ${rolou || menuAberto ? styles.solido : ""}`}>
+    <header className={`${styles.header} ${solido ? styles.solido : ""}`}>
       <div className={styles.interno}>
         <Link href="/" onClick={() => setMenuAberto(false)} className={styles.marca} aria-label={`${site.nome}, início`}>
           <Image src="/img/logo-horizontal.webp" alt="" width={581} height={120} priority className={styles.logo} />

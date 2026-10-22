@@ -1,7 +1,7 @@
 import { Resultados } from "@/components/Resultados";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ARTIGOS } from "@/lib/artigos";
+import { todosOsArtigos } from "@/lib/artigos-painel";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { LeitorBlog } from "@/components/LeitorBlog";
@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const artigos = await todosOsArtigos();
   return (
     <>
       <header className="hero">
@@ -37,7 +38,7 @@ export default function Blog() {
 
       <section className="section wrap">
         <div className="grade-cartoes">
-          {ARTIGOS.map((a, i) => (
+          {artigos.map((a, i) => (
             <Reveal key={a.slug} delay={(i % 2) * 60}>
               <Link href={`/blog/${a.slug}`} className="cartao">
                 <div className={s.tags}>

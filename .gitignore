@@ -4,6 +4,9 @@ out
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
+
+# Artigos gravados pelo painel quando ele roda no computador
+dados/
 .env*.local
 
 # Site de terceiro usado como referencia visual; fica fora do repositorio publico

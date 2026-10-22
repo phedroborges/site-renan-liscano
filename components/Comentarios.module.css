@@ -1,0 +1,63 @@
+/* Fica dentro da folha do artigo: só usa os tokens --read-*, então acompanha
+   o modo escuro/claro do leitor. */
+.bloco { max-width: 65ch; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--read-line); }
+.bloco h2 { margin-top: 0 !important; }
+
+.lista { list-style: none; margin: 0 0 32px; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.lista li { padding-left: 18px; border-left: 2px solid var(--read-line); }
+.autor { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 0 6px; }
+.autor strong { color: var(--read-ink); font-size: 0.95rem; }
+.autor time { color: var(--read-faint); font-size: var(--t-micro); letter-spacing: .08em; text-transform: uppercase; }
+.texto { margin: 0; color: var(--read-muted); white-space: pre-line; overflow-wrap: anywhere; }
+.vazio { margin: 0 0 28px; color: var(--read-faint); font-size: var(--t-small); }
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+.aviso {
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--read-line);
+  background: var(--read-veil);
+  color: var(--read-muted);
+  font-size: var(--t-small);
+  line-height: 1.6;
+}
+.aviso a { color: var(--read-ink); }
+
+.campo { display: flex; flex-direction: column; gap: 7px; }
+.campo span { font-size: var(--t-small); font-weight: 600; color: var(--read-ink); }
+.campo input,
+.campo textarea {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--read-ink);
+  background: var(--read-bg);
+  border: 1px solid var(--read-line);
+  border-radius: 0;
+  padding: 11px 13px;
+}
+.campo textarea { resize: vertical; line-height: 1.6; }
+.campo input:focus,
+.campo textarea:focus { outline: none; border-color: var(--read-ink); }
+
+.isca { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.erro { margin: 0; color: var(--danger); font-size: var(--t-small); }
+
+.enviar {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 0;
+  background: var(--read-ink);
+  color: var(--read-bg);
+  cursor: pointer;
+}
+.enviar:disabled { opacity: .6; cursor: default; }
+
+.recebido { margin: 0; padding: 14px 16px; border-left: 2px solid var(--live); background: var(--read-veil); color: var(--read-muted); font-size: var(--t-small); }
+.recebido button { font: inherit; color: var(--read-ink); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }

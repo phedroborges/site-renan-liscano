@@ -22,6 +22,29 @@ O repositório já tem um `Dockerfile` de produção. No Easypanel:
 
 O `www` é redirecionado para o domínio sem `www` pelo próprio site. Para atualizar o site depois, faça push na `main` e clique em **Deploy** (ou ative o **Auto Deploy**).
 
+## Painel de artigos (fase de teste, sem login)
+
+Publica, edita e apaga artigos do blog sem mexer no código e sem novo deploy. Não usa banco de dados: cada artigo do painel é um arquivo JSON em `dados/artigos`.
+
+**No computador:** `npm run dev` e abra http://localhost:3002/painel. Os artigos ficam em `dados/artigos`, que está fora do git.
+
+**Na VPS (Easypanel):**
+
+1. **Environment**: adicione `PAINEL_ATIVO=1`. Sem essa variável, `/painel` responde "página não encontrada".
+2. **Mounts > Add Volume**: monte um volume em `/app/dados`. Sem ele, os artigos criados no painel e os comentários somem a cada deploy.
+3. **Deploy** e abra https://renanliscano.adv.br/painel.
+
+**Atenção:** enquanto não houver login, qualquer pessoa que souber o endereço consegue publicar no site. Ligue o painel só durante os testes e apague a variável `PAINEL_ATIVO` quando terminar (o volume com os artigos continua).
+
+Como funciona:
+
+- Os 6 artigos originais continuam em `lib/artigos.ts`. Editar um deles no painel grava uma versão no `dados/artigos` que passa a valer; "Desfazer edição" apaga essa versão e o original volta.
+- Artigos criados no painel podem ser apagados. O endereço (`/blog/...`) é gerado a partir da pergunta e não muda depois de publicado.
+- Ao salvar, blog, página do artigo, home e sitemap são atualizados na hora.
+- **Comentários:** o leitor comenta no fim de cada artigo. Todo comentário entra como pendente (arquivo em `dados/comentarios`) e só aparece no site depois de aprovado no painel, onde também pode ser apagado. O envio funciona mesmo com o painel desligado; a aprovação precisa dele ligado.
+- **Leitura:** o artigo abre no modo escuro, com botões de tamanho do texto e de modo escuro/claro. A escolha fica salva no navegador do leitor (`components/Leitor.tsx`).
+- A exportação estática (`npm run build:vizantu`) não inclui o painel nem o envio de comentários: os arquivos `*.servidor.tsx`/`*.servidor.ts` só viram rota quando há servidor (`pageExtensions` em `next.config.mjs`).
+
 ## O que a build de produção faz
 
 - `output: "standalone"`: imagem Docker enxuta, rodando com usuário sem privilégios.

@@ -35,6 +35,11 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Artigos publicados pelo painel e comentários dos leitores. Montar um Volume
+# do Easypanel em /app/dados, senão os dois somem a cada deploy. A pasta já nasce com dono nextjs, e o
+# volume herda essa permissão na primeira montagem.
+RUN mkdir -p /app/dados/artigos /app/dados/comentarios && chown -R nextjs:nodejs /app/dados
+
 USER nextjs
 EXPOSE 80
 

@@ -311,7 +311,3 @@ export const ARTIGOS: Artigo[] = [
     relacionados: ["negativado-mesmo-depois-de-pagar", "sindicancia-crm-sozinho"],
   },
 ];
-
-export function artigoPorSlug(slug: string) {
-  return ARTIGOS.find((a) => a.slug === slug);
-}

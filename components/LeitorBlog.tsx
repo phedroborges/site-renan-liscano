@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ARTIGOS } from "@/lib/artigos";
+import { todosOsArtigos } from "@/lib/artigos-painel";
 import { Icon } from "./Icon";
 import styles from "./LeitorBlog.module.css";
 
 /** Prévia animada do leitor usada na chamada do blog na home. */
-export function LeitorBlog() {
-  const artigo = ARTIGOS[0];
+export async function LeitorBlog() {
+  const [artigo] = await todosOsArtigos();
 
   return (
     <Link

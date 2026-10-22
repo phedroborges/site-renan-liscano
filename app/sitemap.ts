@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { PAGINAS } from "@/lib/navegacao";
-import { ARTIGOS } from "@/lib/artigos";
+import { todosOsArtigos } from "@/lib/artigos-painel";
 import { SERVICOS } from "@/lib/servicos";
 
 const BASE = "https://renanliscano.adv.br";
 
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const artigos = await todosOsArtigos();
   const agora = new Date();
   return [
     ...PAGINAS.map((p) => ({
@@ -22,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       changeFrequency: "monthly" as const,
     })),
-    ...ARTIGOS.map((a) => ({
+    ...artigos.map((a) => ({
       url: `${BASE}/blog/${a.slug}`,
       lastModified: new Date(a.data),
       priority: 0.7,

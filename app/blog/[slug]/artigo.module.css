@@ -1,13 +1,31 @@
-/* A superfície de leitura é clara nos dois temas: Bodoni em corpo pequeno
-   sobre preto cansa em texto longo, e isso não muda porque o leitor prefere
-   modo escuro no resto do site. */
+/* Superfície de leitura com dois modos, como num leitor digital. O escuro é o
+   padrão, igual ao resto do site; o claro é escolha do leitor (botão no
+   Leitor, salvo no navegador). Tudo na página lê os tokens --read-*, então
+   trocar o modo é trocar só os valores abaixo. */
 .papel {
+  --read-bg: var(--ink);
+  --read-ink: #ececef;
+  --read-muted: #b4b4bb;
+  --read-faint: #85858c;
+  --read-line: #ffffff1c;
+  --read-veil: #ffffff08;
   background: var(--read-bg);
   color: var(--read-ink);
   padding-block: clamp(110px, 14vw, 170px) clamp(48px, 7vw, 90px);
+  transition: background var(--med) var(--ease), color var(--med) var(--ease);
+}
+.papel[data-leitura="claro"] {
+  --read-bg: #f4f4f5;
+  --read-ink: #16161a;
+  --read-muted: #3f3f46;
+  --read-faint: #6a6a70;
+  --read-line: #00000014;
+  --read-veil: #00000008;
 }
 
-.artigo { max-width: 1240px; }
+/* Sem max-width aqui: o .wrap já limita o conteúdo a 1240px. Os dois juntos
+   zeravam a largura do texto em telas acima de ~1860px. */
+.artigo { min-width: 0; }
 
 .migalha {
   display: flex;
@@ -61,7 +79,7 @@
   gap: 9px;
   font-size: 0.85rem !important;
   color: var(--read-muted);
-  background: #00000008;
+  background: var(--read-veil);
   border: 1px solid var(--read-line);
   padding: 10px 15px;
   margin-bottom: 2em !important;
@@ -71,7 +89,8 @@
 .video {
   aspect-ratio: 9 / 16;
   max-width: 300px;
-  background: #e4e4e8;
+  background: var(--read-veil);
+  border: 1px solid var(--read-line);
   display: grid;
   place-items: center;
   margin-bottom: 2em;
@@ -101,7 +120,7 @@
 
 .ressalva {
   border: 1px solid var(--read-line);
-  background: #00000006;
+  background: var(--read-veil);
   padding: 24px 26px;
   margin-top: 2.4em;
 }
@@ -132,11 +151,11 @@
   margin: 0 0 10px !important;
   font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
 }
-.cta p { margin: 0 0 24px; color: #c9c9cf; font-size: 0.95rem; }
+.cta p { margin: 0 0 24px; color: color-mix(in srgb, var(--read-bg) 78%, var(--read-ink)); font-size: 0.95rem; }
 .ctaAcoes { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; }
 .cta :global(.btn-primary) { background: var(--read-bg); color: var(--read-ink); }
-.cta :global(.btn-quiet) { color: #c9c9cf; }
-.cta :global(.btn-quiet):hover { color: #fff; }
+.cta :global(.btn-quiet) { color: color-mix(in srgb, var(--read-bg) 78%, var(--read-ink)); }
+.cta :global(.btn-quiet):hover { color: var(--read-bg); }
 
 .relacionados { max-width: 65ch; margin-top: 48px; }
 .relacionados h2 { margin-top: 0 !important; }
@@ -150,7 +169,7 @@
   gap: 8px;
   transition: background var(--fast) var(--ease);
 }
-.relGrade a:hover { background: #00000008; }
+.relGrade a:hover { background: color-mix(in srgb, var(--read-ink) 4%, var(--read-bg)); }
 .relTema {
   font-size: 0.58rem;
   letter-spacing: 0.14em;
@@ -177,6 +196,6 @@
   color: var(--read-faint);
 }
 
-/* Superfície de papel: o contorno de foco segue a tinta, não a platina. */
+/* O contorno de foco segue a tinta da folha, nos dois modos. */
 .papel :focus-visible { outline-color: var(--read-ink); }
 .cta :focus-visible { outline-color: var(--read-bg); }

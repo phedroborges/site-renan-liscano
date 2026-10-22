@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Icon } from "./Icon";
 import styles from "./AlertaGolpe.module.css";
 
@@ -13,6 +14,7 @@ const CHAVE = "liscano-golpe-visto";
  * mas continua acessível — é informação de segurança, não banner de marketing.
  */
 export function AlertaGolpe() {
+  const pathname = usePathname();
   const [aberto, setAberto] = useState(false);
   const [pronto, setPronto] = useState(false);
 
@@ -30,7 +32,8 @@ export function AlertaGolpe() {
     try { localStorage.setItem(CHAVE, "1"); } catch { /* sem storage */ }
   }
 
-  if (!pronto) return null;
+  // O aviso é para visitantes; no painel de artigos ele só cobriria o formulário.
+  if (!pronto || pathname.startsWith("/painel")) return null;
 
   return (
     <>

@@ -3,7 +3,9 @@
 .papel summary:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 .papel summary h2 { display: inline; }
 .papel details[open] summary { margin-bottom: 24px; }
-.caixa { max-width: 1240px; }
+/* Sem max-width: o .wrap já limita a largura (os dois juntos espremiam o
+   texto em telas largas). */
+.caixa { min-width: 0; }
 
 .h1 {
   font-family: var(--fonte-titulo);
