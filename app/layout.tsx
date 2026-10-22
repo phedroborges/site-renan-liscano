@@ -1,3 +1,7 @@
+/* O globals.css vem antes de qualquer componente: a ordem dos imports é a
+   ordem do CSS final, e o módulo de cada componente precisa vir depois do
+   sistema para conseguir ajustá-lo. */
+import "./globals.css";
 import type { Metadata } from "next";
 import { Bodoni_Moda, Archivo, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/lib/site";
@@ -5,7 +9,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BarraMobile } from "@/components/BarraMobile";
 import { AlertaGolpe } from "@/components/AlertaGolpe";
-import "./globals.css";
 
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
@@ -34,21 +37,13 @@ export const metadata: Metadata = {
     template: "%s | Renan Liscano Advogados",
   },
   description:
-    "Atuação bancária, empresarial e tributária, direito médico e do consumidor. Parecer técnico antes da proposta. Atendimento por WhatsApp em todo o Brasil. OAB/RS 120.306.",
+    "Atuação bancária, empresarial e tributária, direito médico e do consumidor. Reunião online sem custo antes da proposta. Atendimento por WhatsApp em todo o Brasil. OAB/RS 120.306.",
   openGraph: {
     type: "website",
     locale: "pt_BR",
     siteName: site.nome,
   },
 };
-
-/** Evita o flash de tema errado: roda antes da pintura. */
-const temaScript = `
-(function(){try{
-  var t = localStorage.getItem('liscano-tema');
-  if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-}catch(e){}})();
-`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const schema = {
@@ -78,7 +73,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${bodoni.variable} ${archivo.variable} ${plex.variable}`}>
       <body>
-        <script dangerouslySetInnerHTML={{ __html: temaScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

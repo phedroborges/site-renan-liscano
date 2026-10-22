@@ -1,0 +1,21 @@
+.alerta {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-structural);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.alertaTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-size: var(--t-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warn);
+  font-weight: 600;
+  padding-top: 2px;
+}
+.alerta p { margin: 0; font-size: var(--t-micro); color: var(--faint); line-height: 1.6; }

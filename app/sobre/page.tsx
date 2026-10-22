@@ -7,7 +7,6 @@ import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { Capitulo, Portico } from "@/components/Pilares";
 import { MapaBrasil } from "@/components/MapaBrasil";
-import { CartaoRenan } from "@/components/CartaoRenan";
 import { Equipe } from "@/components/Equipe";
 import s from "./sobre.module.css";
 
@@ -21,20 +20,20 @@ export const metadata: Metadata = {
 export default function Sobre() {
   return (
     <>
-      <header className={s.hero}>
+      <header className="hero">
         <div className={`wrap ${s.apresentacao}`}>
           <div className={s.bio}>
             <p className="kicker">O advogado e o escritório</p>
-            <h1 className={s.h1}>
+            <h1 className="titulo-hero">
               Quem é <em className="metal">Renan Liscano</em>.
             </h1>
             <p className={s.registro}>{site.oab}</p>
-            <p className={s.sub}>
+            <p className="sub-hero">
               Advogado à frente do escritório Renan Liscano Advogados, com atuação voltada ao
               direito bancário e empresarial, à gestão de dívidas e à defesa de pessoas e empresas
               em processos de execução.
             </p>
-            <p className={s.sub}>
+            <p className="sub-hero">
               Sua trajetória começou no atendimento a médicos e se ampliou para as questões
               financeiras e patrimoniais de seus clientes. Hoje, coordena uma equipe com atuação
               também em direito tributário, médico e do consumidor.
@@ -62,7 +61,7 @@ export default function Sobre() {
 
       <section className="section wrap">
         <Capitulo n={1}>
-          <h2>O início no <em>direito médico</em>.</h2>
+          <h2 className="titulo-destaque">O início no <em>direito médico</em>.</h2>
           <p>
             Renan começou na advocacia com demandas de médicos residentes, especialmente relacionadas
             ao auxílio-moradia. O trabalho também passou a abranger o financiamento estudantil pelo
@@ -76,7 +75,7 @@ export default function Sobre() {
         </Capitulo>
 
         <Capitulo n={2}>
-          <h2>A atuação <em>bancária e empresarial</em>.</h2>
+          <h2 className="titulo-destaque">A atuação <em>bancária e empresarial</em>.</h2>
           <p>
             A experiência com o FIES abriu caminho para o direito bancário. Ao assumir carteiras de
             passivo de clientes, Renan ampliou sua atuação na análise de contratos, na negociação com
@@ -90,7 +89,7 @@ export default function Sobre() {
         </Capitulo>
 
         <Capitulo n={3}>
-          <h2>Uma equipe sob sua <em>coordenação</em>.</h2>
+          <h2 className="titulo-destaque">Uma equipe sob sua <em>coordenação</em>.</h2>
           <p>
             Renan participa do relacionamento com os clientes e coordena o trabalho jurídico do
             escritório. A equipe reúne profissionais que atuam conforme o assunto de cada caso.
@@ -100,7 +99,7 @@ export default function Sobre() {
             execuções. O escritório também atende questões de planejamento patrimonial e direito
             do consumidor, como problemas com planos de saúde, transporte aéreo e cobranças indevidas.
           </p>
-          <div className={s.linksAreas}>
+          <div className="acoes">
             <Link href="/tributario" className="btn btn-quiet">Direito tributário <Icon name="arrow" size={15} /></Link>
             <Link href="/consumidor" className="btn btn-quiet">Direito do consumidor <Icon name="arrow" size={15} /></Link>
           </div>
@@ -117,7 +116,7 @@ export default function Sobre() {
             </h2>
           </div>
         </Reveal>
-        <div className={s.principios}>
+        <div className="grade-cartoes">
           {[
             {
               t: "Orientação sobre a viabilidade",
@@ -125,7 +124,7 @@ export default function Sobre() {
             },
             {
               t: "Análise antes de proposta",
-              d: "Os documentos são examinados antes da proposta de contratação. O cliente recebe uma orientação por escrito para decidir como seguir.",
+              d: "Os documentos são examinados antes da proposta de contratação. O resultado é apresentado em reunião online, para o cliente decidir como seguir.",
             },
             {
               t: "Comunicação clara",
@@ -137,9 +136,9 @@ export default function Sobre() {
             },
           ].map((p, i) => (
             <Reveal key={p.t} delay={i * 60}>
-              <div className={s.principio}>
-                <h3>{p.t}</h3>
-                <p>{p.d}</p>
+              <div className="cartao">
+                <h3 className="cartao-titulo">{p.t}</h3>
+                <p className="cartao-texto">{p.d}</p>
               </div>
             </Reveal>
           ))}
@@ -166,10 +165,10 @@ export default function Sobre() {
       <section className="section wrap">
         <Reveal>
           <Portico>
-            <h2 className={s.fechaTitulo}>
+            <h2 className={`titulo-destaque ${s.fechaTitulo}`}>
               Converse com o escritório sobre <em className="metal">o seu caso</em>.
             </h2>
-            <div className={s.fechaAcoes}>
+            <div className="acoes">
               <a href={whats("página sobre")} className="btn btn-primary btn-lg" target="_blank" rel="noopener">
                 <Icon name="whatsapp" size={18} />
                 Falar no WhatsApp

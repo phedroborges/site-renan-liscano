@@ -6,7 +6,7 @@ import { ARTIGOS, artigoPorSlug } from "@/lib/artigos";
 import { site, whats } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { Leitor } from "@/components/Leitor";
-import { CartaoRenan } from "@/components/CartaoRenan";
+import { CartaoEscritorio } from "@/components/CartaoEscritorio";
 import s from "./artigo.module.css";
 
 export function generateStaticParams() {
@@ -142,9 +142,9 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
         </Leitor>
 
         <aside className={s.autor}>
-          <CartaoRenan tamanho="grande" />
+          <CartaoEscritorio tamanho="grande" />
           <p>
-            Advogado com atuação bancária, empresarial, tributária, médica e do consumidor.
+            Escritório com atuação bancária, empresarial, tributária, médica e do consumidor.
             Atendimento virtual em todo o Brasil.
           </p>
         </aside>

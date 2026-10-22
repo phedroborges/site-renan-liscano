@@ -1,11 +1,5 @@
-.grade {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  border: 1px solid var(--line-hairline);
-  background: var(--line-hairline);
-}
-
+/* Grade e fio de 1px vêm de .grade-cartoes. Aqui só a troca de colunas:
+   retrato fica melhor em duas colunas no celular do que em uma. */
 .item { min-width: 0; height: 100%; }
 
 .cartao {

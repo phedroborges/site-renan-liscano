@@ -20,7 +20,7 @@
   transition: color var(--fast) var(--ease);
 }
 .botao:hover { color: var(--platinum-hi); }
-.botao:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: -3px; }
+.botao:focus-visible { outline-offset: -3px; }
 .botao svg { color: var(--platinum); transition: transform var(--med) var(--ease); }
 .girado { transform: rotate(45deg); }
 

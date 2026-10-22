@@ -34,3 +34,4 @@
 .corpo ul { margin: 0 0 1.3em; padding-left: 20px; color: var(--read-muted); }
 .corpo li { margin-bottom: 8px; }
 .corpo a { color: var(--read-ink); }
+.papel :focus-visible { outline-color: var(--read-ink); }

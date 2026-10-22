@@ -58,16 +58,8 @@
 .texto { opacity: 0.4; transform: translateY(14px); transition: opacity var(--med) var(--ease), transform var(--med) var(--ease); }
 .ereto .texto { opacity: 1; transform: none; }
 
-.texto h2 {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
-  font-weight: 500;
-  line-height: 1.12;
-  margin: 0 0 18px;
-  max-width: 22ch;
-  text-wrap: balance;
-}
-.texto h2 em { font-style: italic; }
+/* O título do capítulo usa .titulo-destaque; aqui só o encaixe. */
+.texto h2 { margin: 0 0 18px; max-width: 22ch; }
 .texto p { margin: 0 0 14px; color: var(--muted); max-width: 62ch; }
 .texto p:last-child { margin-bottom: 0; }
 

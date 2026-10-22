@@ -1,6 +1,8 @@
 /* ============================================================
-   Sistema de design Renan Liscano — v0.2
-   Dark-first: o :root nu é a paleta escura, porque a marca é preta.
+   Sistema de design Renan Liscano — v0.3
+   Sempre escuro: a marca é preta e o cliente pediu o site só no tema
+   escuro. As superfícies de leitura (artigo, depoimentos) seguem claras
+   pelos tokens --read-*, que não dependem de tema.
    ============================================================ */
 
 :root {
@@ -50,84 +52,30 @@
   /* Cartoes de conteudo. Titulo e corpo saem daqui, entao um ajuste de
      tipografia vale para todo cartao do site de uma vez. O tema popular
      so troca o valor do token, nao redeclara seletor por seletor. */
-  --cartao-titulo-tam: clamp(1.14rem, 1.9vw, 1.3rem);
+  --cartao-titulo-tam: clamp(1.2rem, 2vw, 1.4rem);
   --cartao-corpo-tam: var(--t-small);
 
   --measure: 1240px;
   --rail: max(20px, calc((100vw - var(--measure)) / 2));
+
+  --hero-topo: clamp(120px, 15vw, 190px);
+  --hero-base: clamp(24px, 4vw, 44px);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --fast: 0.22s;
   --med: 0.42s;
   --slow: 0.72s;
 
-  --t-display: clamp(2.6rem, 6.5vw, 5rem);
+  /* Escala de títulos: um tamanho por nível, para o site inteiro. As classes
+     .titulo-* leem daqui, então nenhuma página declara o próprio tamanho. */
+  --t-hero: clamp(2.2rem, 5.2vw, 4rem);
+  --t-destaque: clamp(1.7rem, 3.6vw, 2.6rem);
   --t-h2: clamp(1.5rem, 2.8vw, 2.15rem);
-  --t-h3: 1.15rem;
+  --t-sub: clamp(1rem, 1.5vw, 1.12rem);
   --t-small: 0.875rem;
   --t-micro: 0.7rem;
 
   color-scheme: dark;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --ink: #f1f1f3;
-    --ink-raise: #ffffff;
-    --ink-sunk: #e7e7eb;
-    --read-bg: #ffffff;
-    --platinum: #5e5e64;
-    --platinum-hi: #26262a;
-    --platinum-lo: #8a8a90;
-    --platinum-dk: #b6b6bc;
-    --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
-    --cta-bg: #0a0a0b;
-    --cta-ink: #f4f4f5;
-    --cta-bg-hover: #000000;
-    --text: #101014;
-    --muted: #5c5c63;
-    --faint: #8a8a92;
-    --line: #00000024;
-    --line-hairline: #00000014;
-    --line-structural: #0000000a;
-    --hover-veil: #00000005;
-    --live: #15803d;
-    --live-line: #15803d40;
-    --warn: #a16207;
-    --danger: #b91c1c;
-    --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
-    --avatar-ink: #101014;
-    color-scheme: light;
-  }
-}
-
-:root[data-theme="light"] {
-  --ink: #f1f1f3;
-  --ink-raise: #ffffff;
-  --ink-sunk: #e7e7eb;
-  --read-bg: #ffffff;
-  --platinum: #5e5e64;
-  --platinum-hi: #26262a;
-  --platinum-lo: #8a8a90;
-  --platinum-dk: #b6b6bc;
-  --metal-grad: linear-gradient(100deg, #b6b6bc 0%, #6d6d6e 26%, #3b3b3c 43%, #1a1a1e 50%, #5a5a5f 58%, #93939a 76%, #b6b6bc 100%);
-  --cta-bg: #0a0a0b;
-  --cta-ink: #f4f4f5;
-  --cta-bg-hover: #000000;
-  --text: #101014;
-  --muted: #5c5c63;
-  --faint: #8a8a92;
-  --line: #00000024;
-  --line-hairline: #00000014;
-  --line-structural: #0000000a;
-  --hover-veil: #00000005;
-  --live: #15803d;
-  --live-line: #15803d40;
-  --warn: #a16207;
-  --danger: #b91c1c;
-  --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
-  --avatar-ink: #101014;
-  color-scheme: light;
 }
 
 *,
@@ -151,6 +99,10 @@ body {
 img { max-width: 100%; }
 
 ::selection { background: var(--platinum); color: var(--ink); }
+
+/* Foco de teclado igual em todo o site. Superfícies de papel (artigo,
+   depoimentos, páginas legais) trocam só a cor do contorno. */
+:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: 2px; }
 
 /* ---------- utilidades ---------- */
 .wrap { padding-inline: var(--rail); }
@@ -235,6 +187,157 @@ img { max-width: 100%; }
 .lede { color: var(--muted); max-width: 66ch; font-size: 1.02rem; }
 .lede strong { color: var(--text); font-weight: 600; }
 
+/* ---------- títulos ----------
+   Fonte, tamanho e entrelinha de título moram só aqui. A página usa a classe
+   e, se precisar, ajusta margem ou largura no próprio módulo. */
+.titulo-hero,
+.titulo-destaque {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  text-wrap: balance;
+}
+.titulo-hero {
+  font-size: var(--t-hero);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  margin: 22px 0 24px;
+  max-width: 18ch;
+}
+.titulo-destaque {
+  font-size: var(--t-destaque);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 14px 0 20px;
+  max-width: 20ch;
+}
+.titulo-hero em,
+.titulo-destaque em { font-style: italic; }
+
+.sub-hero {
+  color: var(--muted);
+  font-size: var(--t-sub);
+  max-width: 56ch;
+  margin: 0 0 32px;
+}
+
+/* ---------- hero ----------
+   Topo de página. Com foto: .hero-fundo leva a imagem e o .hero-veu segura o
+   lado do texto no tom da página, nos dois temas, sem apagar a luz da foto. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--hero-topo) var(--hero-base);
+}
+.hero-fundo { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero-veu {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 88%, transparent) 38%,
+      color-mix(in srgb, var(--ink) 42%, transparent) 66%, transparent 100%),
+    linear-gradient(180deg, color-mix(in srgb, var(--ink) 70%, transparent) 0%, transparent 26%,
+      transparent 62%, var(--ink) 100%);
+}
+@media (max-width: 820px) {
+  .hero-veu {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--ink) 78%, transparent) 0%,
+        color-mix(in srgb, var(--ink) 86%, transparent) 45%, var(--ink) 88%);
+  }
+}
+.hero-conteudo { position: relative; }
+
+/* Selos de confiança logo abaixo das ações do hero. */
+.provas {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+}
+.provas li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--t-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.provas svg { color: var(--live); flex: none; }
+
+/* Linha de botões e links lado a lado. */
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+}
+
+/* Caixa em superfície elevada, para blocos de chamada e fechamento. */
+.painel {
+  border: 1px solid var(--line-hairline);
+  background: var(--ink-raise);
+  padding: clamp(30px, 5vw, 56px);
+}
+
+/* ---------- cartões ----------
+   Grade separada por fio de 1px: o fundo da grade aparece no vão e vira a
+   linha. Duas colunas por padrão, .grade-3 e .grade-4 para mais; todas
+   viram uma coluna no celular. */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line-hairline);
+  border: 1px solid var(--line-hairline);
+}
+.grade-cartoes > * { min-width: 0; background: var(--ink); }
+.grade-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grade-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1200px) { .grade-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 820px) { .grade-cartoes { grid-template-columns: 1fr; } }
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px 28px;
+  background: var(--ink);
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--med) var(--ease);
+}
+/* Só o cartão que é link reage ao mouse: fundo que muda promete clique. */
+a.cartao:hover { background: var(--ink-raise); }
+a.cartao:focus-visible { outline-offset: -3px; }
+
+.cartao-icone { display: inline-flex; color: var(--platinum); margin-bottom: 18px; }
+.cartao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--cartao-titulo-tam);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.cartao-texto { margin: 0; color: var(--muted); font-size: var(--cartao-corpo-tam); }
+.cartao-cta {
+  margin-top: auto;
+  padding-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--t-small);
+  color: var(--platinum);
+  transition: gap var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+a.cartao:hover .cartao-cta { gap: 15px; color: var(--platinum-hi); }
+
 /* ---------- botões ---------- */
 .btn {
   display: inline-flex;
@@ -253,7 +356,7 @@ img { max-width: 100%; }
   transition: background var(--fast) var(--ease), color var(--fast) var(--ease),
     border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
 }
-.btn:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: 3px; }
+.btn:focus-visible { outline-offset: 3px; }
 .btn-primary { background: var(--cta-bg); color: var(--cta-ink); }
 .btn-primary:hover { background: var(--cta-bg-hover); transform: translateY(-2px); }
 .btn-lg { padding: 19px 36px; font-size: 0.9rem; }

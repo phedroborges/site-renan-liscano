@@ -82,7 +82,7 @@
 }
 .corpo p { margin: 0; color: var(--muted); max-width: 52ch; }
 
-/* a etapa do parecer é a única com tratamento próprio */
+/* a etapa da reunião sem custo é a única com tratamento próprio */
 .destaque .corpo h3::after {
   content: "sem custo";
   margin-left: 12px;

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { PAGINAS } from "@/lib/navegacao";
 import { site, whats } from "@/lib/site";
@@ -15,20 +16,12 @@ export function Header() {
   const menuBotao = useRef<HTMLButtonElement>(null);
   const ativo = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
   const [rolou, setRolou] = useState(false);
-  const [escuro, setEscuro] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setRolou(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const carimbo = document.documentElement.getAttribute("data-theme");
-    if (carimbo === "light") setEscuro(false);
-    else if (carimbo === "dark") setEscuro(true);
-    else setEscuro(!window.matchMedia?.("(prefers-color-scheme: light)").matches);
   }, []);
 
   useEffect(() => {
@@ -43,22 +36,11 @@ export function Header() {
     return () => window.removeEventListener("keydown", fechar);
   }, [menuAberto]);
 
-  function trocarTema() {
-    const proximo = escuro ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", proximo);
-    try { localStorage.setItem("liscano-tema", proximo); } catch { /* sem persistência, tudo bem */ }
-    setEscuro(!escuro);
-  }
-
   return (
     <header className={`${styles.header} ${rolou || menuAberto ? styles.solido : ""}`}>
       <div className={styles.interno}>
         <Link href="/" onClick={() => setMenuAberto(false)} className={styles.marca} aria-label={`${site.nome}, início`}>
-          <span className={`${styles.icone} metal`}>LR</span>
-          <span className={styles.nome}>
-            Renan Liscano
-            <em className={styles.sub}>Advogados</em>
-          </span>
+          <Image src="/img/logo-horizontal.webp" alt="" width={581} height={120} priority className={styles.logo} />
         </Link>
 
         <nav className={styles.nav} aria-label="Navegação principal">
@@ -68,14 +50,6 @@ export function Header() {
         </nav>
 
         <div className={styles.acoes}>
-          <button
-            type="button"
-            onClick={trocarTema}
-            className={styles.tema}
-            aria-label={escuro ? "Mudar para o tema claro" : "Mudar para o tema escuro"}
-          >
-            <Icon name={escuro ? "sun" : "moon"} size={15} />
-          </button>
           <a href={whats("cabeçalho do site")} className={`btn btn-primary ${styles.cta}`} target="_blank" rel="noopener">
             <Icon name="whatsapp" size={16} />
             WhatsApp

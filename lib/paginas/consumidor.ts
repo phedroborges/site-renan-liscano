@@ -13,7 +13,7 @@ export const consumidor: PaginaServico = {
     sub: "Problemas com companhias aéreas e planos de saúde. Entenda como funciona a análise do seu caso, quais documentos reunir e como falar com o advogado, tudo nesta página.",
   },
   heroImagem: {
-    escuro: "/img/consumidor-hero-wide-v2.webp",
+    imagem: "/img/consumidor-hero-wide-v2.webp",
     alt: "Passageira aguardando no aeroporto após receber a notícia do cancelamento de um voo",
   },
   blocos: [
@@ -37,7 +37,7 @@ export const consumidor: PaginaServico = {
     },
     {
       tipo: "situacoes",
-      h2: "Onde a gente atua.",
+      h2: "Onde a gente atua?",
       itens: [
         {
           pergunta: "Seu voo foi cancelado, atrasou ou você ficou em terra?",

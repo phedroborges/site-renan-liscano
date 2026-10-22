@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ARTIGOS } from "@/lib/artigos";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
+import { LeitorBlog } from "@/components/LeitorBlog";
 import s from "./conteudo.module.css";
 
 export const metadata: Metadata = {
@@ -16,41 +17,35 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <>
-      <header className={s.hero}>
+      <header className="hero">
         <div className={`wrap ${s.heroGrade}`}>
           <div>
             <p className="kicker">Blog</p>
-            <h1 className={s.h1}>
+            <h1 className="titulo-hero">
               Um <em className="metal">Kindle</em> para entender o seu direito.
             </h1>
-            <p className={s.sub}>
+            <p className={`sub-hero ${s.sub}`}>
               Textos legíveis, com a lei, o raciocínio inteiro e conexões para continuar pesquisando.
               Sem juridiquês e sem esconder a resposta para forçar um contato.
             </p>
           </div>
-          <Link href={`/blog/${ARTIGOS[0].slug}`} className={s.leitorMock} aria-label={`Começar a ler: ${ARTIGOS[0].pergunta}`}>
-            <span className={s.leitorTopo}>RENAN LISCANO · BLOG</span>
-            <strong>{ARTIGOS[0].pergunta}</strong>
-            <p>{ARTIGOS[0].resposta}</p>
-            <span className={s.leitorProgresso}><i /></span>
-            <span className={s.leitorRodape}>Começar a ler <Icon name="arrow" size={14} /></span>
-          </Link>
+          <LeitorBlog />
         </div>
       </header>
 
       <Resultados />
 
       <section className="section wrap">
-        <div className={s.lista}>
+        <div className="grade-cartoes">
           {ARTIGOS.map((a, i) => (
             <Reveal key={a.slug} delay={(i % 2) * 60}>
-              <Link href={`/blog/${a.slug}`} className={s.card}>
+              <Link href={`/blog/${a.slug}`} className="cartao">
                 <div className={s.tags}>
                   <span className={s.tag}>{a.publicoRotulo}</span>
                   <span className={s.tag}>{a.tema}</span>
                 </div>
-                <h2>{a.pergunta}</h2>
-                <p>{a.resposta}</p>
+                <h2 className="cartao-titulo">{a.pergunta}</h2>
+                <p className={`cartao-texto ${s.resumo}`}>{a.resposta}</p>
                 <div className={s.rodape}>
                   <span>
                     <Icon name={a.video ? "play" : "doc"} size={14} />

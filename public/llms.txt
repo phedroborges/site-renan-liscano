@@ -5,8 +5,9 @@
 > Responsável: Renan Liscano, OAB/RS 120.306.
 
 Diferencial operacional: o contrato do cliente é analisado contra a série histórica
-de taxas do Banco Central e a jurisprudência do STF e do STJ, e o parecer é entregue
-por escrito e sem custo — inclusive quando conclui que não há fundamento.
+de taxas do Banco Central e a jurisprudência do STF e do STJ, e o resultado é apresentado
+em reunião online, sem custo — inclusive quando a conclusão é de que não há fundamento.
+Todo o atendimento é digital: WhatsApp, videochamada e assinatura eletrônica.
 
 ## Dívidas
 - [Dívidas](https://renanliscano.adv.br/dividas): visão geral de dívida bancária, o que se discute num contrato e os erros que pioram a situação.

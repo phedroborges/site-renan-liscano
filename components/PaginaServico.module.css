@@ -3,10 +3,7 @@
    que não tem dinheiro para contratar. Um acento verde, corpo maior,
    contraste mais suave que a marca. Fonte, ícones e cantos retos não mudam.
 
-   Dark-first, igual ao globals.css: o seletor nu é a paleta escura e o claro
-   entra pelas duas condições de tema. Antes daqui a paleta clara estava fixa
-   no seletor nu, que vence o :root por especificidade — por isso o modo
-   escuro não surtia efeito nenhum nesta página. */
+   O site é sempre escuro, então a variante só tem a paleta escura. */
 .pagina[data-tema="popular"] {
   --ink: #121215;
   --ink-raise: #1b1b1f;
@@ -32,57 +29,13 @@
   font-size: 1.06rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .pagina[data-tema="popular"] {
-    --ink: #f2f2f4;
-    --ink-raise: #ffffff;
-    --ink-sunk: #e8e8ec;
-    --text: #101014;
-    --muted: #4e4e56;
-    --faint: #7a7a84;
-    --line: #00000024;
-    --line-hairline: #00000014;
-    --line-structural: #0000000a;
-    --hover-veil: #00000005;
-    --platinum: #3f6f4f;
-    --platinum-hi: #16a34a;
-    --cta-bg: #0a0a0b;
-    --cta-ink: #f4f4f5;
-    --cta-bg-hover: #000000;
-    --live: #15803d;
-    --warn: #b45309;
-    --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
-    --avatar-ink: #101014;
-  }
-}
-
-:root[data-theme="light"] .pagina[data-tema="popular"] {
-  --ink: #f2f2f4;
-  --ink-raise: #ffffff;
-  --ink-sunk: #e8e8ec;
-  --text: #101014;
-  --muted: #4e4e56;
-  --faint: #7a7a84;
-  --line: #00000024;
-  --line-hairline: #00000014;
-  --line-structural: #0000000a;
-  --hover-veil: #00000005;
-  --platinum: #3f6f4f;
-  --platinum-hi: #16a34a;
-  --cta-bg: #0a0a0b;
-  --cta-ink: #f4f4f5;
-  --cta-bg-hover: #000000;
-  --live: #15803d;
-  --warn: #b45309;
-  --avatar-grad: linear-gradient(140deg, #8a8a90, #c4c4ca);
-  --avatar-ink: #101014;
-}
 /* O tema popular usa corpo maior. Basta mover o token: todo cartao segue. */
 .pagina[data-tema="popular"] { --cartao-corpo-tam: 1.02rem; }
 .pagina[data-tema="popular"] .prosa p { font-size: 1.02rem; }
 
-/* ---- hero ---- */
-.hero { padding-block: clamp(120px, 15vw, 180px) clamp(24px, 4vw, 44px); }
+/* ---- hero ----
+   Base, título, subtítulo, ações e selos vêm do globals.css (.hero,
+   .titulo-hero, .sub-hero, .acoes, .provas). Aqui só o que é desta página. */
 .heroTexto { min-width: 0; }
 
 /* ---- hero imersivo (/dividas): imagem sangrando a tela, texto por cima ----
@@ -112,18 +65,6 @@
   z-index: -1;
   overflow: hidden;
 }
-
-/* Dark-first, como a paleta: a cena escura é a padrão. */
-.cenaClara { display: none; }
-.cenaEscura { display: block; }
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .cenaClara { display: block; }
-  :root:not([data-theme="dark"]) .cenaEscura { display: none; }
-}
-
-:root[data-theme="light"] .cenaClara { display: block; }
-:root[data-theme="light"] .cenaEscura { display: none; }
 
 .heroVeu {
   position: absolute;
@@ -180,19 +121,7 @@
 .breadcrumb a:hover { color: var(--platinum-hi); }
 .breadcrumb svg { opacity: .55; }
 
-.h1 {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(2.1rem, 5vw, 3.8rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  margin: 22px 0 22px;
-  max-width: 20ch;
-  text-wrap: balance;
-}
-.h1 em { font-style: italic; }
-
-.sub { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.1rem); max-width: 56ch; margin: 0 0 26px; }
+.sub { margin-bottom: 26px; }
 
 .baseLegal {
   display: flex;
@@ -218,26 +147,8 @@
   margin: 0 0 30px;
 }
 
-.acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
-
-.provas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
-  list-style: none;
-  margin: 28px 0 0;
-  padding: 20px 0 0;
-  border-top: 1px solid var(--line-structural);
-  color: var(--faint);
-  font-size: var(--t-micro);
-  max-width: 780px;
-}
-.provas li { display: inline-flex; align-items: center; gap: 7px; }
-.provas svg { color: var(--platinum); flex: none; }
-
 @media (max-width: 560px) {
   .breadcrumb { margin-bottom: 22px; }
-  .provas { display: grid; gap: 9px; }
 }
 
 /* ---- blocos ---- */
@@ -245,23 +156,6 @@
 .prosa { max-width: 68ch; }
 .prosa p { margin: 0 0 16px; color: var(--muted); }
 .prosa p:last-child { margin-bottom: 0; }
-
-.cartoes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line-hairline);
-  border: 1px solid var(--line-hairline);
-}
-@media (max-width: 760px) { .cartoes { grid-template-columns: 1fr; } }
-.cartao { background: var(--ink); padding: 28px 26px; }
-.cartao :is(h3, h4) {
-  margin: 0 0 10px;
-  font-family: var(--fonte-titulo);
-  font-size: var(--cartao-titulo-tam);
-  font-weight: 500;
-}
-.cartao p { margin: 0; color: var(--muted); font-size: var(--cartao-corpo-tam); }
 
 .callout {
   border: 1px solid var(--line);
@@ -325,84 +219,9 @@
 .docs svg { color: var(--platinum); margin-top: 2px; flex: none; }
 .docNota { margin: 22px 0 0; color: var(--faint); font-size: var(--t-small); max-width: 62ch; }
 
-/* ---- situações (páginas-pilar) ---- */
-.situacoes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line-hairline);
-  border: 1px solid var(--line-hairline);
-}
-@media (max-width: 820px) { .situacoes { grid-template-columns: 1fr; } }
-
-.situacao {
-  display: flex;
-  flex-direction: column;
-  background: var(--ink);
-  padding: 30px 28px;
-  text-decoration: none;
-  color: inherit;
-  transition: background var(--med) var(--ease);
-}
-.situacao:hover { background: var(--ink-raise); }
-.situacao:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: -3px; }
-.situacao :is(h3, h4) {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(1.15rem, 2vw, 1.36rem);
-  font-weight: 500;
-  line-height: 1.24;
-  margin: 0 0 12px;
-  text-wrap: balance;
-}
-.situacao > p { margin: 0; color: var(--muted); font-size: var(--t-small); }
-
-.alerta {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line-structural);
-  display: flex;
-  gap: 11px;
-  align-items: flex-start;
-}
-.alertaTag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  flex: none;
-  font-size: var(--t-micro);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--warn);
-  font-weight: 600;
-  padding-top: 2px;
-}
-.alerta p { margin: 0; font-size: var(--t-micro); color: var(--faint); line-height: 1.6; }
-
-.situacaoCta {
-  margin-top: auto;
-  padding-top: 22px;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  font-size: var(--t-small);
-  color: var(--platinum);
-  transition: gap var(--fast) var(--ease);
-}
-.situacao:hover .situacaoCta { gap: 15px; color: var(--platinum-hi); }
-
-/* ---- fechamento ---- */
-.fechamento { border: 1px solid var(--line-hairline); background: var(--ink-raise); padding: clamp(30px, 5vw, 56px); }
-.fechamento h2 {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-  max-width: 20ch;
-  text-wrap: balance;
-}
-.fechamento h2 em { font-style: italic; }
+/* ---- fechamento ----
+   Caixa (.painel), título (.titulo-destaque) e ações (.acoes) vêm do globals.css. */
+.fechamento > h2 { margin-top: 0; }
 .fechamento > p { color: var(--muted); max-width: 56ch; margin: 0 0 30px; }
 
 .disclaimer {
@@ -423,7 +242,7 @@
 .atalhos a:hover { background: var(--ink-raise); }
 .servicoIntro { max-width: 72ch; color: var(--muted); margin: 0 0 28px; font-size: 1.1rem; }
 
-.atalhos a:focus-visible { outline: 2px solid var(--platinum); outline-offset: 4px; }
+.atalhos a:focus-visible { outline-offset: 4px; }
 
 /* ---- chamada de meio de página ----
    Fica entre seções, sem a borda superior de .section, para ler como uma
@@ -442,7 +261,7 @@
 .chamadaMeio > div { min-width: 0; }
 .chamadaMeio h2 {
   font-family: var(--fonte-titulo);
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: var(--t-h2);
   font-weight: 500;
   line-height: 1.15;
   margin: 12px 0 0;
@@ -457,84 +276,4 @@
   .chamadaMeio .btn { justify-content: center; }
 }
 
-/* ---- cena "contrato": folha ao centro, cláusulas ao redor ---- */
-.contrato {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.72fr) minmax(0, 1fr);
-  gap: clamp(24px, 3vw, 48px);
-  align-items: center;
-}
-.contratoCol { display: flex; flex-direction: column; gap: clamp(20px, 2.6vw, 34px); min-width: 0; }
-
-.clausulaCartao { display: flex; gap: 16px; align-items: flex-start; min-width: 0; }
-.clausulaCartao > div { min-width: 0; }
-.clausulaCartao :is(h3, h4) {
-  margin: 0 0 8px;
-  font-family: var(--fonte-titulo);
-  font-size: var(--cartao-titulo-tam);
-  font-weight: 500;
-  line-height: 1.25;
-  text-wrap: balance;
-}
-.clausulaCartao p { margin: 0; color: var(--muted); font-size: var(--cartao-corpo-tam); }
-.clausulaN {
-  flex: none;
-  font-family: var(--fonte-mono);
-  font-size: var(--t-micro);
-  letter-spacing: .1em;
-  color: var(--platinum);
-  padding-top: 5px;
-}
-
-/* A folha é papel no claro e superfície elevada no escuro: os dois vêm dos
-   tokens, então ela troca de tema junto com a página. */
-.folhaEnvelope { display: flex; justify-content: center; min-width: 0; }
-.folha {
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 3 / 4;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(9px, 1.4vw, 14px);
-  padding: clamp(20px, 2.6vw, 30px);
-  background: var(--ink-raise);
-  border: 1px solid var(--line);
-  box-shadow: 0 22px 50px color-mix(in srgb, #000 20%, transparent);
-}
-.folhaTopo { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-.folhaSelo { flex: none; width: 20px; height: 20px; border: 1px solid var(--platinum); opacity: .7; }
-.folhaTituloBarra { height: 9px; width: 62%; background: var(--text); opacity: .55; }
-
-.folhaBloco { display: flex; flex-direction: column; gap: 6px; }
-.folhaLinha { height: 4px; background: var(--text); opacity: .13; }
-
-.folhaClausula {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  background: color-mix(in srgb, var(--platinum-hi) 12%, transparent);
-  border-left: 2px solid var(--platinum-hi);
-}
-.folhaClausulaN {
-  flex: none;
-  font-family: var(--fonte-mono);
-  font-size: .58rem;
-  letter-spacing: .1em;
-  color: var(--platinum-hi);
-}
-.folhaClausulaBarras { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-.folhaClausulaBarras span { height: 4px; background: var(--platinum-hi); opacity: .42; }
-
-.folhaAssinatura { margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; gap: 7px; }
-.folhaAssinatura span { height: 1px; background: var(--text); opacity: .22; }
-.folhaAssinatura span:first-child { width: 58%; }
-.folhaAssinatura span:last-child { width: 34%; }
-
-/* No celular a folha vai para o topo, como abertura da seção, e as cláusulas
-   descem em lista única. */
-@media (max-width: 900px) {
-  .contrato { grid-template-columns: 1fr; gap: clamp(26px, 5vw, 40px); }
-  .folhaEnvelope { order: -1; }
-  .folha { max-width: 300px; }
-}
+/* A cena "contrato" mora em CenaContrato.module.css. */

@@ -44,7 +44,7 @@
 .opcoes button svg { color: var(--platinum); transition: transform var(--fast) var(--ease); }
 .opcoes button:hover { background: var(--ink-raise); color: var(--platinum-hi); }
 .opcoes button:hover svg { transform: translateX(5px); }
-.opcoes button:focus-visible { outline: 2px solid var(--platinum-hi); outline-offset: -3px; }
+.opcoes button:focus-visible { outline-offset: -3px; }
 
 .previa {
   margin: 0 0 26px;

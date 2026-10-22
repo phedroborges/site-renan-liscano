@@ -1,0 +1,113 @@
+/* ---- cena "contrato": folha ao centro, cláusulas ao redor ---- */
+.contrato {
+  --ritmo: 110ms;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+}
+.contratoCol { display: flex; flex-direction: column; gap: clamp(20px, 2.6vw, 34px); min-width: 0; }
+
+.clausulaCartao { display: flex; gap: 16px; align-items: flex-start; min-width: 0; }
+.clausulaCartao > div { min-width: 0; }
+.clausulaCartao :global(.cartao-titulo) { margin-bottom: 8px; }
+.clausulaN {
+  flex: none;
+  font-family: var(--fonte-mono);
+  font-size: var(--t-micro);
+  letter-spacing: .1em;
+  color: var(--platinum);
+  padding-top: 5px;
+}
+
+/* A folha é superfície elevada sobre o fundo escuro, toda feita de tokens. */
+.folhaEnvelope { display: flex; justify-content: center; min-width: 0; }
+.folha {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(9px, 1.4vw, 14px);
+  padding: clamp(20px, 2.6vw, 30px);
+  background: var(--ink-raise);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 50px color-mix(in srgb, #000 20%, transparent);
+}
+.folhaTopo { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.folhaSelo { flex: none; width: 20px; height: 20px; border: 1px solid var(--platinum); opacity: .7; }
+.folhaTituloBarra { height: 9px; width: 62%; background: var(--text); opacity: .55; }
+
+.folhaBloco { display: flex; flex-direction: column; gap: 6px; }
+.folhaLinha { height: 4px; background: var(--text); opacity: .13; }
+
+.folhaClausula {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--platinum-hi) 12%, transparent);
+  border-left: 2px solid var(--platinum-hi);
+}
+.folhaClausulaN {
+  flex: none;
+  font-family: var(--fonte-mono);
+  font-size: .58rem;
+  letter-spacing: .1em;
+  color: var(--platinum-hi);
+}
+.folhaClausulaBarras { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.folhaClausulaBarras span { height: 4px; background: var(--platinum-hi); opacity: .42; }
+
+.folhaAssinatura { margin-top: auto; padding-top: 14px; display: flex; flex-direction: column; gap: 7px; }
+.folhaAssinatura span { height: 1px; background: var(--text); opacity: .22; }
+.folhaAssinatura span:first-child { width: 58%; }
+.folhaAssinatura span:last-child { width: 34%; }
+
+/* ---- a folha se escrevendo ----
+   "aguardando": o componente já rodou e a cena ainda não entrou na tela.
+   "escrita": cada peça volta ao lugar no seu passo (--passo × --ritmo).
+   Sem JavaScript a fase fica "pronta" e nada é escondido. A transição só
+   existe na escrita: esconder é instantâneo, senão as peças levariam os
+   mesmos segundos para sumir e voltariam antes de sumir de fato. */
+[data-fase="escrita"] :is(.folhaTopo, .folhaLinha, .folhaClausula, .folhaClausulaBarras span, .folhaAssinatura span, .clausulaCartao) {
+  transition-property: transform, opacity;
+  transition-duration: 460ms;
+  transition-timing-function: var(--ease);
+  transition-delay: calc(var(--passo, 0) * var(--ritmo));
+}
+
+/* linhas riscam da esquerda para a direita */
+.folhaTituloBarra,
+.folhaLinha,
+.folhaClausulaBarras span,
+.folhaAssinatura span { transform-origin: left center; }
+[data-fase="aguardando"] :is(.folhaLinha, .folhaAssinatura span) { transform: scaleX(0); }
+[data-fase="aguardando"] .folhaTopo { opacity: 0; }
+
+/* a cláusula surge, e as barras dentro dela se escrevem logo depois */
+[data-fase="aguardando"] .folhaClausula {
+  opacity: 0;
+  transform: translateX(-8px);
+}
+/* As barras herdam o --passo da cláusula e entram 160ms depois dela. */
+[data-fase="escrita"] .folhaClausulaBarras span { transition-delay: calc(var(--passo, 0) * var(--ritmo) + 160ms); }
+[data-fase="aguardando"] .folhaClausulaBarras span { transform: scaleX(0); }
+
+/* o cartão ao lado acende junto da sua cláusula */
+[data-fase="aguardando"] .clausulaCartao {
+  opacity: 0.22;
+  transform: translateY(8px);
+}
+
+/* No celular a folha vai para o topo, como abertura da seção, e as cláusulas
+   descem em lista única. */
+@media (max-width: 900px) {
+  .contrato { grid-template-columns: 1fr; gap: clamp(26px, 5vw, 40px); }
+  .folhaEnvelope { order: -1; }
+  .folha { max-width: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contrato * { transition-delay: 0s !important; }
+}

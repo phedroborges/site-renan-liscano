@@ -1,62 +1,17 @@
-.hero { padding-block: clamp(120px, 15vw, 190px) clamp(24px, 4vw, 40px); }
-
+/* Título, hero, grade e cartões vêm do globals.css. Aqui fica só o que
+   existe apenas no sobre. */
 .apresentacao { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
 .bio { min-width: 0; }
 .registro { font-family: var(--fonte-mono); font-size: var(--t-micro); letter-spacing: .1em; color: var(--platinum); margin: 0 0 24px; }
 .retrato { aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--line-hairline); }
 .retrato img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 68% center; }
-.linksAreas { display: flex; flex-wrap: wrap; gap: 12px 24px; }
 @media (max-width: 900px) {
   .apresentacao { grid-template-columns: 1fr; }
   .retrato { aspect-ratio: 3 / 2; }
 }
 
-.h1 {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(2.2rem, 5.2vw, 4rem);
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  margin: 22px 0 24px;
-  max-width: 18ch;
-  text-wrap: balance;
-}
-.h1 em { font-style: italic; }
+.fechaTitulo { margin: 0 0 28px; }
 
-.sub { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.12rem); max-width: 58ch; margin: 0 0 32px; }
-
-.principios {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line-hairline);
-  border: 1px solid var(--line-hairline);
-}
-.principios > * { background: var(--ink); }
-@media (max-width: 760px) { .principios { grid-template-columns: 1fr; } }
-
-.principio { padding: 30px 28px; height: 100%; }
-.principio h3 {
-  margin: 0 0 12px;
-  font-family: var(--fonte-titulo);
-  font-size: 1.28rem;
-  font-weight: 500;
-}
-.principio p { margin: 0; color: var(--muted); font-size: var(--t-small); }
-
-.fechaTitulo {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 0 0 28px;
-  max-width: 20ch;
-  text-wrap: balance;
-}
-.fechaTitulo em { font-style: italic; }
-
-.fechaAcoes { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
 .fechaOab {
   margin: 26px 0 0;
   font-size: var(--t-micro);

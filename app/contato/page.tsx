@@ -9,21 +9,21 @@ import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { Triagem } from "@/components/Triagem";
 import { MapaBrasil } from "@/components/MapaBrasil";
-import { CartaoRenan } from "@/components/CartaoRenan";
+import { CartaoEscritorio } from "@/components/CartaoEscritorio";
 import s from "./contato.module.css";
 
 export const metadata: Metadata = {
   title: "Falar com o advogado",
   description:
-    "Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com parecer técnico antes de qualquer proposta.",
+    "Atendimento por WhatsApp em todo o Brasil. Triagem na própria conversa e reunião online sem custo antes de qualquer proposta.",
   alternates: { canonical: "/contato" },
 };
 
 export default function Contato() {
   return (
     <>
-      <header className={s.hero}>
-        <div className={s.heroFundo} aria-hidden="true">
+      <header className="hero">
+        <div className="hero-fundo" aria-hidden="true">
           <Image
             src="/img/contato-hero-wide.webp"
             alt=""
@@ -33,15 +33,15 @@ export default function Contato() {
             sizes="100vw"
             style={{ objectFit: "cover", objectPosition: "center right" }}
           />
-          <span className={s.heroVeu} />
+          <span className="hero-veu" />
         </div>
 
-        <div className={`wrap ${s.heroConteudo}`}>
+        <div className="wrap hero-conteudo">
           <p className="kicker">Contato</p>
-          <h1 className={s.h1}>
+          <h1 className="titulo-hero">
             Manda a sua dúvida. A resposta é <em className="metal">gratuita</em>.
           </h1>
-          <p className={s.sub}>
+          <p className="sub-hero">
             A primeira conversa serve para uma coisa só: dizer se existe caso. Se não existir, você
             vai ouvir isso, e não vai receber proposta nenhuma.
           </p>
@@ -54,7 +54,7 @@ export default function Contato() {
           </a>
 
           <div className={s.assinatura}>
-            <CartaoRenan tamanho="grande" />
+            <CartaoEscritorio tamanho="grande" />
           </div>
         </div>
       </header>
@@ -86,28 +86,28 @@ export default function Contato() {
             </h2>
           </div>
         </Reveal>
-        <div className={s.canais}>
+        <div className="grade-cartoes grade-3">
           <Reveal>
-            <a href={whats("canal WhatsApp")} className={s.canal} target="_blank" rel="noopener">
-              <Icon name="whatsapp" size={26} />
-              <h3>WhatsApp</h3>
-              <p>Canal principal. É por onde tudo acontece, do primeiro contato ao acompanhamento do processo.</p>
+            <a href={whats("canal WhatsApp")} className="cartao" target="_blank" rel="noopener">
+              <span className="cartao-icone"><Icon name="whatsapp" size={26} /></span>
+              <h3 className="cartao-titulo">WhatsApp</h3>
+              <p className={`cartao-texto ${s.canalTexto}`}>Canal principal. É por onde tudo acontece, do primeiro contato ao acompanhamento do processo.</p>
               <span className={s.canalDado}>{site.telefone}</span>
             </a>
           </Reveal>
           <Reveal delay={70}>
-            <a href={site.instagram} className={s.canal} target="_blank" rel="noopener">
-              <Icon name="instagram" size={26} />
-              <h3>Instagram</h3>
-              <p>Onde saem as explicações em vídeo sobre os temas do escritório.</p>
+            <a href={site.instagram} className="cartao" target="_blank" rel="noopener">
+              <span className="cartao-icone"><Icon name="instagram" size={26} /></span>
+              <h3 className="cartao-titulo">Instagram</h3>
+              <p className={`cartao-texto ${s.canalTexto}`}>Onde saem as explicações em vídeo sobre os temas do escritório.</p>
               <span className={s.canalDado}>Ver o perfil</span>
             </a>
           </Reveal>
           <Reveal delay={140}>
-            <Link href="/blog" className={s.canal}>
-              <Icon name="doc" size={26} />
-              <h3>Blog</h3>
-              <p>Talvez a sua dúvida já esteja respondida por escrito, com a lei que trata do assunto.</p>
+            <Link href="/blog" className="cartao">
+              <span className="cartao-icone"><Icon name="doc" size={26} /></span>
+              <h3 className="cartao-titulo">Blog</h3>
+              <p className={`cartao-texto ${s.canalTexto}`}>Talvez a sua dúvida já esteja respondida por escrito, com a lei que trata do assunto.</p>
               <span className={s.canalDado}>Ver os artigos</span>
             </Link>
           </Reveal>
@@ -139,12 +139,12 @@ export default function Contato() {
             </h2>
           </div>
         </Reveal>
-        <div className={s.espera}>
+        <div className="grade-cartoes">
           {[
             { t: "Não é consulta comercial", d: "Ninguém vai empurrar contratação." },
             { t: "Não precisa ter tudo", d: "Traga os documentos que tiver. Levantar o resto faz parte do trabalho." },
             { t: "Você sai com uma resposta", d: "Tem caso ou não tem. Se tiver, quais são os cenários." },
-            { t: "Envolvendo contrato, há parecer", d: "Por escrito, sem custo, mesmo quando a conclusão é negativa." },
+            { t: "Há uma reunião online, sem custo", d: "Com dia e hora combinados. Apresentamos a análise do caso, mesmo quando a conclusão é negativa." },
           ].map((e, i) => (
             <Reveal key={e.t} delay={i * 60}>
               <div className={s.esperaItem}>

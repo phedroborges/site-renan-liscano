@@ -220,18 +220,18 @@ export const tributario: PaginaServico = {
   "slug": "/tributario",
   "titulo": "Direito tributário e dívida ativa",
   "metaTitulo": "Direito tributário e dívida ativa: defesa em execução fiscal",
-  "metaDescricao": "Dívida ativa, execução fiscal, penhora e bloqueio de contas. Análise da cobrança, negociação e defesa para pessoas e empresas. Parecer por escrito antes de qualquer proposta.",
+  "metaDescricao": "Dívida ativa, execução fiscal, penhora e bloqueio de contas. Análise da cobrança, negociação e defesa para pessoas e empresas. Análise sem custo, apresentada em reunião online antes de qualquer proposta.",
   "tema": "padrao",
   "hero": {
     "kicker": "Direito tributário · Dívida ativa",
     "h1": "A dívida foi para execução fiscal. Agora o risco é o seu patrimônio.",
     "enfase": "Agora o risco é o seu patrimônio",
-    "sub": "Inscrição em dívida ativa, penhora, bloqueio de conta e certidão negada travando a empresa. Conferimos a origem do débito, o estágio da cobrança e o que ainda dá para discutir, e você recebe isso por escrito antes de falarmos de honorário.",
+    "sub": "Inscrição em dívida ativa, penhora, bloqueio de conta e certidão negada travando a empresa. Conferimos a origem do débito, o estágio da cobrança e o que ainda dá para discutir, e apresentamos isso numa reunião online, sem custo, antes de falarmos de honorário.",
     "urgencia": "Executado tem prazo para se defender, e ele corre da citação.",
     "ctaTexto": "Mandar minha cobrança no WhatsApp"
   },
   "heroImagem": {
-    "escuro": "/img/tributario-hero-wide.webp",
+    "imagem": "/img/tributario-hero-wide.webp",
     "alt": "Uma pilha alta de documentos fiscais ligada por um circuito a um patrimônio protegido por um escudo"
   },
   "blocos": [
@@ -273,7 +273,7 @@ export const tributario: PaginaServico = {
       "icone": "scale",
       "titulo": "Às vezes a resposta é que o débito é devido mesmo.",
       "paras": [
-        "Quando a conferência não encontra fundamento, o parecer diz isso, com o motivo. Não vem proposta de ação anexada, e a análise continua sem custo.",
+        "Quando a conferência não encontra fundamento, a gente diz isso na reunião, com o motivo. Não vem proposta de ação junto, e a análise continua sem custo.",
         "Nesse cenário o trabalho vira outro: encontrar a modalidade de parcelamento ou transação mais vantajosa entre as disponíveis, e evitar que a cobrança alcance bens que não precisaria alcançar."
       ]
     },
@@ -330,13 +330,13 @@ export const tributario: PaginaServico = {
     },
     {
       "p": "Vocês cobram para analisar?",
-      "r": "Não. A análise e o parecer são sem custo, inclusive quando a conclusão é que não há o que discutir."
+      "r": "Não. A análise e a reunião online em que apresentamos o resultado são sem custo, inclusive quando a conclusão é que não há o que discutir."
     }
   ],
   "cta": {
     "titulo": "Antes de assinar qualquer parcelamento, saiba o que está assinando.",
     "enfase": "saiba o que está assinando",
-    "texto": "Mande a certidão ou a notificação. O parecer vem por escrito, sem custo."
+    "texto": "Mande a certidão ou a notificação pelo WhatsApp. A análise é sem custo e o resultado vem numa reunião online."
   },
   "disclaimer": true
 };

@@ -7,7 +7,9 @@ import type { PaginaServico as Dados } from "@/lib/tipos";
 import { Icon } from "./Icon";
 import { Reveal } from "./Reveal";
 import { Acordeao } from "./Acordeao";
-import { CartaoRenan } from "./CartaoRenan";
+import { CartaoEscritorio } from "./CartaoEscritorio";
+import { CartaoSituacao } from "./CartaoSituacao";
+import { CenaContrato } from "./CenaContrato";
 import { Depoimentos } from "./Depoimentos";
 import { Diferenciais } from "./Diferenciais";
 import { Etapas } from "./Etapas";
@@ -57,7 +59,7 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
         />
       )}
-      <header className={`${s.hero} ${heroImersivo ? s.heroImersivo : ""}`}>
+      <header className={`hero ${heroImersivo ? s.heroImersivo : ""}`}>
         <div className="wrap">
           <div className={s.heroTexto}>
           <nav className={s.breadcrumb} aria-label="Navegação estrutural">
@@ -70,8 +72,8 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
             <span aria-current="page">{dados.titulo}</span>
           </nav>
           <p className="kicker">{dados.hero.kicker}</p>
-          <h1 className={s.h1}>{comEnfase(dados.hero.h1, dados.hero.enfase)}</h1>
-          <p className={s.sub}>{dados.hero.sub}</p>
+          <h1 className="titulo-hero">{comEnfase(dados.hero.h1, dados.hero.enfase)}</h1>
+          <p className={`sub-hero ${s.sub}`}>{dados.hero.sub}</p>
 
           {dados.baseLegal && (
             <p className={s.baseLegal}>
@@ -87,18 +89,18 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
             </p>
           )}
 
-          <div className={s.acoes}>
+          <div className="acoes">
             <a href={whats(dados.titulo)} className="btn btn-primary btn-lg" target="_blank" rel="noopener">
               <Icon name="whatsapp" size={18} />
               {ctaTexto}
             </a>
-            <CartaoRenan />
+            <CartaoEscritorio />
           </div>
 
-          <ul className={s.provas} aria-label="Informações do atendimento">
+          <ul className="provas" aria-label="Informações do atendimento">
             <li><Icon name="check" size={14} />Análise inicial sem custo</li>
             <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
-            <li><Icon name="check" size={14} />Orientação por escrito</li>
+            <li><Icon name="check" size={14} />Reunião online agendada</li>
           </ul>
           </div>
         </div>
@@ -107,23 +109,9 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
             celular volta ao fluxo e aparece embaixo, inteira. */}
         {heroImagem && (
           <div className={s.heroFundo}>
-            {heroImagem.claro && (
-              <Image
-                src={heroImagem.claro}
-                alt={heroImagem.alt}
-                className={s.cenaClara}
-                fill
-                priority
-                quality={90}
-                sizes="100vw"
-                style={{ objectFit: "cover", objectPosition: "center right" }}
-              />
-            )}
             <Image
-              src={heroImagem.escuro}
-              alt={heroImagem.claro ? "" : heroImagem.alt}
-              aria-hidden={heroImagem.claro ? true : undefined}
-              className={heroImagem.claro ? s.cenaEscura : undefined}
+              src={heroImagem.imagem}
+              alt={heroImagem.alt}
               fill
               priority
               quality={90}
@@ -232,15 +220,15 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
 
       <section className="section wrap">
         <Reveal>
-          <div className={s.fechamento}>
-            <h2>{comEnfase(dados.cta.titulo, dados.cta.enfase)}</h2>
+          <div className={`painel ${s.fechamento}`}>
+            <h2 className="titulo-destaque">{comEnfase(dados.cta.titulo, dados.cta.enfase)}</h2>
             {dados.cta.texto && <p>{dados.cta.texto}</p>}
-            <div className={s.acoes}>
+            <div className="acoes">
               <a href={whats(dados.titulo)} className="btn btn-primary btn-lg" target="_blank" rel="noopener">
                 <Icon name="whatsapp" size={18} />
                 {ctaTexto}
               </a>
-              <CartaoRenan />
+              <CartaoEscritorio />
             </div>
             {dados.disclaimer && (
               <p className={s.disclaimer}>
@@ -251,53 +239,6 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
           </div>
         </Reveal>
       </section>
-    </div>
-  );
-}
-
-/** Folha de contrato desenhada em CSS, não em imagem: acompanha o tema claro
- *  e escuro sozinha, fica nítida em qualquer tela e não inventa texto jurídico
- *  falso — as linhas são barras, e só as quatro cláusulas citadas ao lado
- *  aparecem marcadas. */
-function FolhaContrato() {
-  const linhas = (larguras: number[], chave: string) => (
-    <div className={s.folhaBloco} key={chave}>
-      {larguras.map((l, i) => (
-        <span key={i} className={s.folhaLinha} style={{ width: `${l}%` }} />
-      ))}
-    </div>
-  );
-  const clausula = (n: string) => (
-    <div className={s.folhaClausula} key={n}>
-      <span className={s.folhaClausulaN}>{n}</span>
-      <span className={s.folhaClausulaBarras}>
-        <span style={{ width: "82%" }} />
-        <span style={{ width: "56%" }} />
-      </span>
-    </div>
-  );
-
-  return (
-    <div className={s.folhaEnvelope} aria-hidden="true">
-      <div className={s.folha}>
-        <div className={s.folhaTopo}>
-          <span className={s.folhaSelo} />
-          <span className={s.folhaTituloBarra} />
-        </div>
-        {linhas([100, 96, 72], "a")}
-        {clausula("01")}
-        {linhas([100, 88], "b")}
-        {clausula("02")}
-        {linhas([94, 100, 64], "c")}
-        {clausula("03")}
-        {linhas([100, 80], "d")}
-        {clausula("04")}
-        {linhas([92, 58], "e")}
-        <div className={s.folhaAssinatura}>
-          <span />
-          <span />
-        </div>
-      </div>
     </div>
   );
 }
@@ -323,15 +264,6 @@ function renderBloco(b: Dados["blocos"][number], interno = false) {
       /* A cena "contrato" só fecha com 4 itens, 2 de cada lado da folha.
          Com qualquer outro número cai na grade normal de cartões. */
       const comFolha = b.cena === "contrato" && b.itens.length === 4;
-      const item = (i: { titulo: string; texto: string }, n: number) => (
-        <div key={i.titulo} className={s.clausulaCartao}>
-          <span className={s.clausulaN} aria-hidden="true">{String(n + 1).padStart(2, "0")}</span>
-          <div>
-            <Subtitulo>{i.titulo}</Subtitulo>
-            <p>{i.texto}</p>
-          </div>
-        </div>
-      );
       return (
         <div className={s.bloco}>
           <div className="section-head">
@@ -339,17 +271,13 @@ function renderBloco(b: Dados["blocos"][number], interno = false) {
             {b.intro && <p className="note">{b.intro}</p>}
           </div>
           {comFolha ? (
-            <div className={s.contrato}>
-              <div className={s.contratoCol}>{b.itens.slice(0, 2).map((i, n) => item(i, n))}</div>
-              <FolhaContrato />
-              <div className={s.contratoCol}>{b.itens.slice(2).map((i, n) => item(i, n + 2))}</div>
-            </div>
+            <CenaContrato itens={b.itens} nivel={Subtitulo} />
           ) : (
-            <div className={s.cartoes}>
+            <div className="grade-cartoes">
               {b.itens.map((i) => (
-                <div key={i.titulo} className={s.cartao}>
-                  <Subtitulo>{i.titulo}</Subtitulo>
-                  <p>{i.texto}</p>
+                <div key={i.titulo} className="cartao">
+                  <Subtitulo className="cartao-titulo">{i.titulo}</Subtitulo>
+                  <p className="cartao-texto">{i.texto}</p>
                 </div>
               ))}
             </div>
@@ -416,24 +344,9 @@ function renderBloco(b: Dados["blocos"][number], interno = false) {
             <Titulo>{b.h2}</Titulo>
             {b.intro && <p className="note">{b.intro}</p>}
           </div>
-          <div className={s.situacoes}>
+          <div className="grade-cartoes">
             {b.itens.map((c) => (
-              <Link key={c.href} href={c.href} className={s.situacao}>
-                <Subtitulo>{c.pergunta}</Subtitulo>
-                <p>{c.texto}</p>
-                {c.alerta && (
-                  <div className={s.alerta}>
-                    <span className={s.alertaTag}>
-                      <Icon name={c.alerta.icone} size={13} />
-                      {c.alerta.tag}
-                    </span>
-                    <p>{c.alerta.texto}</p>
-                  </div>
-                )}
-                <span className={s.situacaoCta}>
-                  Entender o meu caso <Icon name="arrow" size={15} />
-                </span>
-              </Link>
+              <CartaoSituacao key={c.href} situacao={c} nivel={Subtitulo} />
             ))}
           </div>
         </div>

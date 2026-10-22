@@ -1,7 +1,7 @@
 /** Páginas principais; os serviços de cada área têm rotas próprias. */
 export const PAGINAS = [
   { href: "/", label: "Home", priority: 1 },
-  { href: "/dividas", label: "Dívidas", priority: 0.9 },
+  { href: "/dividas", label: "Bancário", priority: 0.9 },
   { href: "/tributario", label: "Tributário", priority: 0.9 },
   { href: "/medico", label: "Direito médico", priority: 0.9 },
   { href: "/consumidor", label: "Direito do consumidor", priority: 0.9 },

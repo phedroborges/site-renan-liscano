@@ -176,3 +176,7 @@
   line-height: 1.7;
   color: var(--read-faint);
 }
+
+/* Superfície de papel: o contorno de foco segue a tinta, não a platina. */
+.papel :focus-visible { outline-color: var(--read-ink); }
+.cta :focus-visible { outline-color: var(--read-bg); }

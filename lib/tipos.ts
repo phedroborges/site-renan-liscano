@@ -33,10 +33,9 @@ export type PaginaServico = {
     urgencia?: string;
     ctaTexto?: string;
   };
-  /** Hero sangrando a tela, no lugar da cena em CSS. `escuro` é obrigatório
-   *  porque o site é dark-first; sem `claro`, a faixa do hero fica escura nos
-   *  dois temas em vez de mostrar uma foto escura sob véu claro. */
-  heroImagem?: { escuro: string; claro?: string; alt: string };
+  /** Hero sangrando a tela, no lugar da cena em CSS. O site é sempre escuro,
+   *  então a imagem precisa ser a versão escura da cena. */
+  heroImagem?: { imagem: string; alt: string };
   blocos: Bloco[];
   faq?: { p: string; r: string }[];
   cta: { titulo: string; enfase?: string; texto?: string };

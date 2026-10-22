@@ -2,9 +2,12 @@ export const site = {
   nome: "Renan Liscano Advogados",
   advogado: "Renan Liscano",
   oab: "OAB/RS 120.306",
-  telefone: "(55) 9 9619-2413",
-  whatsapp: "https://wa.me/55996192413",
+  /** Número do escritório, atendido pela Isa. */
+  telefone: "(42) 9 9198-7371",
+  whatsapp: "https://wa.me/5542991987371",
   instagram: "https://instagram.com/renanliscano",
+  /** Perfil no Google Meu Negócio, onde estão as avaliações públicas. */
+  avaliacoesGoogle: "https://share.google/7bAswrGhykxPiyC8E",
   // TODO confirmar: o site atual diz 23 numa página e 25 em outra.
   alcance: "todo o Brasil",
 } as const;

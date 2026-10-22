@@ -11,9 +11,10 @@ import { MapaBrasil } from "@/components/MapaBrasil";
 import { Depoimentos } from "@/components/Depoimentos";
 import { Acordeao } from "@/components/Acordeao";
 import { Etapas } from "@/components/Etapas";
-import { CartaoRenan } from "@/components/CartaoRenan";
+import { CartaoEscritorio } from "@/components/CartaoEscritorio";
 import { LeitorBlog } from "@/components/LeitorBlog";
 import { Equipe } from "@/components/Equipe";
+import { CartaoSituacao } from "@/components/CartaoSituacao";
 import s from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -36,8 +37,8 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ---------------- HERO ---------------- */}
-      <header className={s.hero}>
-        <div className={s.heroFundo} aria-hidden="true">
+      <header className={`hero ${s.hero}`}>
+        <div className="hero-fundo" aria-hidden="true">
           <Image
             src="/img/hero-escritorio.jpg"
             alt=""
@@ -47,30 +48,30 @@ export default function Home() {
             sizes="100vw"
             style={{ objectFit: "cover", objectPosition: "center right" }}
           />
-          <span className={s.heroVeu} />
+          <span className="hero-veu" />
         </div>
 
-        <div className={`wrap ${s.heroConteudo}`}>
+        <div className="wrap hero-conteudo">
           <p className="kicker">Renan Liscano · Advogado · {site.oab}</p>
 
-          <h1 className={s.h1}>
+          <h1 className="titulo-hero">
             Reduzir dívidas. <em className="metal">Proteger seu patrimônio.</em>
           </h1>
 
-          <p className={s.sub}>
+          <p className="sub-hero">
             Atuação bancária, empresarial e tributária para pessoas e empresas, além dos direitos
             de médicos e consumidores. A conversa começa pelos documentos e pelos caminhos para o seu caso.
           </p>
 
-          <div className={s.heroAcoes}>
+          <div className="acoes">
             <a href={whats("primeira dobra")} className="btn btn-primary btn-lg" target="_blank" rel="noopener">
               <Icon name="whatsapp" size={18} />
               Falar agora no WhatsApp
             </a>
-            <CartaoRenan />
+            <CartaoEscritorio />
           </div>
 
-          <ul className={s.heroProvas}>
+          <ul className="provas">
             <li><Icon name="check" size={14} />Análise sem custo</li>
             <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
             <li><Icon name="check" size={14} />Tudo pelo celular, sem cartório</li>
@@ -96,32 +97,16 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className={s.situacoes}>
+        <div className="grade-cartoes">
           {SITUACOES.map((c, i) => (
             <Reveal key={c.href} delay={(i % 2) * 70}>
-              <Link href={c.href} className={s.card}>
-                <h3 className={s.cardTitulo}>{c.pergunta}</h3>
-                <p className={s.cardTexto}>{c.texto}</p>
-                {c.alerta && (
-                  <div className={s.alerta}>
-                    <span className={s.alertaTag}>
-                      <Icon name={c.alerta.icone} size={13} />
-                      {c.alerta.tag}
-                    </span>
-                    <p>{c.alerta.texto}</p>
-                  </div>
-                )}
-                <span className={s.cardCta}>
-                  Entender o meu caso
-                  <Icon name="arrow" size={15} />
-                </span>
-              </Link>
+              <CartaoSituacao situacao={c} />
             </Reveal>
           ))}
         </div>
 
         <Reveal>
-          <div className={s.rodapeSecao}>
+          <div className={`acoes ${s.rodapeSecao}`}>
             <p>Nenhuma delas é a sua?</p>
             <a href={whats("nenhuma das situações listadas")} className="btn btn-quiet" target="_blank" rel="noopener">
               Conte o seu caso <Icon name="arrow" size={15} />
@@ -137,12 +122,12 @@ export default function Home() {
         </Reveal>
 
         <Reveal>
-          <div className={s.rodapeSecao}>
+          <div className={`acoes ${s.rodapeSecao}`}>
             <a href={whats("quero começar")} className="btn btn-primary" target="_blank" rel="noopener">
               <Icon name="whatsapp" size={16} />
               Começar pelo passo 1
             </a>
-            <CartaoRenan tamanho="pequeno" />
+            <CartaoEscritorio tamanho="pequeno" />
           </div>
         </Reveal>
       </section>
@@ -174,7 +159,7 @@ export default function Home() {
             </h2>
           </div>
         </Reveal>
-        <div className={s.areas}>
+        <div className="grade-cartoes grade-4">
           {[
             {
               href: "/dividas",
@@ -204,11 +189,11 @@ export default function Home() {
             },
           ].map((a, i) => (
             <Reveal key={a.href} delay={i * 80}>
-              <Link href={a.href} className={s.area}>
-                <Icon name={a.icone} size={26} />
-                <h3>{a.titulo}</h3>
-                <p>{a.texto}</p>
-                <span className={s.cardCta}>
+              <Link href={a.href} className="cartao">
+                <span className="cartao-icone"><Icon name={a.icone} size={26} /></span>
+                <h3 className="cartao-titulo">{a.titulo}</h3>
+                <p className="cartao-texto">{a.texto}</p>
+                <span className="cartao-cta">
                   Ver a área <Icon name="arrow" size={15} />
                 </span>
               </Link>
@@ -233,7 +218,7 @@ export default function Home() {
             </div>
             <div className={s.historiaTexto}>
               <p className="kicker">O advogado</p>
-              <h2 id="sobre-renan-titulo" className={s.historiaTitulo}>
+              <h2 id="sobre-renan-titulo" className="titulo-destaque">
                 Quem é <em className="metal">Renan Liscano</em>.
               </h2>
               <p className={s.registro}>{site.oab}</p>
@@ -278,10 +263,10 @@ export default function Home() {
       {/* ---------------- CONTEÚDO ---------------- */}
       <section className="section wrap">
         <Reveal>
-          <div className={`${s.conteudo} ${s.conteudoComLeitor}`}>
+          <div className={`painel ${s.conteudoComLeitor}`}>
             <div className={s.conteudoTexto}>
               <p className="kicker">Blog</p>
-              <h2 className={s.historiaTitulo}>
+              <h2 className="titulo-destaque">
                 A maior parte das dúvidas não precisa virar <em>processo</em>.
               </h2>
               <p className="lede">

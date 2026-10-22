@@ -49,6 +49,12 @@ export const SITUACOES = [
     href: "/medico/processo-etico",
   },
   {
+    pergunta: "O seu nome profissional já é uma marca, mas não está registrado?",
+    texto:
+      "Nome, reputação e presença construídos ao longo dos anos são patrimônio, ainda que não apareçam no balanço. Sem registro no INPI, esse patrimônio não tem dono formal.",
+    href: "/medico/registro-de-marca",
+  },
+  {
     pergunta: "Seu nome foi negativado por uma dívida que você não reconhece?",
     texto:
       "Cobrança duplicada, dívida já paga, contrato aberto por terceiro. Cada uma dessas situações tem tratamento próprio.",
@@ -78,9 +84,9 @@ export const ETAPAS = [
     texto: "Só o necessário para entender o seu caso. Leva alguns minutos.",
   },
   {
-    titulo: "Você recebe um parecer por escrito",
+    titulo: "Agendamos uma reunião online",
     destaque: true,
-    texto: "Sem custo. E se não houver nada a fazer, o parecer diz isso, com o motivo. Você fica com o documento de qualquer jeito.",
+    texto: "Combinada antes com você e sem custo. Nela apresentamos o nosso trabalho e as soluções encontradas para o seu caso.",
   },
   {
     titulo: "Só então falamos de valores",
@@ -96,7 +102,7 @@ export const ETAPAS = [
   },
   {
     titulo: "Você acompanha do começo ao fim",
-    texto: "Cada novidade do processo vira uma mensagem no grupo, escrita em português.",
+    texto: "Cada novidade do processo vira uma mensagem no grupo.",
   },
 ];
 
@@ -165,7 +171,7 @@ export const FAQ = [
   },
   {
     p: "Quanto tempo demora para ter uma resposta?",
-    r: "A triagem inicial acontece na conversa. O parecer técnico, quando envolve análise de contrato, depende do envio dos documentos.",
+    r: "A triagem acontece na própria conversa. A reunião online é agendada depois que os documentos chegam, porque é neles que a análise se baseia.",
   },
   {
     p: "Como sei que estou falando com o escritório de verdade?",
@@ -173,7 +179,7 @@ export const FAQ = [
   },
   {
     p: "Vocês cobram para analisar meu contrato?",
-    r: "Não. A análise e o parecer são entregues sem custo, inclusive quando a conclusão é de que não há fundamento.",
+    r: "Não. A análise e a reunião online em que apresentamos o resultado são sem custo, inclusive quando a conclusão é de que não há fundamento.",
   },
   { p: "E se eu não tiver todos os documentos?", r: "Traga o que tiver. Levantar documento faz parte do trabalho." },
 ];

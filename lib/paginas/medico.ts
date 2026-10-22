@@ -5,7 +5,7 @@ export const medico: PaginaServico = {
   titulo: "Direito médico",
   metaTitulo: "Advogado para médicos: FIES, residência, CRM e marca",
   metaDescricao:
-    "Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. Parecer técnico antes da proposta. OAB/RS 120.306.",
+    "Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. Reunião online sem custo antes da proposta. OAB/RS 120.306.",
   hero: {
     kicker: "Direito médico",
     h1: "Seis anos de faculdade, três de residência. E a conta que ninguém avisou.",
@@ -14,7 +14,7 @@ export const medico: PaginaServico = {
     ctaTexto: "Ver quais direitos são meus",
   },
   heroImagem: {
-    escuro: "/img/medico-hero-wide.webp",
+    imagem: "/img/medico-hero-wide.webp",
     alt: "Médico ao final de um plantão, sentado diante de documentos e de um notebook",
   },
   blocos: [
@@ -166,7 +166,7 @@ export const auxilioMoradia: PaginaServico = {
       p: "Preciso processar o hospital onde ainda trabalho?",
       r: "A ação é contra a instituição responsável pelo programa. Se isso é um problema no seu caso, é um ponto a avaliar antes de decidir.",
     },
-    { p: "Quanto custa?", r: "A conversa inicial não tem custo. Honorários e cenários vão por escrito antes de qualquer assinatura." },
+    { p: "Quanto custa?", r: "A conversa inicial e a reunião online não têm custo. Os honorários vêm por escrito antes de qualquer assinatura." },
   ],
   cta: {
     titulo: "Descubra se o seu caso se enquadra.",
@@ -272,7 +272,7 @@ export const fies: PaginaServico = {
     { p: "Consigo suspender o pagamento enquanto atuo?", r: "Em alguns casos é possível discutir extensão de carência. Depende da situação contratual." },
     { p: "Isso vale para dentista e enfermeiro?", r: "A modalidade da COVID-19 alcança profissionais da saúde de forma mais ampla. As demais têm recorte próprio." },
   ],
-  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise sem custo, com resposta por escrito." },
+  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise sem custo, com o resultado apresentado em reunião online." },
 };
 
 export const processoEtico: PaginaServico = {

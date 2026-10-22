@@ -11,12 +11,11 @@ export const dividas: PaginaServico = {
     kicker: "Dívidas",
     h1: "A dívida só cresce. O problema pode estar no contrato.",
     enfase: "O problema pode estar no contrato",
-    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos, por escrito e em número, se houve cobrança indevida. A primeira análise não tem custo, e se não compensar entrar com ação, a recomendação vai ser não entrar.",
+    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos, em número, se houve cobrança indevida. A análise não tem custo e o resultado é apresentado numa reunião online. Se não compensar entrar com ação, a recomendação vai ser não entrar.",
     ctaTexto: "Mandar meu contrato no WhatsApp",
   },
   heroImagem: {
-    claro: "/img/dividas-hero.webp",
-    escuro: "/img/dividas-hero-escuro.webp",
+    imagem: "/img/dividas-hero-escuro.webp",
     alt: "Uma bola enorme feita de contratos e boletos amassados, parada por uma cunha de aço antes de alcançar uma casa iluminada",
   },
   blocos: [
@@ -83,7 +82,7 @@ export const dividas: PaginaServico = {
       titulo: "Nada disso é ilegal por si só.",
       paras: [
         "O que se discute é se foi contratado de forma clara e se está dentro do que a jurisprudência admite. Por isso a análise vem antes de qualquer conversa sobre honorários, e às vezes a conclusão é de que o contrato está correto.",
-        "Quando é esse o caso, o parecer diz isso. Sem custo e sem proposta anexada.",
+        "Quando é esse o caso, a gente diz isso na reunião. Sem custo e sem proposta junto.",
       ],
     },
     {
@@ -106,10 +105,10 @@ export const dividas: PaginaServico = {
     },
   ],
   faq: [
-    { p: "Eu tenho que pagar alguma coisa para vocês olharem meu contrato?", r: "Não. A análise e o parecer são gratuitos, inclusive quando a resposta é negativa." },
+    { p: "Eu tenho que pagar alguma coisa para vocês olharem meu contrato?", r: "Não. A análise e a reunião online em que apresentamos o resultado são gratuitas, inclusive quando a resposta é negativa." },
     { p: "Meu nome vai ficar mais sujo se eu processar?", r: "Não. Discutir o contrato judicialmente não gera nova negativação." },
     { p: "Preciso parar de pagar?", r: "Não, e em regra não convém. Parar por conta própria costuma piorar a posição." },
-    { p: "Minha dívida é pequena. Vale a pena?", r: "Talvez não, e você vai ouvir isso. O parecer inclui essa conta." },
+    { p: "Minha dívida é pequena. Vale a pena?", r: "Talvez não, e você vai ouvir isso. A análise inclui essa conta." },
     { p: "Vou ter que ir ao fórum?", r: "Não. Tudo é virtual, do começo ao fim." },
     { p: "Já negociei com o banco. Estraguei tudo?", r: "Depende do que você assinou. Traga o documento do acordo, é a primeira coisa a ler." },
   ],
@@ -240,7 +239,7 @@ export const revisional: PaginaServico = {
       itens: [
         { titulo: "Leitura do contrato", texto: "Confronto entre o que está escrito e o que está sendo cobrado." },
         { titulo: "Recálculo", texto: "Refazimento da evolução do saldo com os parâmetros pactuados e com a taxa média do período." },
-        { titulo: "Parecer", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Vai por escrito." },
+        { titulo: "Reunião online", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Apresentamos o resultado, sem custo." },
         { titulo: "Decisão sua", texto: "Com o número na mão, você decide. Se não compensar, não ajuizamos." },
       ],
     },
@@ -259,7 +258,7 @@ export const revisional: PaginaServico = {
   faq: [
     { p: "Posso continuar pagando durante o processo?", r: "Em regra, sim, e costuma ser o mais prudente. Deixar de pagar por conta própria tende a piorar a posição." },
     { p: "A revisional tira meu nome do cadastro?", r: "Não automaticamente. São discussões distintas, que às vezes caminham juntas." },
-    { p: "Vale a pena para dívida pequena?", r: "Nem sempre. O parecer inclui essa conta, e se não compensar, a recomendação é não ajuizar." },
+    { p: "Vale a pena para dívida pequena?", r: "Nem sempre. A análise inclui essa conta, e se não compensar, a recomendação é não ajuizar." },
     { p: "Serve para consignado e financiamento de veículo?", r: "Serve para contratos bancários em geral. Cada modalidade tem discussões típicas." },
   ],
   cta: { titulo: "Uma leitura do contrato antes de qualquer decisão.", enfase: "antes de qualquer decisão" },

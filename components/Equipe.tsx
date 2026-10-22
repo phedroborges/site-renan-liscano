@@ -19,7 +19,7 @@ export function Equipe() {
         </div>
       </Reveal>
 
-      <div className={styles.grade}>
+      <div className={`grade-cartoes grade-3 ${styles.grade}`}>
         {EQUIPE.map((membro, indice) => (
           <Reveal key={membro.nome} delay={indice * 55} className={styles.item}>
             <article className={styles.cartao}>

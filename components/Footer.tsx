@@ -29,7 +29,7 @@ export function Footer() {
       <div className={styles.chamada}>
         <div className="wrap">
           <p className="kicker">Fale com o advogado</p>
-          <h2 className={styles.titulo}>
+          <h2 className={`titulo-hero ${styles.titulo}`}>
             Manda a sua dúvida. A resposta é <em className="metal">gratuita</em>.
           </h2>
           <p className={styles.apoio}>

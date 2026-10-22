@@ -80,3 +80,9 @@
   color: #15803d; background: #15803d14; border: 1px solid #15803d33;
   padding: 2px 6px; font-weight: 700;
 }
+
+/* Cartão de papel: o contorno de foco segue a tinta, não a platina. */
+.card :focus-visible { outline-color: var(--read-ink); }
+
+/* Link para o perfil do Google, logo abaixo da parede. */
+.google { margin-top: 18px; }
