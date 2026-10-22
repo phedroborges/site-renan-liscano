@@ -12,6 +12,26 @@ export const site = {
   alcance: "todo o Brasil",
 } as const;
 
+/* ------------------------------------------------------------------
+ * Textos que se repetem em várias páginas. Editar aqui muda o site todo.
+ * ------------------------------------------------------------------ */
+
+/** Selos do topo da home e de todas as páginas de serviço. */
+export const SELOS_ATENDIMENTO = [
+  "Análise sem custo",
+  "Atendimento em todo o Brasil",
+  "Atendimento online",
+] as const;
+
+/** Título do bloco de atuação nas páginas de serviço. */
+export const TITULO_COMO_ATUAMOS = "Como atuamos?";
+
+/** Frase da reunião sem custo nas descrições das páginas (aparece no Google). */
+export const CHAMADA_REUNIAO = "Reunião online sem custo antes da proposta.";
+
+/** Nota abaixo das listas de documentos das páginas de serviço. */
+export const NOTA_DOCUMENTOS = "Envie o que você já tiver. Os documentos necessários são definidos conforme o caso.";
+
 /** Mensagem pré-preenchida do WhatsApp, por contexto de origem. */
 export function whats(contexto?: string) {
   const base = "Olá! Vim pelo site";

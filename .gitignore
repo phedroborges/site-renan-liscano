@@ -8,3 +8,5 @@ next-env.d.ts
 
 # Site de terceiro usado como referencia visual; fica fora do repositorio publico
 referencia base/
+.next-static
+vizantu-dist

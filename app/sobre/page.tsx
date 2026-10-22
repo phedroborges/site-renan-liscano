@@ -13,7 +13,7 @@ import s from "./sobre.module.css";
 export const metadata: Metadata = {
   title: "Quem é Renan Liscano",
   description:
-    "Conheça Renan Liscano, sua trajetória na advocacia, a atuação bancária e empresarial e a equipe do escritório. OAB/RS 120.306.",
+    `Conheça Renan Liscano, sua trajetória na advocacia, a atuação bancária e empresarial e a equipe do escritório. ${site.oab}.`,
   alternates: { canonical: "/sobre" },
 };
 
@@ -124,7 +124,7 @@ export default function Sobre() {
             },
             {
               t: "Análise antes de proposta",
-              d: "Os documentos são examinados antes da proposta de contratação. O resultado é apresentado em reunião online, para o cliente decidir como seguir.",
+              d: "Os documentos são examinados antes da proposta de contratação. O cliente participa de uma reunião online sem custo para conhecer as soluções e decidir como seguir.",
             },
             {
               t: "Comunicação clara",

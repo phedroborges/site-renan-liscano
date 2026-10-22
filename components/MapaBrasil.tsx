@@ -109,7 +109,7 @@ export function MapaBrasil({ compacto = false }: { compacto?: boolean }) {
       <div className={styles.dado}>
         <span className={styles.numero}>{aceso}</span>
         <span className={styles.legenda}>
-          estados e o Distrito Federal
+          unidades da federação
           <br />
           com atendimento virtual
         </span>

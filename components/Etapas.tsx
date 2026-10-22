@@ -53,7 +53,7 @@ export function Etapas() {
     <>
       <div className="section-head">
         <h2>
-          Como funciona, do começo <em>ao fim</em>.
+          Como funciona nosso procedimento, do começo <em>ao fim</em>.
         </h2>
         <p className="note">
           {contagem.charAt(0).toUpperCase() + contagem.slice(1)} passos. Nenhum deles exige que

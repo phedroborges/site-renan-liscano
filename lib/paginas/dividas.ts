@@ -11,7 +11,7 @@ export const dividas: PaginaServico = {
     kicker: "Dívidas",
     h1: "A dívida só cresce. O problema pode estar no contrato.",
     enfase: "O problema pode estar no contrato",
-    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos, em número, se houve cobrança indevida. A análise não tem custo e o resultado é apresentado numa reunião online. Se não compensar entrar com ação, a recomendação vai ser não entrar.",
+    sub: "Conferimos juros, tarifas e seguros do que você assinou e apuramos se houve cobrança indevida. A primeira análise não tem custo, e se não compensar entrar com ação, a recomendação vai ser não entrar.",
     ctaTexto: "Mandar meu contrato no WhatsApp",
   },
   heroImagem: {
@@ -82,7 +82,7 @@ export const dividas: PaginaServico = {
       titulo: "Nada disso é ilegal por si só.",
       paras: [
         "O que se discute é se foi contratado de forma clara e se está dentro do que a jurisprudência admite. Por isso a análise vem antes de qualquer conversa sobre honorários, e às vezes a conclusão é de que o contrato está correto.",
-        "Quando é esse o caso, a gente diz isso na reunião. Sem custo e sem proposta junto.",
+        "Quando é esse o caso, explicamos isso na reunião online, com o motivo. Sem custo e sem proposta anexada.",
       ],
     },
     {
@@ -105,7 +105,7 @@ export const dividas: PaginaServico = {
     },
   ],
   faq: [
-    { p: "Eu tenho que pagar alguma coisa para vocês olharem meu contrato?", r: "Não. A análise e a reunião online em que apresentamos o resultado são gratuitas, inclusive quando a resposta é negativa." },
+    { p: "Eu tenho que pagar alguma coisa para vocês olharem meu contrato?", r: "Não. A análise e a reunião online são sem custo, inclusive quando a resposta é negativa." },
     { p: "Meu nome vai ficar mais sujo se eu processar?", r: "Não. Discutir o contrato judicialmente não gera nova negativação." },
     { p: "Preciso parar de pagar?", r: "Não, e em regra não convém. Parar por conta própria costuma piorar a posição." },
     { p: "Minha dívida é pequena. Vale a pena?", r: "Talvez não, e você vai ouvir isso. A análise inclui essa conta." },
@@ -239,7 +239,7 @@ export const revisional: PaginaServico = {
       itens: [
         { titulo: "Leitura do contrato", texto: "Confronto entre o que está escrito e o que está sendo cobrado." },
         { titulo: "Recálculo", texto: "Refazimento da evolução do saldo com os parâmetros pactuados e com a taxa média do período." },
-        { titulo: "Reunião online", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Apresentamos o resultado, sem custo." },
+        { titulo: "Reunião online", texto: "Existe fundamento? Qual é a diferença apurada? Vale o processo? Apresentamos a análise em reunião online sem custo." },
         { titulo: "Decisão sua", texto: "Com o número na mão, você decide. Se não compensar, não ajuizamos." },
       ],
     },

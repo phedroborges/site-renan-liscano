@@ -4,7 +4,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Bodoni_Moda, Archivo, IBM_Plex_Mono } from "next/font/google";
-import { site } from "@/lib/site";
+import { site, CHAMADA_REUNIAO } from "@/lib/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BarraMobile } from "@/components/BarraMobile";
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | Renan Liscano Advogados",
   },
   description:
-    "Atuação bancária, empresarial e tributária, direito médico e do consumidor. Reunião online sem custo antes da proposta. Atendimento por WhatsApp em todo o Brasil. OAB/RS 120.306.",
+    `Atuação bancária, empresarial e tributária, direito médico e do consumidor. ${CHAMADA_REUNIAO} Atendimento por WhatsApp em todo o Brasil. ${site.oab}.`,
   openGraph: {
     type: "website",
     locale: "pt_BR",

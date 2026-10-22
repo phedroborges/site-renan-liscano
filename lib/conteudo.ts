@@ -84,9 +84,9 @@ export const ETAPAS = [
     texto: "Só o necessário para entender o seu caso. Leva alguns minutos.",
   },
   {
-    titulo: "Agendamos uma reunião online",
+    titulo: "Você participa de uma reunião online",
     destaque: true,
-    texto: "Combinada antes com você e sem custo. Nela apresentamos o nosso trabalho e as soluções encontradas para o seu caso.",
+    texto: "Você é encaminhado para uma reunião online, previamente combinada, sem custo. Te apresentamos nosso trabalho e as soluções encontradas.",
   },
   {
     titulo: "Só então falamos de valores",
@@ -171,7 +171,7 @@ export const FAQ = [
   },
   {
     p: "Quanto tempo demora para ter uma resposta?",
-    r: "A triagem acontece na própria conversa. A reunião online é agendada depois que os documentos chegam, porque é neles que a análise se baseia.",
+    r: "A triagem inicial acontece na conversa. A análise técnica, quando envolve contrato, depende do envio dos documentos.",
   },
   {
     p: "Como sei que estou falando com o escritório de verdade?",
@@ -179,7 +179,7 @@ export const FAQ = [
   },
   {
     p: "Vocês cobram para analisar meu contrato?",
-    r: "Não. A análise e a reunião online em que apresentamos o resultado são sem custo, inclusive quando a conclusão é de que não há fundamento.",
+    r: "Não. A análise e a reunião online são sem custo, inclusive quando a conclusão é de que não há fundamento.",
   },
   { p: "E se eu não tiver todos os documentos?", r: "Traga o que tiver. Levantar documento faz parte do trabalho." },
 ];

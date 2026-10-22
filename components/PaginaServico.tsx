@@ -2,7 +2,7 @@ import { PAGINAS } from "@/lib/navegacao";
 import { Resultados } from "./Resultados";
 import Link from "next/link";
 import Image from "next/image";
-import { whats } from "@/lib/site";
+import { whats, SELOS_ATENDIMENTO } from "@/lib/site";
 import type { PaginaServico as Dados } from "@/lib/tipos";
 import { Icon } from "./Icon";
 import { Reveal } from "./Reveal";
@@ -98,9 +98,9 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
           </div>
 
           <ul className="provas" aria-label="Informações do atendimento">
-            <li><Icon name="check" size={14} />Análise inicial sem custo</li>
-            <li><Icon name="check" size={14} />Atendimento em todo o Brasil</li>
-            <li><Icon name="check" size={14} />Reunião online agendada</li>
+            {SELOS_ATENDIMENTO.map((selo) => (
+              <li key={selo}><Icon name="check" size={14} />{selo}</li>
+            ))}
           </ul>
           </div>
         </div>

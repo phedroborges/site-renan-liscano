@@ -1,4 +1,5 @@
 import type { PaginaServico } from "@/lib/tipos";
+import { TITULO_COMO_ATUAMOS } from "@/lib/site";
 
 export const registrato: PaginaServico = {
   slug: "/dividas/registrato",
@@ -42,7 +43,7 @@ export const cobranca: PaginaServico = {
     ctaTexto: "Falar sobre um valor a receber",
   },
   blocos: [
-    { tipo: "bullets", h2: "Como atuamos.", itens: [
+    { tipo: "bullets", h2: TITULO_COMO_ATUAMOS, itens: [
       { titulo: "Conferência do crédito", texto: "Leitura de contratos, comprovantes e comunicações para entender a origem e o valor pendente." },
       { titulo: "Negociação", texto: "Avaliação de propostas e condições de acordo com acompanhamento da formalização." },
       { titulo: "Medidas de cobrança", texto: "Análise dos documentos, dos custos e das alternativas antes de definir a atuação no caso." },

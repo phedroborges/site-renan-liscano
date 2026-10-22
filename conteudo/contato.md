@@ -3,7 +3,7 @@ titulo: Contato
 slug: /contato
 tipo: institucional
 meta_titulo: Falar com o advogado — Renan Liscano
-meta_descricao: Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com parecer técnico antes de qualquer proposta.
+meta_descricao: Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita, com reunião online sem custo antes de qualquer proposta.
 cta_unico: Chamar no WhatsApp
 ---
 
@@ -133,8 +133,7 @@ caso; você acompanha pelo WhatsApp.
 
 **Você sai com uma resposta.** Tem caso ou não tem. Se tiver, quais são os cenários.
 
-**Se envolver contrato, você recebe um parecer.** Por escrito, sem custo, mesmo que a
-conclusão seja negativa.
+**Você participa de uma reunião online.** Previamente combinada, sem custo, para conhecer nosso trabalho e as soluções encontradas.
 
 ---
 

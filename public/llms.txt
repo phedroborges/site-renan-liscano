@@ -5,8 +5,8 @@
 > Responsável: Renan Liscano, OAB/RS 120.306.
 
 Diferencial operacional: o contrato do cliente é analisado contra a série histórica
-de taxas do Banco Central e a jurisprudência do STF e do STJ, e o resultado é apresentado
-em reunião online, sem custo — inclusive quando a conclusão é de que não há fundamento.
+de taxas do Banco Central e a jurisprudência do STF e do STJ, e o resultado da análise
+é apresentado em uma reunião online sem custo — inclusive quando não há fundamento.
 Todo o atendimento é digital: WhatsApp, videochamada e assinatura eletrônica.
 
 ## Dívidas

@@ -3,7 +3,7 @@ titulo: Renan Liscano Advogados
 slug: /
 tipo: institucional
 meta_titulo: Renan Liscano Advogados — Dívidas, direito médico e consumidor
-meta_descricao: Advogado para dívidas bancárias, direito médico e direito do consumidor. Parecer técnico antes da proposta. Atendimento por WhatsApp em todo o Brasil. OAB/RS 120.306.
+meta_descricao: Advogado para dívidas bancárias, direito médico e direito do consumidor. Reunião online sem custo antes da proposta. Atendimento por WhatsApp em todo o Brasil. OAB/RS 120.306.
 cta_unico: Chamar no WhatsApp
 ---
 
@@ -11,12 +11,12 @@ cta_unico: Chamar no WhatsApp
 
 **Kicker:** Advocacia · OAB/RS 120.306
 
-**H1:** Antes de contratar advogado, você precisa saber se *tem caso*.
+**H1:** Reduzir dívidas. *Proteger seu patrimônio.*
 
 **Subtítulo:**
-Dívidas, direito médico e direito do consumidor. A primeira conversa é gratuita e
-serve exatamente para isso — inclusive para dizer que não há o que fazer.
-Atendimento por WhatsApp, em todo o Brasil.
+Nossa atuação é dedicada à segurança e à continuidade do que pessoas e empresas constroem. Trabalhamos na redução de dívidas, na proteção patrimonial, empresarial e tributária e na defesa de carreiras, com análise criteriosa e acompanhamento próximo do início ao fim.
+
+**Destaques:** Análise sem custo · Atendimento em todo o Brasil · Atendimento online.
 
 **CTA único:** Chamar no WhatsApp
 
@@ -117,11 +117,7 @@ Todo o atendimento é virtual — WhatsApp, videochamada e assinatura eletrônic
 existe deslocamento, não existe sala de espera, e a distância nunca foi obstáculo
 para nenhum caso.
 
-> ⚠ **Confirmar antes de publicar:** o site atual diz "23 estados" numa página e
-> "25 estados" em outra. A orientação foi de que hoje é o Brasil inteiro. Definir a
-> frase única — "todos os 26 estados e o Distrito Federal" ou "todo o Brasil" — e
-> usar a mesma em todas as páginas. Número afirmado em site de advocacia precisa ser
-> verdadeiro e verificável.
+> Atendimento disponível em todo o Brasil. O indicador de presença informado pelo Renan é de 23 Estados (ver `resultados.md`).
 
 > **Componente:** `<MapaBrasil>` — animação de cobertura nacional.
 >
@@ -170,23 +166,11 @@ propósito:
 - **Registro de marca:** qual é a atividade principal do negócio, para saber se o
   registro é viável antes de pesquisar no INPI.
 
-**03 · Parecer técnico antes de qualquer proposta**
-Esta é a etapa que quase ninguém oferece.
-
-O contrato é analisado contra a **série histórica de taxas do Banco Central** para o
-período exato da contratação, contra as **decisões vinculantes do STF e do STJ** e
-contra o entendimento dos tribunais estaduais sobre abusividade. Entram na conta os
-encargos acessórios, o seguro prestamista e o impacto real sobre o custo efetivo
-total.
-
-O resultado é um parecer escrito, em papel timbrado, dizendo se há ou não
-fundamento.
-
-**E quando não há, o parecer diz isso.** Com a explicação do porquê. Você recebe o
-documento do mesmo jeito, sem custo e sem proposta anexada.
+**03 · Reunião online sem custo**
+Você é encaminhado para uma reunião online, previamente combinada, sem custo. Te apresentamos nosso trabalho e as soluções encontradas.
 
 **04 · Proposta de honorários por escrito**
-Havendo fundamento, a proposta vai junto com o parecer. Valor, forma de cobrança e
+Havendo fundamento, a proposta é apresentada após a reunião online. Valor, forma de cobrança e
 cenários — tudo antes de qualquer assinatura. Não existe surpresa no meio do
 processo.
 
@@ -201,7 +185,7 @@ processo. Toda a comunicação passa a acontecer ali.
 **07 · Distribuição e controle de prazos**
 O caso é distribuído ao advogado responsável pela matéria, com os prazos lançados no
 controle interno do escritório. Cada movimentação relevante do processo vira uma
-mensagem no grupo, escrita em português.
+mensagem no grupo.
 
 **CTA:** Começar pela primeira etapa · WhatsApp
 
@@ -377,7 +361,7 @@ Depois do contrato, toda comunicação acontece no grupo com os advogados
 identificados. E nenhum pedido de pagamento é feito fora dele.
 
 **Vocês cobram para analisar meu contrato?**
-Não. A análise e o parecer são entregues sem custo, inclusive quando a conclusão é
+Não. A análise e a reunião online são sem custo, inclusive quando a conclusão é
 de que não há fundamento.
 
 **E se eu não tiver todos os documentos?**

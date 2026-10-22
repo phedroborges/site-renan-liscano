@@ -1,11 +1,12 @@
 import type { PaginaServico } from "@/lib/tipos";
+import { CHAMADA_REUNIAO, site } from "@/lib/site";
 
 export const medico: PaginaServico = {
   slug: "/medico",
   titulo: "Direito médico",
   metaTitulo: "Advogado para médicos: FIES, residência, CRM e marca",
   metaDescricao:
-    "Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. Reunião online sem custo antes da proposta. OAB/RS 120.306.",
+    `Auxílio moradia da residência, abatimento do FIES, defesa em processo ético no CRM e registro de marca. ${CHAMADA_REUNIAO} ${site.oab}.`,
   hero: {
     kicker: "Direito médico",
     h1: "Seis anos de faculdade, três de residência. E a conta que ninguém avisou.",
@@ -272,7 +273,7 @@ export const fies: PaginaServico = {
     { p: "Consigo suspender o pagamento enquanto atuo?", r: "Em alguns casos é possível discutir extensão de carência. Depende da situação contratual." },
     { p: "Isso vale para dentista e enfermeiro?", r: "A modalidade da COVID-19 alcança profissionais da saúde de forma mais ampla. As demais têm recorte próprio." },
   ],
-  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise sem custo, com o resultado apresentado em reunião online." },
+  cta: { titulo: "Manda o seu contrato e a gente confere.", enfase: "a gente confere", texto: "Análise apresentada em reunião online sem custo." },
 };
 
 export const processoEtico: PaginaServico = {

@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 export type MembroEquipe = {
   nome: string;
   cargo: string;
@@ -15,7 +16,7 @@ export const EQUIPE: MembroEquipe[] = [
     area: "Estratégia, direito bancário e empresarial",
     imagem: "/img/equipe-renan.webp",
     alt: "Renan Liscano no escritório",
-    registro: "OAB/RS 120.306",
+    registro: site.oab,
   },
   {
     nome: "Marina Ribeiro",

@@ -4,7 +4,7 @@ import { AvisoLegal } from "@/components/AvisoLegal";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { site, whats } from "@/lib/site";
+import { site, whats, CHAMADA_REUNIAO } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { Triagem } from "@/components/Triagem";
@@ -15,7 +15,7 @@ import s from "./contato.module.css";
 export const metadata: Metadata = {
   title: "Falar com o advogado",
   description:
-    "Atendimento por WhatsApp em todo o Brasil. Triagem na própria conversa e reunião online sem custo antes de qualquer proposta.",
+    `Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita. ${CHAMADA_REUNIAO}`,
   alternates: { canonical: "/contato" },
 };
 
@@ -144,7 +144,7 @@ export default function Contato() {
             { t: "Não é consulta comercial", d: "Ninguém vai empurrar contratação." },
             { t: "Não precisa ter tudo", d: "Traga os documentos que tiver. Levantar o resto faz parte do trabalho." },
             { t: "Você sai com uma resposta", d: "Tem caso ou não tem. Se tiver, quais são os cenários." },
-            { t: "Há uma reunião online, sem custo", d: "Com dia e hora combinados. Apresentamos a análise do caso, mesmo quando a conclusão é negativa." },
+            { t: "Análise em reunião online", d: "Previamente combinada, sem custo, para apresentar nosso trabalho e as soluções encontradas." },
           ].map((e, i) => (
             <Reveal key={e.t} delay={i * 60}>
               <div className={s.esperaItem}>
