@@ -13,10 +13,10 @@ export type MembroEquipe = {
 export const EQUIPE: MembroEquipe[] = [
   {
     nome: "Renan Liscano",
-    cargo: "SÃ³cio fundador",
-    area: "ProteÃ§Ã£o patrimonial e gestÃ£o de passivos",
+    cargo: "Sócio fundador",
+    area: "Proteção patrimonial e gestão de passivos",
     descricao:
-      "Advogado especialista em proteÃ§Ã£o patrimonial de pessoas fÃ­sicas e jurÃ­dicas. Atua na defesa de executados, na gestÃ£o de passivos bancÃ¡rios e tributÃ¡rios e na proteÃ§Ã£o de ativos intangÃ­veis.",
+      "Advogado especialista em proteção patrimonial de pessoas físicas e jurídicas. Atua na defesa de executados, na gestão de passivos bancários e tributários e na proteção de ativos intangíveis.",
     imagem: "/img/equipe-renan.jpeg",
     alt: "Retrato profissional de Renan Liscano",
     registro: site.oab,
@@ -24,9 +24,9 @@ export const EQUIPE: MembroEquipe[] = [
   {
     nome: "Mateus Pasa",
     cargo: "Advogado tributarista",
-    area: "Direito TributÃ¡rio e defesa do contribuinte",
+    area: "Direito Tributário e defesa do contribuinte",
     descricao:
-      "Especialista em Direito TributÃ¡rio, atua hÃ¡ mais de seis anos na defesa de contribuintes diante de cobranÃ§as e outros excessos do Fisco. Ã‰ pÃ³s-graduado em Direito Empresarial, Direito TributÃ¡rio Empresarial, Contabilidade e Compliance.",
+      "Especialista em Direito Tributário, atua há mais de seis anos na defesa de contribuintes diante de cobranças e outros excessos do Fisco. É pós-graduado em Direito Empresarial, Direito Tributário Empresarial, Contabilidade e Compliance.",
     imagem: "/img/equipe-mateus-pasa.png",
     alt: "Retrato profissional de Mateus Pasa",
     registro: "OAB/RS 120.460",
@@ -36,7 +36,7 @@ export const EQUIPE: MembroEquipe[] = [
     cargo: "Advogada",
     area: "Propriedade intelectual, marcas e software",
     descricao:
-      "Atua na proteÃ§Ã£o de ativos de propriedade intelectual, com foco no registro de marcas e na proteÃ§Ã£o jurÃ­dica de software.",
+      "Atua na proteção de ativos de propriedade intelectual, com foco no registro de marcas e na proteção jurídica de software.",
     imagem: "/img/equipe-maria-luisa.png",
     alt: "Retrato profissional de Maria Luisa Borges da Silva",
     registro: "OAB/RS 129.051",
@@ -44,18 +44,18 @@ export const EQUIPE: MembroEquipe[] = [
   {
     nome: "Tamara Yasin",
     cargo: "Advogada tributarista",
-    area: "Direito TributÃ¡rio e defesa do contribuinte",
+    area: "Direito Tributário e defesa do contribuinte",
     descricao:
-      "Especialista em Direito TributÃ¡rio, atua hÃ¡ mais de seis anos na defesa de contribuintes diante de cobranÃ§as e outros excessos do Fisco. Ã‰ pÃ³s-graduada em Direito Empresarial, Direito TributÃ¡rio Empresarial, Contabilidade e Compliance.",
+      "Especialista em Direito Tributário, atua há mais de seis anos na defesa de contribuintes diante de cobranças e outros excessos do Fisco. É pós-graduada em Direito Empresarial, Direito Tributário Empresarial, Contabilidade e Compliance.",
     imagem: "/img/equipe-tamara-yasin.png",
     alt: "Retrato profissional de Tamara Yasin",
   },
   {
     nome: "Isabely Betim",
-    cargo: "Assistente jurÃ­dica",
-    area: "Suporte jurÃ­dico e atendimento",
+    cargo: "Assistente jurídica",
+    area: "Suporte jurídico e atendimento",
     descricao:
-      "Integra a equipe como assistente jurÃ­dica, apoiando a organizaÃ§Ã£o dos atendimentos e das rotinas do escritÃ³rio.",
+      "Integra a equipe como assistente jurídica, apoiando a organização dos atendimentos e das rotinas do escritório.",
     imagem: "/img/equipe-isabely-betim.png",
     alt: "Retrato profissional de Isabely Betim",
   },

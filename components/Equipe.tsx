@@ -10,11 +10,11 @@ export function Equipe() {
         <div className="section-head">
           <p className="kicker">A equipe</p>
           <h2 id="equipe-titulo">
-            Cinco profissionais. <em>Uma atuaÃ§Ã£o coordenada.</em>
+            Cinco profissionais. <em>Uma atuação coordenada.</em>
           </h2>
           <p className="note">
-            Uma equipe integrada, coordenada por Renan Liscano, que reÃºne diferentes especialidades para cuidar de
-            cada caso com estratÃ©gia e acompanhamento prÃ³ximo.
+            Uma equipe integrada, coordenada por Renan Liscano, que reúne diferentes especialidades para cuidar de
+            cada caso com estratégia e acompanhamento próximo.
           </p>
         </div>
       </Reveal>

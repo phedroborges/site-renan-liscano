@@ -121,7 +121,7 @@ export async function carregarAvaliacoesGoogle(): Promise<DadosAvaliacoes> {
     const placeId = process.env.GOOGLE_PLACE_ID?.trim();
     const consulta =
       process.env.GOOGLE_PLACE_QUERY?.trim() ||
-      "Renan Liscano Advogados, Rua Souza Dutra 482, FlorianÃ³polis, SC";
+      "Renan Liscano Advogados, Rua Souza Dutra 482, Florianópolis, SC";
     const lugar = placeId ? await buscarPorId(chave, placeId) : await buscarPorTexto(chave, consulta);
 
     const depoimentos = (lugar?.reviews ?? [])
@@ -154,7 +154,7 @@ export async function carregarAvaliacoesGoogle(): Promise<DadosAvaliacoes> {
       totalAvaliacoes: lugar.userRatingCount,
     };
   } catch (erro) {
-    console.warn("NÃ£o foi possÃ­vel carregar as avaliaÃ§Ãµes do Google Places.", erro);
+    console.warn("Não foi possível carregar as avaliações do Google Places.", erro);
     return fallback();
   }
 }

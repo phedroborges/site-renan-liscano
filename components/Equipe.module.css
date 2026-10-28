@@ -1,4 +1,4 @@
-/* Grade e fio de 1px vÃªm de .grade-cartoes. Aqui sÃ³ a troca de colunas:
+/* Grade e fio de 1px vêm de .grade-cartoes. Aqui só a troca de colunas:
    retrato fica melhor em duas colunas no celular do que em uma. */
 .item { min-width: 0; height: 100%; }
 

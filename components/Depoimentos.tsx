@@ -7,9 +7,9 @@ function Estrelas({ nota }: { nota: number }) {
 
   return (
     <span className={styles.estrelas} aria-label={`${nota} de 5 estrelas`}>
-      {"â˜…".repeat(estrelas)}
+      {"★".repeat(estrelas)}
       <span className={styles.estrelasVazias} aria-hidden="true">
-        {"â˜…".repeat(5 - estrelas)}
+        {"★".repeat(5 - estrelas)}
       </span>
     </span>
   );
@@ -22,11 +22,11 @@ export async function Depoimentos() {
     <>
       {dados.origem === "google" && (
         <div className={styles.resumo}>
-          <span className={styles.fonte}>AvaliaÃ§Ãµes do Google Maps</span>
+          <span className={styles.fonte}>Avaliações do Google Maps</span>
           {dados.notaMedia !== undefined && <strong>{dados.notaMedia.toFixed(1)}</strong>}
           {dados.notaMedia !== undefined && <Estrelas nota={dados.notaMedia} />}
           {dados.totalAvaliacoes !== undefined && (
-            <span className={styles.total}>{dados.totalAvaliacoes} avaliaÃ§Ãµes</span>
+            <span className={styles.total}>{dados.totalAvaliacoes} avaliações</span>
           )}
         </div>
       )}
@@ -44,7 +44,7 @@ export async function Depoimentos() {
             <blockquote className={styles.texto}>{depoimento.texto}</blockquote>
             <figcaption className={styles.autor}>
               {depoimento.fotoAutor ? (
-                // A URL Ã© fornecida pela prÃ³pria API do Google Maps e pode variar por autor.
+                // A URL é fornecida pela própria API do Google Maps e pode variar por autor.
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   className={styles.avatarFoto}
@@ -82,7 +82,7 @@ export async function Depoimentos() {
                     target="_blank"
                     rel="noopener nofollow"
                   >
-                    Ver avaliaÃ§Ã£o no Google Maps
+                    Ver avaliação no Google Maps
                   </a>
                 ) : null}
                 {depoimento.handle && (
@@ -97,7 +97,7 @@ export async function Depoimentos() {
                     </a>
                     <span className={styles.verificado}>
                       <Icon name="check" size={9} />
-                      verificÃ¡vel
+                      verificável
                     </span>
                   </span>
                 )}
@@ -109,14 +109,14 @@ export async function Depoimentos() {
 
       {dados.origem === "google" && (
         <p className={styles.aviso}>
-          O Google Maps seleciona e ordena as avaliaÃ§Ãµes por relevÃ¢ncia. As avaliaÃ§Ãµes nÃ£o sÃ£o verificadas pelo
-          Google, que identifica e remove conteÃºdo falso quando detectado.
+          O Google Maps seleciona e ordena as avaliações por relevância. As avaliações não são verificadas pelo
+          Google, que identifica e remove conteúdo falso quando detectado.
         </p>
       )}
 
       <div className={`acoes ${styles.google}`}>
         <a href={dados.perfilUrl} className="btn btn-quiet" target="_blank" rel="noopener">
-          Veja todas as avaliaÃ§Ãµes no Google Maps <Icon name="arrow" size={15} />
+          Veja todas as avaliações no Google Maps <Icon name="arrow" size={15} />
         </a>
       </div>
     </>
