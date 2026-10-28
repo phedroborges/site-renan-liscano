@@ -1,8 +1,7 @@
 /*
- * Cartões em papel sobre o fundo escuro. A troca de superfície é o que separa
- * "fala de outra pessoa" de "texto do escritório" — sem ela, os depoimentos
- * se misturavam ao resto da página.
- * Colunas CSS em vez de grade: alturas desiguais nunca deixam buraco.
+ * CartÃµes em papel sobre o fundo escuro. A troca de superfÃ­cie separa
+ * "fala de outra pessoa" de "texto do escritÃ³rio".
+ * Colunas CSS evitam buracos quando as avaliaÃ§Ãµes tÃªm alturas diferentes.
  */
 .parede {
   columns: 3;
@@ -10,6 +9,29 @@
 }
 @media (max-width: 1000px) { .parede { columns: 2; } }
 @media (max-width: 640px) { .parede { columns: 1; } }
+
+.resumo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  color: var(--platinum);
+}
+
+.resumo strong {
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.fonte,
+.total {
+  color: var(--faint);
+  font: 500 var(--t-micro)/1.4 var(--fonte-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
 .card {
   break-inside: avoid;
@@ -22,6 +44,15 @@
   gap: 20px;
   border: 1px solid var(--read-line);
 }
+
+.estrelas {
+  color: #b7791f;
+  font-size: .92rem;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+.estrelasVazias { color: #d4d4d8; }
 
 .aspas {
   font-family: var(--fonte-titulo);
@@ -49,17 +80,48 @@
   margin-top: auto;
 }
 
+.avatar,
+.avatarFoto {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+}
+
 .avatar {
-  width: 40px; height: 40px; flex: none; border-radius: 50%;
   background: #d8d8dd;
   color: #3f3f46;
-  display: grid; place-items: center;
-  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.02em;
+  display: grid;
+  place-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.avatarFoto {
+  object-fit: cover;
+  background: #d8d8dd;
 }
 
 .ids { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.nome { font-size: 0.9rem; font-weight: 700; color: var(--read-ink); line-height: 1.25; }
+.nome,
+.nomeLink {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--read-ink);
+  line-height: 1.25;
+}
+.nomeLink { text-decoration: none; }
+.nomeLink:hover { text-decoration: underline; }
 .papel { font-size: var(--t-micro); color: var(--read-faint); letter-spacing: 0.1em; text-transform: uppercase; }
+.tempo { font-size: var(--t-micro); color: var(--read-faint); }
+
+.origem {
+  color: var(--read-muted);
+  font: 500 var(--t-micro)/1.35 var(--fonte-mono);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 .linha2 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
 
@@ -75,14 +137,29 @@
 .handle:hover { color: #000; text-decoration: underline; }
 
 .verificado {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: #15803d; background: #15803d14; border: 1px solid #15803d33;
-  padding: 2px 6px; font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #15803d;
+  background: #15803d14;
+  border: 1px solid #15803d33;
+  padding: 2px 6px;
+  font-weight: 700;
 }
 
-/* Cartão de papel: o contorno de foco segue a tinta, não a platina. */
+.aviso {
+  max-width: 78ch;
+  margin: 18px 0 0;
+  color: var(--faint);
+  font-size: var(--t-micro);
+  line-height: 1.55;
+}
+
+/* CartÃ£o de papel: o contorno de foco segue a tinta, nÃ£o a platina. */
 .card :focus-visible { outline-color: var(--read-ink); }
 
-/* Link para o perfil do Google, logo abaixo da parede. */
 .google { margin-top: 18px; }
+

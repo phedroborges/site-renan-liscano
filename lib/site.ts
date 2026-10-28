@@ -7,7 +7,7 @@ export const site = {
   whatsapp: "https://wa.me/5542991987371",
   instagram: "https://instagram.com/renanliscano",
   /** Perfil no Google Meu Negócio, onde estão as avaliações públicas. */
-  avaliacoesGoogle: "https://share.google/7bAswrGhykxPiyC8E",
+  avaliacoesGoogle: "https://share.google/gBCmKwFuOhQYZCmCU",
   // TODO confirmar: o site atual diz 23 numa página e 25 em outra.
   alcance: "todo o Brasil",
 } as const;

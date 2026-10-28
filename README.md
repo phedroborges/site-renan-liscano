@@ -75,3 +75,17 @@ Estes itens aparecem em várias páginas e têm **um lugar só** para editar. Mu
 | Cartões "Alguma dessas é a sua situação?" | Home e páginas de área | Lista em `SITUACOES` (`lib/conteudo.ts`), visual em `components/CartaoSituacao.tsx` |
 
 O site é sempre escuro: não há tema claro nem botão de troca. As superfícies de leitura (artigo e depoimentos) continuam claras pelos tokens `--read-*`.
+
+## Avaliações do Google Maps
+
+A seção de depoimentos usa a Places API (New) no servidor e mantém os depoimentos locais como fallback. Habilite a API no Google Cloud, associe faturamento e configure no ambiente de produção:
+
+```env
+GOOGLE_PLACES_API_KEY=...
+# Recomendado para identificar o perfil sem ambiguidade:
+GOOGLE_PLACE_ID=...
+# Usada apenas quando GOOGLE_PLACE_ID não estiver definido:
+GOOGLE_PLACE_QUERY="Renan Liscano Advogados, Rua Souza Dutra 482, Florianópolis, SC"
+```
+
+A resposta fica em cache por 24 horas. A chave nunca é enviada ao navegador.
