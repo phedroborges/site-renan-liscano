@@ -17,6 +17,9 @@ import { Equipe } from "@/components/Equipe";
 import { CartaoSituacao } from "@/components/CartaoSituacao";
 import s from "./home.module.css";
 
+// As avaliações do Google dependem das variáveis disponíveis no servidor em produção.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
