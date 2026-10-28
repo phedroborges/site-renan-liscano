@@ -1,4 +1,4 @@
-/* Grade e fio de 1px vêm de .grade-cartoes. Aqui só a troca de colunas:
+/* Grade e fio de 1px vÃªm de .grade-cartoes. Aqui sÃ³ a troca de colunas:
    retrato fica melhor em duas colunas no celular do que em uma. */
 .item { min-width: 0; height: 100%; }
 
@@ -14,7 +14,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: var(--ink-raise);
+  background: var(--ink-raised);
 }
 
 .foto::after {
@@ -77,9 +77,17 @@
   margin: 18px 0 0;
   padding-top: 16px;
   border-top: 1px solid var(--line-structural);
+  color: var(--platinum);
+  font: 500 var(--t-micro)/1.5 var(--fonte-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.descricao {
+  margin: 12px 0 0;
   color: var(--muted);
   font-size: var(--t-small);
-  line-height: 1.55;
+  line-height: 1.62;
 }
 
 .notaPrototipo {
@@ -101,3 +109,4 @@
   .foto img { transition: none; }
   .cartao:hover .foto img { transform: none; }
 }
+

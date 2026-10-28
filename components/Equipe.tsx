@@ -10,11 +10,11 @@ export function Equipe() {
         <div className="section-head">
           <p className="kicker">A equipe</p>
           <h2 id="equipe-titulo">
-            Seis advogados. <em>Uma equipe por área.</em>
+            Cinco profissionais. <em>Uma atuaÃ§Ã£o coordenada.</em>
           </h2>
           <p className="note">
-            Renan coordena o trabalho jurídico e cada caso segue para o profissional responsável
-            pela matéria.
+            Uma equipe integrada, coordenada por Renan Liscano, que reÃºne diferentes especialidades para cuidar de
+            cada caso com estratÃ©gia e acompanhamento prÃ³ximo.
           </p>
         </div>
       </Reveal>
@@ -31,23 +31,19 @@ export function Equipe() {
                   sizes="(max-width: 360px) 100vw, (max-width: 900px) 50vw, 33vw"
                   quality={90}
                 />
-                {membro.demonstrativo ? <span className={styles.selo}>Perfil demonstrativo</span> : null}
               </div>
               <div className={styles.corpo}>
                 <p className={styles.cargo}>{membro.cargo}</p>
                 <h3>{membro.nome}</h3>
                 {membro.registro ? <p className={styles.registro}>{membro.registro}</p> : null}
                 <p className={styles.area}>{membro.area}</p>
+                <p className={styles.descricao}>{membro.descricao}</p>
               </div>
             </article>
           </Reveal>
         ))}
       </div>
-
-      <p className={styles.notaPrototipo}>
-        Os cinco perfis marcados como demonstrativos são fictícios e serão substituídos pelos dados
-        e retratos da equipe antes da publicação.
-      </p>
     </section>
   );
 }
+
