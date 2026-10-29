@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ESTADOS } from "@/lib/site";
+import { ESTADOS, TOTAL_ESTADOS_ATENDIDOS } from "@/lib/site";
 import { CONTORNO } from "@/lib/brasil";
 import styles from "./MapaBrasil.module.css";
 
@@ -52,7 +52,7 @@ const DURACAO = 2200;
 
 export function MapaBrasil({ compacto = false }: { compacto?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  const ordem = useMemo(ordemDeCrescimento, []);
+  const ordem = useMemo(() => ordemDeCrescimento().slice(0, TOTAL_ESTADOS_ATENDIDOS), []);
   const [aceso, setAceso] = useState(0);
   const [tracado, setTracado] = useState(false);
 
@@ -93,7 +93,7 @@ export function MapaBrasil({ compacto = false }: { compacto?: boolean }) {
           viewBox={`-4 -4 ${W + 8} ${H + 8}`}
           className={styles.mapa}
           role="img"
-          aria-label={`Mapa do Brasil com atendimento em ${ordem.length} unidades federativas`}
+          aria-label={`Mapa do Brasil com atendimento em ${ordem.length} estados`}
         >
           <path d={PATH} className={`${styles.silhueta} ${tracado ? styles.tracado : ""}`} />
           {ordem.map((p, i) => (
@@ -109,7 +109,7 @@ export function MapaBrasil({ compacto = false }: { compacto?: boolean }) {
       <div className={styles.dado}>
         <span className={styles.numero}>{aceso}</span>
         <span className={styles.legenda}>
-          unidades da federação
+          estados
           <br />
           com atendimento virtual
         </span>

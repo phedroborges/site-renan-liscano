@@ -1,4 +1,5 @@
 import { RESULTADOS, RESULTADOS_POR_AREA, type AreaResultados } from "@/lib/resultados";
+import { NumeroAnimado } from "@/components/NumeroAnimado";
 import s from "./Resultados.module.css";
 
 const TITULOS: Record<AreaResultados, string> = {
@@ -26,7 +27,10 @@ export function Resultados({ area = "geral" }: { area?: AreaResultados }) {
             return (
               <div className={s.card} key={chave} data-indicador={chave}>
                 <dt>{resultado.rotulo}</dt>
-                <dd className={s.valor}>{resultado.valor}</dd>
+                <dd className={s.valor}>
+                  <span className={s.somenteLeitor}>{resultado.valor}</span>
+                  <NumeroAnimado valor={resultado.valor} />
+                </dd>
               </div>
             );
           })}

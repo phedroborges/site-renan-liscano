@@ -1,3 +1,5 @@
+import { TOTAL_ESTADOS_ATENDIDOS } from "@/lib/site";
+
 export type AreaResultados = "geral" | "tributario" | "dividas" | "medico" | "consumidor";
 
 /** Indicadores informados pelo Renan no documento de correções.
@@ -8,7 +10,7 @@ export const RESULTADOS = {
   bancario: { rotulo: "Em reduções bancárias e indenizações", valor: "R$ 6,3 mi" },
   empresas: { rotulo: "Empresas protegidas", valor: "+300" },
   medico: { rotulo: "Em direitos médicos", valor: "+R$ 2,9 mi" },
-  presenca: { rotulo: "Presença combativa", valor: "23 Estados" },
+  presenca: { rotulo: "Presença combativa", valor: `${TOTAL_ESTADOS_ATENDIDOS} estados` },
 };
 
 export const RESULTADOS_POR_AREA: Record<AreaResultados, (keyof typeof RESULTADOS)[]> = {

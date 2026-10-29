@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | Renan Liscano Advogados",
   },
   description:
-    `Atuação bancária, empresarial e tributária, direito médico e do consumidor. ${CHAMADA_REUNIAO} Atendimento por WhatsApp em todo o Brasil. ${site.oab}.`,
+    `Atuação bancária, empresarial e tributária, direito médico e do consumidor. ${CHAMADA_REUNIAO} Atendimento por WhatsApp em ${site.alcance}. ${site.oab}.`,
   openGraph: {
     type: "website",
     locale: "pt_BR",

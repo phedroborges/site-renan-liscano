@@ -1,3 +1,5 @@
+export const TOTAL_ESTADOS_ATENDIDOS = 25;
+
 export const site = {
   nome: "Renan Liscano Advogados",
   advogado: "Renan Liscano",
@@ -8,8 +10,7 @@ export const site = {
   instagram: "https://instagram.com/renanliscano",
   /** Perfil no Google Meu Negócio, onde estão as avaliações públicas. */
   avaliacoesGoogle: "https://share.google/gBCmKwFuOhQYZCmCU",
-  // TODO confirmar: o site atual diz 23 numa página e 25 em outra.
-  alcance: "todo o Brasil",
+  alcance: `${TOTAL_ESTADOS_ATENDIDOS} estados`,
 } as const;
 
 /* ------------------------------------------------------------------
@@ -19,7 +20,7 @@ export const site = {
 /** Selos do topo da home e de todas as páginas de serviço. */
 export const SELOS_ATENDIMENTO = [
   "Análise sem custo",
-  "Atendimento em todo o Brasil",
+  `Atendimento em ${TOTAL_ESTADOS_ATENDIDOS} estados`,
   "Atendimento online",
 ] as const;
 

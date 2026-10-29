@@ -151,7 +151,7 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
           <CartaoEscritorio tamanho="grande" />
           <p>
             Escritório com atuação bancária, empresarial, tributária, médica e do consumidor.
-            Atendimento virtual em todo o Brasil.
+            Atendimento virtual em {site.alcance}.
           </p>
         </aside>
 

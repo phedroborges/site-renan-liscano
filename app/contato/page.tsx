@@ -15,7 +15,7 @@ import s from "./contato.module.css";
 export const metadata: Metadata = {
   title: "Falar com o advogado",
   description:
-    `Atendimento por WhatsApp em todo o Brasil. Primeira conversa gratuita. ${CHAMADA_REUNIAO}`,
+    `Atendimento por WhatsApp em ${site.alcance}. Primeira conversa gratuita. ${CHAMADA_REUNIAO}`,
   alternates: { canonical: "/contato" },
 };
 
@@ -46,7 +46,7 @@ export default function Contato() {
             vai ouvir isso, e não vai receber proposta nenhuma.
           </p>
 
-          <p className={s.brasil}><Icon name="check" size={15} /> Atendimento em todo o Brasil, sem deslocamento</p>
+          <p className={s.brasil}><Icon name="check" size={15} /> Atendimento em {site.alcance}, sem deslocamento</p>
 
           <a href={whats("página de contato")} className={`btn btn-primary ${s.ctaGigante}`} target="_blank" rel="noopener">
             <Icon name="whatsapp" size={22} />
@@ -121,7 +121,7 @@ export default function Contato() {
               Onde quer que você <em>esteja</em>.
             </h2>
             <p className="note">
-              Atendimento virtual em todo o Brasil. O processo corre no foro competente do seu caso;
+              Atendimento virtual em {site.alcance}. O processo corre no foro competente do seu caso;
               você acompanha pelo WhatsApp.
             </p>
           </div>

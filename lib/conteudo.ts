@@ -1,4 +1,6 @@
 /** Cards da seção "Alguma dessas é a sua situação?" — sem rótulo de área. */
+import { site } from "@/lib/site";
+
 export const SITUACOES = [
   {
     pergunta: "As dívidas da empresa estão comprometendo o caixa?",
@@ -167,7 +169,7 @@ export const FAQ = [
   { p: "Preciso ir até o escritório?", r: "Não, em nenhuma etapa. Todo o atendimento é virtual, inclusive para quem mora perto." },
   {
     p: "Vocês atendem no meu estado?",
-    r: "Sim. O processo corre no foro competente do seu caso, e a atuação é virtual em todo o país.",
+    r: `Sim. O processo corre no foro competente do seu caso, e a atuação é virtual em ${site.alcance}.`,
   },
   {
     p: "Quanto tempo demora para ter uma resposta?",
@@ -226,7 +228,7 @@ export const DIFERENCIAIS = [
   },
   {
     icone: "pin" as const,
-    titulo: "Atendimento virtual, em qualquer estado",
+    titulo: `Atendimento virtual, em ${site.alcance}`,
     texto:
       "O acompanhamento é feito à distância, com os profissionais identificados pelo nome e por canais oficiais. Clientes em estados diferentes são acompanhados do mesmo jeito.",
   },

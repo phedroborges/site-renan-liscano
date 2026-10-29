@@ -7,3 +7,15 @@
 .descricao { color: var(--muted); font-size: var(--t-small); max-width: 52ch; }
 .card .periodo { margin-top: auto; padding-top: 26px; color: var(--faint); font-size: var(--t-micro); }
 .nota { margin: 22px 0 0; max-width: 80ch; color: var(--muted); font-size: var(--t-micro); }
+
+.somenteLeitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

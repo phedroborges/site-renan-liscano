@@ -62,9 +62,9 @@ Estes itens aparecem em várias páginas e têm **um lugar só** para editar. Mu
 
 | O que | Onde aparece | Arquivo |
 |---|---|---|
-| Números de resultados (R$ 6,3 mi, +300, +R$ 2,9 mi, 23 Estados) e quais áreas mostram cada um | Home, Sobre, Contato, Blog e páginas de área | `lib/resultados.ts` |
+| Números de resultados (R$ 6,3 mi, +300, +R$ 2,9 mi, 25 estados) e quais áreas mostram cada um | Home, Sobre, Contato, Blog e páginas de área | `lib/resultados.ts` |
 | Passos "Como funciona nosso procedimento" | Home e páginas de serviço | `ETAPAS` em `lib/conteudo.ts` (título em `components/Etapas.tsx`) |
-| Selos do topo (✓ Análise sem custo, ✓ Atendimento em todo o Brasil, ✓ Atendimento online) | Home e todas as páginas de serviço | `SELOS_ATENDIMENTO` em `lib/site.ts` |
+| Selos do topo (✓ Análise sem custo, ✓ Atendimento em 25 estados, ✓ Atendimento online) | Home e todas as páginas de serviço | `SELOS_ATENDIMENTO` em `lib/site.ts` |
 | Título "Como atuamos?" | Todas as páginas de serviço | `TITULO_COMO_ATUAMOS` em `lib/site.ts` |
 | Frase "Reunião online sem custo antes da proposta." | Descrições das páginas no Google | `CHAMADA_REUNIAO` em `lib/site.ts` |
 | Nota "Envie o que você já tiver…" | Listas de documentos | `NOTA_DOCUMENTOS` em `lib/site.ts` |

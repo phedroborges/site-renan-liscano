@@ -212,10 +212,10 @@ export default function Home() {
           <div className={s.historia}>
             <div className={s.retrato}>
               <Image
-                src="/img/renan-escritorio.webp"
+                src="/img/renan-escritorio-atualizado.jpeg"
                 alt="Renan Liscano em seu escritório"
-                width={1360}
-                height={907}
+                width={1536}
+                height={1024}
                 sizes="(max-width: 820px) 100vw, 50vw"
                 quality={90}
               />
@@ -223,7 +223,7 @@ export default function Home() {
             <div className={s.historiaTexto}>
               <p className="kicker">O advogado</p>
               <h2 id="sobre-renan-titulo" className="titulo-destaque">
-                Quem é <em className="metal">Renan Liscano</em>.
+                Quem é <em className="metal">Renan Liscano</em>?
               </h2>
               <p className={s.registro}>{site.oab}</p>
               <p>

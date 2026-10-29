@@ -45,10 +45,10 @@ export default function Sobre() {
           </div>
           <div className={s.retrato}>
             <Image
-              src="/img/renan-escritorio.webp"
+              src="/img/renan-escritorio-atualizado.jpeg"
               alt="Renan Liscano em seu escritório"
-              width={1360}
-              height={907}
+              width={1536}
+              height={1024}
               sizes="(max-width: 900px) 100vw, 50vw"
               quality={90}
               priority
@@ -149,7 +149,7 @@ export default function Sobre() {
         <Reveal>
           <div className="section-head">
             <h2>
-              Atendimento em <em>todo o Brasil</em>.
+              Atendimento em <em>{site.alcance}</em>.
             </h2>
             <p className="note">
               O atendimento pode ser feito por WhatsApp, videochamada e assinatura eletrônica,
