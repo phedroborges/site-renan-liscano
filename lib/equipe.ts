@@ -17,7 +17,7 @@ export const EQUIPE: MembroEquipe[] = [
     area: "Proteção patrimonial e gestão de passivos",
     descricao:
       "Advogado especialista em proteção patrimonial de pessoas físicas e jurídicas. Atua na defesa de executados, na gestão de passivos bancários e tributários e na proteção de ativos intangíveis.",
-    imagem: "/img/equipe-renan.jpeg",
+    imagem: "/img/equipe-renan-dourada.jpeg",
     alt: "Retrato profissional de Renan Liscano",
     registro: site.oab,
   },
@@ -27,7 +27,7 @@ export const EQUIPE: MembroEquipe[] = [
     area: "Defesa do executado, responsabilidade civil e sucessões",
     descricao:
       "Especialista em defesa do executado, responsabilidade civil e sucessões. Atua na proteção de direitos patrimoniais e na condução estratégica de questões civis e sucessórias.",
-    imagem: "/img/equipe-mateus-pasa.png",
+    imagem: "/img/equipe-mateus-pasa-dourada.jpeg",
     alt: "Retrato profissional de Mateus Pasa",
     registro: "OAB/RS 120.460",
   },
