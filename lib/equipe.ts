@@ -17,7 +17,7 @@ export const EQUIPE: MembroEquipe[] = [
     area: "Proteção patrimonial e gestão de passivos",
     descricao:
       "Advogado especialista em proteção patrimonial de pessoas físicas e jurídicas. Atua na defesa de executados, na gestão de passivos bancários e tributários e na proteção de ativos intangíveis.",
-    imagem: "/img/equipe-renan-verde.jpeg",
+    imagem: "/img/equipe-renan-verde-alinhada.jpeg",
     alt: "Retrato profissional de Renan Liscano",
     registro: site.oab,
   },
