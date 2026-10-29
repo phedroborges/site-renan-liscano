@@ -17,7 +17,7 @@ export const EQUIPE: MembroEquipe[] = [
     area: "Proteção patrimonial e gestão de passivos",
     descricao:
       "Advogado especialista em proteção patrimonial de pessoas físicas e jurídicas. Atua na defesa de executados, na gestão de passivos bancários e tributários e na proteção de ativos intangíveis.",
-    imagem: "/img/equipe-renan-dourada.jpeg",
+    imagem: "/img/equipe-renan-verde.jpeg",
     alt: "Retrato profissional de Renan Liscano",
     registro: site.oab,
   },
@@ -42,13 +42,14 @@ export const EQUIPE: MembroEquipe[] = [
     registro: "OAB/RS 129.051",
   },
   {
-    nome: "Tamara Yasin",
+    nome: "Tamara Pertile",
     cargo: "Advogada tributarista",
     area: "Direito Tributário e defesa do contribuinte",
     descricao:
       "Especialista em Direito Tributário, atua há mais de seis anos na defesa de contribuintes diante de cobranças e outros excessos do Fisco. É pós-graduada em Direito Empresarial, Direito Tributário Empresarial, Contabilidade e Compliance.",
     imagem: "/img/equipe-tamara-yasin.png",
-    alt: "Retrato profissional de Tamara Yasin",
+    alt: "Retrato profissional de Tamara Pertile",
+    registro: "OAB/RS 121.145",
   },
   {
     nome: "Isabely Betim",
