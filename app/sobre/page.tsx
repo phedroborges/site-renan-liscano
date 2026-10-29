@@ -11,7 +11,7 @@ import { Equipe } from "@/components/Equipe";
 import s from "./sobre.module.css";
 
 export const metadata: Metadata = {
-  title: "Quem é Renan Liscano",
+  title: "Quem é Renan Liscano?",
   description:
     `Conheça Renan Liscano, sua trajetória na advocacia, a atuação bancária e empresarial e a equipe do escritório. ${site.oab}.`,
   alternates: { canonical: "/sobre" },
@@ -25,7 +25,7 @@ export default function Sobre() {
           <div className={s.bio}>
             <p className="kicker">O advogado e o escritório</p>
             <h1 className="titulo-hero">
-              Quem é <em className="metal">Renan Liscano</em>.
+              Quem é <em className="metal">Renan Liscano</em>?
             </h1>
             <p className={s.registro}>{site.oab}</p>
             <p className="sub-hero">
