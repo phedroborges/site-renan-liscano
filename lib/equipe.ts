@@ -23,10 +23,10 @@ export const EQUIPE: MembroEquipe[] = [
   },
   {
     nome: "Mateus Pasa",
-    cargo: "Advogado tributarista",
-    area: "Direito Tributário e defesa do contribuinte",
+    cargo: "Advogado",
+    area: "Defesa do executado, responsabilidade civil e sucessões",
     descricao:
-      "Especialista em Direito Tributário, atua há mais de seis anos na defesa de contribuintes diante de cobranças e outros excessos do Fisco. É pós-graduado em Direito Empresarial, Direito Tributário Empresarial, Contabilidade e Compliance.",
+      "Especialista em defesa do executado, responsabilidade civil e sucessões. Atua na proteção de direitos patrimoniais e na condução estratégica de questões civis e sucessórias.",
     imagem: "/img/equipe-mateus-pasa.png",
     alt: "Retrato profissional de Mateus Pasa",
     registro: "OAB/RS 120.460",
