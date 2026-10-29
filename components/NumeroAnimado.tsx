@@ -26,7 +26,7 @@ export function NumeroAnimado({ valor, duracao = 1600 }: { valor: string; duraca
   const ref = useRef<HTMLSpanElement>(null);
   const iniciou = useRef(false);
   const quadro = useRef<number | null>(null);
-  const partes = decompor(valor);
+  const partes = useMemo(() => decompor(valor), [valor]);
   const alvo = partes?.numero ?? 0;
   const casas = partes?.casas ?? 0;
   const [numero, setNumero] = useState(0);
@@ -86,7 +86,7 @@ export function NumeroAnimado({ valor, duracao = 1600 }: { valor: string; duraca
       observador.disconnect();
       if (quadro.current !== null) window.cancelAnimationFrame(quadro.current);
     };
-  }, [alvo, duracao, partes?.prefixo, partes?.sufixo]);
+  }, [alvo, duracao, partes]);
 
   if (!partes) return <span aria-hidden="true">{valor}</span>;
 
