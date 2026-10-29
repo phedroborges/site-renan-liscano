@@ -32,13 +32,13 @@ export const EQUIPE: MembroEquipe[] = [
     registro: "OAB/RS 120.460",
   },
   {
-    nome: "Maria Luisa Borges da Silva",
+    nome: "Maria Luisa",
     cargo: "Advogada",
     area: "Propriedade intelectual, marcas e software",
     descricao:
       "Atua na proteção de ativos de propriedade intelectual, com foco no registro de marcas e na proteção jurídica de software.",
     imagem: "/img/equipe-maria-luisa.png",
-    alt: "Retrato profissional de Maria Luisa Borges da Silva",
+    alt: "Retrato profissional de Maria Luisa",
     registro: "OAB/RS 129.051",
   },
   {
