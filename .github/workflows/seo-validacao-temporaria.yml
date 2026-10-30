@@ -1,6 +1,8 @@
 name: Validação temporária de SEO
 
 on:
+  push:
+    branches: [seo/otimizacao-tecnica]
   pull_request:
     branches: [main]
 
