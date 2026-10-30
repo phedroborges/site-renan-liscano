@@ -9,17 +9,14 @@ export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const artigos = await todosOsArtigos();
-  const agora = new Date();
   return [
     ...PAGINAS.map((p) => ({
       url: `${BASE}${p.href}`,
-      lastModified: agora,
       priority: p.priority,
       changeFrequency: "monthly" as const,
     })),
     ...SERVICOS.map((servico) => ({
       url: `${BASE}${servico.slug}`,
-      lastModified: agora,
       priority: 0.8,
       changeFrequency: "monthly" as const,
     })),
