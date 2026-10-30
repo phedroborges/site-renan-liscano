@@ -34,6 +34,11 @@ const nextConfig = {
               permanent: true,
             },
             {
+              source: "/inicio",
+              destination: "/",
+              permanent: true,
+            },
+            {
               source: "/conteudo/:path*",
               destination: "/blog/:path*",
               permanent: true,
