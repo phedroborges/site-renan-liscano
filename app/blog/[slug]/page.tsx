@@ -19,11 +19,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const a = await artigoPorSlug(slug);
   if (!a) return {};
+  const url = `https://renanliscano.adv.br/blog/${a.slug}`;
   return {
     title: a.pergunta,
     description: a.resposta,
+    authors: [{ name: site.advogado, url: "/sobre" }],
     alternates: { canonical: `/blog/${a.slug}` },
-    openGraph: { type: "article", title: a.pergunta, description: a.resposta },
+    openGraph: {
+      type: "article",
+      url,
+      title: a.pergunta,
+      description: a.resposta,
+      publishedTime: a.data,
+      modifiedTime: a.data,
+      authors: [site.advogado],
+      images: [{ url: "/img/hero-escritorio.jpg", alt: site.nome }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: a.pergunta,
+      description: a.resposta,
+      images: ["/img/hero-escritorio.jpg"],
+    },
   };
 }
 
@@ -34,17 +51,22 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
   if (!a) notFound();
 
   const relacionados = a.relacionados.map((r) => todos.find((artigo) => artigo.slug === r)).filter(Boolean);
+  const url = `https://renanliscano.adv.br/blog/${a.slug}`;
 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Article",
+        "@id": url + "#article",
         headline: a.pergunta,
         description: a.resposta,
         datePublished: a.data,
         dateModified: a.data,
         inLanguage: "pt-BR",
+        articleSection: a.tema,
+        image: "https://renanliscano.adv.br/img/hero-escritorio.jpg",
+        isAccessibleForFree: true,
         author: {
           "@type": "Person",
           name: site.advogado,
@@ -52,8 +74,20 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
           identifier: site.oab,
           url: "https://renanliscano.adv.br/sobre",
         },
-        publisher: { "@type": "Organization", name: site.nome },
-        mainEntityOfPage: `https://renanliscano.adv.br/blog/${a.slug}`,
+        publisher: { "@id": "https://renanliscano.adv.br/#organization" },
+        isPartOf: { "@id": "https://renanliscano.adv.br/#website" },
+        mainEntityOfPage: { "@id": url + "#webpage" },
+      },
+      {
+        "@type": "WebPage",
+        "@id": url + "#webpage",
+        url,
+        name: a.pergunta,
+        description: a.resposta,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": "https://renanliscano.adv.br/#website" },
+        breadcrumb: { "@id": url + "#breadcrumb" },
+        mainEntity: { "@id": url + "#article" },
       },
       {
         "@type": "FAQPage",
@@ -74,10 +108,11 @@ export default async function Artigo({ params }: { params: Promise<{ slug: strin
       },
       {
         "@type": "BreadcrumbList",
+        "@id": url + "#breadcrumb",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Início", item: "https://renanliscano.adv.br/" },
           { "@type": "ListItem", position: 2, name: "Blog", item: "https://renanliscano.adv.br/blog" },
-          { "@type": "ListItem", position: 3, name: a.pergunta },
+          { "@type": "ListItem", position: 3, name: a.pergunta, item: url },
         ],
       },
     ],
