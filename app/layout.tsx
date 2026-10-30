@@ -10,6 +10,17 @@ import { Footer } from "@/components/Footer";
 import { BarraMobile } from "@/components/BarraMobile";
 import { AlertaGolpe } from "@/components/AlertaGolpe";
 
+const URL_SITE = "https://renanliscano.adv.br";
+const TITULO_SITE = "Renan Liscano Advogados: bancário, tributário, médico e consumidor";
+const DESCRICAO_SITE =
+  "Atuação bancária, empresarial e tributária, direito médico e do consumidor. " +
+  CHAMADA_REUNIAO +
+  " Atendimento por WhatsApp em " +
+  site.alcance +
+  ". " +
+  site.oab +
+  ".";
+
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   display: "swap",
@@ -31,51 +42,125 @@ const plex = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://renanliscano.adv.br"),
+  metadataBase: new URL(URL_SITE),
+  applicationName: site.nome,
   title: {
-    default: "Renan Liscano Advogados: bancário, tributário, médico e consumidor",
+    default: TITULO_SITE,
     template: "%s | Renan Liscano Advogados",
   },
-  description:
-    `Atuação bancária, empresarial e tributária, direito médico e do consumidor. ${CHAMADA_REUNIAO} Atendimento por WhatsApp em ${site.alcance}. ${site.oab}.`,
+  description: DESCRICAO_SITE,
+  authors: [{ name: site.advogado, url: "/sobre" }],
+  creator: site.advogado,
+  publisher: site.nome,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: URL_SITE,
+    title: TITULO_SITE,
+    description: DESCRICAO_SITE,
     siteName: site.nome,
+    images: [
+      {
+        url: "/img/hero-escritorio.jpg",
+        alt: "Renan Liscano Advogados",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITULO_SITE,
+    description: DESCRICAO_SITE,
+    images: ["/img/hero-escritorio.jpg"],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    name: site.nome,
-    areaServed: { "@type": "Country", name: "BR" },
-    url: "https://renanliscano.adv.br",
-    telephone: site.telefone,
-    founder: {
-      "@type": "Person",
-      name: site.advogado,
-      jobTitle: "Advogado",
-      identifier: site.oab,
-    },
-    knowsAbout: [
-      "Direito bancário",
-      "Direito empresarial",
-      "Direito tributário",
-      "Planejamento patrimonial",
-      "Superendividamento",
-      "Direito médico",
-      "Direito do consumidor",
+    "@graph": [
+      {
+        "@type": ["Organization", "LegalService"],
+        "@id": URL_SITE + "/#organization",
+        name: site.nome,
+        legalName: site.nome,
+        url: URL_SITE,
+        logo: {
+          "@type": "ImageObject",
+          url: URL_SITE + "/img/logo-horizontal.webp",
+        },
+        image: URL_SITE + "/img/hero-escritorio.jpg",
+        telephone: site.telefone,
+        areaServed: { "@type": "Country", name: "Brasil" },
+        availableLanguage: "pt-BR",
+        sameAs: [site.instagram, site.avaliacoesGoogle],
+        founder: { "@id": URL_SITE + "/sobre#renan-liscano" },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: site.telefone,
+          contactType: "atendimento",
+          areaServed: "BR",
+          availableLanguage: "Portuguese",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Áreas de atuação",
+          itemListElement: [
+            ["Dívidas bancárias e empresariais", "/dividas"],
+            ["Direito tributário", "/tributario"],
+            ["Direito médico", "/medico"],
+            ["Direito do consumidor", "/consumidor"],
+          ].map(([name, url]) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name,
+              url: URL_SITE + url,
+            },
+          })),
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": URL_SITE + "/#website",
+        url: URL_SITE,
+        name: site.nome,
+        description: DESCRICAO_SITE,
+        inLanguage: "pt-BR",
+        publisher: { "@id": URL_SITE + "/#organization" },
+      },
+      {
+        "@type": "Person",
+        "@id": URL_SITE + "/sobre#renan-liscano",
+        name: site.advogado,
+        url: URL_SITE + "/sobre",
+        jobTitle: "Advogado",
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "OAB/RS",
+          value: "120.306",
+        },
+        worksFor: { "@id": URL_SITE + "/#organization" },
+      },
     ],
   };
 
   return (
-    <html lang="pt-BR" className={`${bodoni.variable} ${archivo.variable} ${plex.variable}`}>
+    <html lang="pt-BR" className={[bodoni.variable, archivo.variable, plex.variable].join(" ")}>
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
         />
         <div className="rails" aria-hidden="true">
           <span /><span /><span /><span /><span /><span />
