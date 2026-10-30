@@ -107,7 +107,8 @@ export function MapaBrasil({ compacto = false }: { compacto?: boolean }) {
       </div>
 
       <div className={styles.dado}>
-        <span className={styles.numero}>{aceso}</span>
+        <span className={styles.somenteLeitor}>{ordem.length}</span>
+        <span className={styles.numero} aria-hidden="true">{aceso}</span>
         <span className={styles.legenda}>
           estados
           <br />
