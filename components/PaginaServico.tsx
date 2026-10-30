@@ -39,26 +39,71 @@ export function PaginaServico({ dados, servicos = [] }: { dados: Dados; servicos
   const heroImagem = paginaFilha ? undefined : dados.heroImagem;
   const heroImersivo = Boolean(heroImagem);
   const perguntas = dados.faq ?? [];
-  const faqSchema = perguntas.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: perguntas.map((item) => ({
-          "@type": "Question",
-          name: item.p,
-          acceptedAnswer: { "@type": "Answer", text: item.r },
+  const base = "https://renanliscano.adv.br";
+  const url = base + dados.slug;
+  const breadcrumbItems = [
+    { name: "Início", url: base + "/" },
+    ...(paginaFilha && paginaArea
+      ? [{ name: paginaArea.label, url: base + paginaArea.href }]
+      : []),
+    { name: dados.titulo, url },
+  ];
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": url + "#service",
+        name: dados.titulo,
+        serviceType: dados.titulo,
+        description: dados.metaDescricao,
+        url,
+        areaServed: { "@type": "Country", name: "Brasil" },
+        provider: { "@id": base + "/#organization" },
+      },
+      {
+        "@type": "WebPage",
+        "@id": url + "#webpage",
+        url,
+        name: dados.metaTitulo,
+        description: dados.metaDescricao,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": base + "/#website" },
+        breadcrumb: { "@id": url + "#breadcrumb" },
+        mainEntity: { "@id": url + "#service" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": url + "#breadcrumb",
+        itemListElement: breadcrumbItems.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: item.url,
         })),
-      }
-    : null;
+      },
+      ...(perguntas.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": url + "#faq",
+              mainEntity: perguntas.map((item) => ({
+                "@type": "Question",
+                name: item.p,
+                acceptedAnswer: { "@type": "Answer", text: item.r },
+              })),
+            },
+          ]
+        : []),
+    ],
+  };
 
   return (
     <div data-tema={dados.tema ?? "padrao"} className={s.pagina}>
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+      />
       <header className={`hero ${heroImersivo ? s.heroImersivo : ""}`}>
         <div className="wrap">
           <div className={s.heroTexto}>
