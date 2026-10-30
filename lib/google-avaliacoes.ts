@@ -84,6 +84,7 @@ async function buscarPorId(chave: string, placeId: string): Promise<LugarGoogle>
         "X-Goog-FieldMask": CAMPOS_LUGAR,
       },
       next: { revalidate: UM_DIA },
+      signal: AbortSignal.timeout(5000),
     },
   );
 
@@ -106,6 +107,7 @@ async function buscarPorTexto(chave: string, consulta: string): Promise<LugarGoo
       maxResultCount: 1,
     }),
     next: { revalidate: UM_DIA },
+    signal: AbortSignal.timeout(5000),
   });
 
   if (!resposta.ok) throw new Error(`Google Places respondeu ${resposta.status}`);
